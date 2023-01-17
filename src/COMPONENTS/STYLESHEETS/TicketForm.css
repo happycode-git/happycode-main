@@ -1,0 +1,172 @@
+/* FONTS
+font-family: 'Rubik', sans-serif;
+*/
+/* COLORS
+#1E232B - Dark
+#C9FD3A - Yellow
+#FEFEFF - Light
+#494c51 - Gray
+#2249f7 - Purple
+*/
+
+@media only screen and (min-width: 350px) {
+    .ticketform-wrapper {
+        background-color: #FEFEFF;
+        color: #1E232B;
+        border-radius: 20px;
+        font-family: 'Rubik', sans-serif;
+        /* letter-spacing: -1px; */
+        padding: 1em;
+    }
+
+    .ticketform-wrapper h1 {
+        letter-spacing: -2px;
+        font-weight: 500;
+    }
+
+    .ticketid {
+        color: #2249f7;
+        font-weight: 400;
+    }
+
+    .ticketform-info {
+        font-size: 1.1em;
+        font-weight: 400;
+        color: #C9FD3A;
+        line-height: 20px;
+        padding: 1em;
+        border-radius: 8px;
+        font-family: 'Rubik', sans-serif;
+    }
+
+    .ticketform-form {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        width: 100%;
+    }
+
+    .ticketform-form h3 {
+        font-weight: 500;
+        font-size: 1em;
+        padding-bottom: 0.2em;
+        letter-spacing: -1px;
+    }
+
+    .ticketform-form p {
+        font-size: 0.7em;
+        color: #2249f7;
+        padding: 0.4em 0;
+        max-width: 300px;
+    }
+
+    .ticketform-form-block {
+        margin: 0.5em 0;
+    }
+    .ticketform-form-block h3 {
+        font-weight: 500;
+        letter-spacing: -1px;
+        font-size: 1em;
+    }
+
+    .ticketform-form-block h2 {
+        font-weight: 700;
+        color: #2249f7;
+        letter-spacing: -1px;
+        font-size: 2em;
+    }
+
+    .ticketform-textarea {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 1em;
+        border: 0;
+        font-size: 1em;
+        border-radius: 12px;
+        width: 100%;
+        min-height: 200px;
+    }
+
+    .dropbox-block {
+        padding: 0.5em;
+        border-radius: 8px;
+    }
+
+    .dropbox-block p {
+        color: #1E232B;
+        font-size: 0.9em;
+    }
+
+    .dropbox-title {
+        font-family: 'Rubik', sans-serif;
+        color: #1E232B;
+        font-weight: 500;
+        font-size: 1.4em;
+    }
+
+    .dropbox-icon {
+        font-size: 3em;
+    }
+
+    .ticketform-form-btn {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 100%;
+        padding: 0.7em;
+        font-family: 'Rubik', sans-serif;
+        background-color: #C9FD3A;
+        color: #1E232B;
+        font-weight: 600;
+        font-size: 1em;
+        border: 0;
+        border-radius: 8px;
+    }
+    input[type=checkbox] {
+        margin-left: 1em;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .ticketform-info {
+        width: 80vw;
+        margin: 0em auto;
+    }
+
+    .ticketform-wrapper {
+        width: 70vw;
+        display: block;
+        margin: 0em auto;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .ticketform-info {
+        width: 75vw;
+        font-size: 1.5em;
+        line-height: 25px;
+    }
+
+    .ticketform-wrapper {
+        width: 55vw;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .ticketform-info {
+        width: 70vw;
+    }
+
+    .ticketform-wrapper {
+        width: 40vw;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .ticketform-info {
+        width: 60vw;
+    }
+
+    .ticketform-wrapper {
+        width: 30vw;
+    }
+}

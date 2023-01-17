@@ -1,0 +1,38 @@
+/* FONTS
+font-family: 'Rubik', sans-serif;
+*/
+/* COLORS
+#1E232B - Dark
+#C9FD3A - Yellow
+#FEFEFF - Light
+#494c51 - Gray
+#2249f7 - Purple
+*/
+
+@media only screen and (min-width: 350px) {
+    .loading {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: #171c24d7;
+        color: #C9FD3A;
+        text-align: center;
+        font-family: 'Rubik', sans-serif;
+        z-index: 1000;
+    }
+    .loading h1 {
+        display: block;
+        margin-top: auto;
+        margin-bottom: auto;
+        line-height: 100vh;
+    }
+}
+
+@media only screen and (min-width: 600px) {}
+
+@media only screen and (min-width: 800px) {}
+
+@media only screen and (min-width: 1000px) {}
+
+@media only screen and (min-width: 1200px) {}
+

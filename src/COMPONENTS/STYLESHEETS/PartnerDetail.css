@@ -1,0 +1,41 @@
+/* FONTS
+font-family: 'Rubik', sans-serif;
+*/
+/* COLORS
+#1E232B - Dark
+#C9FD3A - Yellow
+#FEFEFF - Light
+#494c51 - Gray
+#2249f7 - Purple
+*/
+
+@media only screen and (min-width: 350px) {
+    .partner-name {
+        font-family: 'Rubik', sans-serif;
+        font-size: 1.1em;
+        letter-spacing: -1px;
+    }
+
+    .partner-info {
+        background-color: #131519;
+        padding: 1em;
+        border-radius: 20px;
+    }
+    .add-project-btn {
+        background-color: rgba(0,0,0,0);
+        border: 0;
+        padding-right: 1em;
+    }
+    .add-project-icon {
+        color: #2249f7;
+        font-size: 2.8em;
+    }
+}
+
+@media only screen and (min-width: 600px) {}
+
+@media only screen and (min-width: 800px) {}
+
+@media only screen and (min-width: 1000px) {}
+
+@media only screen and (min-width: 1200px) {}

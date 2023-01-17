@@ -1,0 +1,164 @@
+/* FONTS
+font-family: 'Rubik', sans-serif;
+*/
+
+@media only screen and (min-width: 325px) {
+    .home-panel1 {
+        padding: 1em;
+        font-family: 'Rubik', sans-serif;
+
+    }
+
+    .we-are-happy-code {
+        padding: 4em 2em;
+    }
+
+    .we-are {
+        font-size: 2.5em;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 300;
+        color: #C9FD3A;
+    }
+
+    .happy-code {
+        font-size: 5.5em;
+        line-height: 90%;
+        text-transform: uppercase;
+        transform: rotate(-10deg);
+        text-align: center;
+        letter-spacing: -3px;
+    }
+
+    .home-panel1 p {
+        font-size: 2em;
+        font-weight: 400;
+        padding: 0.4em;
+        color: #C9FD3A;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .home-panel2 {
+        font-family: 'Rubik', sans-serif;
+        color: #1E232B;
+        background-color: #FEFEFF;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+
+    }
+
+    .home-panel2-title {
+        font-size: 2.5em;
+        letter-spacing: -2px;
+        font-weight: 500;
+        padding: 1em 1em 0em 1em;
+    }
+
+    .home-panel2-caption {
+        color: #FEFEFF;
+        width: fit-content;
+        margin: 0em 1em;
+        padding: 0.2em 0.5em;
+        border-radius: 3px;
+        font-weight: 500;
+    }
+
+    .home-panel2-options {
+        margin-top: 1.5em;
+    }
+
+    .home-panel2-option1 {
+        padding: 1em;
+        display: flex;
+        align-items: center;
+        border-top: 1px solid #1E232B;
+        border-bottom: 1px solid #1E232B;
+    }
+
+    .home-panel2-option {
+        padding: 1em;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #1E232B;
+    }
+
+    .home-panel2-option-icon {
+        font-size: 3em;
+        color: #1E232B;
+    }
+
+    .home-panel2-option-block {
+        align-items: center;
+        padding: 0em 1em;
+    }
+
+    .home-panel2-option-block h1 {
+        font-size: 1.8em;
+        font-weight: 400;
+        letter-spacing: -1px;
+    }
+
+    .home-panel2-option-block p {
+        font-size: 0.9em;
+        color: #303339;
+    }
+
+    .home-panel3 {
+        padding-top: 4em;
+        font-family: 'Rubik', sans-serif;
+    }
+
+    .home-panel3 h1 {
+        font-weight: 900;
+        color: #494c51;
+        text-transform: uppercase;
+        font-size: 6em;
+        line-height: 70%;
+    }
+
+}
+
+@media only screen and (min-width: 600px) {}
+
+@media only screen and (min-width: 800px) {
+    .we-are {
+        font-size: 3.4em;
+    }
+
+    .happy-code {
+        font-size: 7.5em;
+    }
+
+    .home-panel2-option-block {
+        width: 100%;
+        padding: 0.7em;
+    }
+
+    .home-panel2-option-block h1 {
+        font-size: 2em;
+    }
+
+    .home-panel2-option-block p {
+        font-size: 1.2em;
+    }
+    .home-panel3 {
+        padding-top: 8em;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .we-are-happy-code {
+        padding: 6em;
+    }
+
+    .happy-code {
+        font-size: 9em;
+    }
+
+    .home-panel1 {
+        padding: 3.5em;
+    }
+}
+
+@media only screen and (min-width: 1200px) {}

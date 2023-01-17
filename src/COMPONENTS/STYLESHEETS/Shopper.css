@@ -1,0 +1,292 @@
+/* FONTS
+font-family: 'Rubik', sans-serif;
+*/
+/* COLORS
+#1E232B - Dark
+#C9FD3A - Yellow
+#FEFEFF - Light
+#494c51 - Gray
+#2249f7 - Purple
+*/
+
+@media only screen and (min-width: 350px) {
+    .shopper {
+        background-color: #FEFEFF;
+        color: #1E232B;
+        font-family: 'Rubik', sans-serif;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+       
+    }
+
+    .shopper-info {
+        font-size: 0.8em;
+        color: #2249f7;
+        padding: 1em;
+    }
+
+    .shopper-new-btn {
+        background-color: rgba(0, 0, 0, 0);
+        border: 0;
+        position: fixed;
+        bottom: 0.3em;
+        right: 0.3em;
+        font-size: 3.5em;
+    }
+
+    .shopper-remove {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 0.8em;
+        width: 100%;
+        border: 0;
+        background-color: red;
+        color: #FEFEFF;
+        text-align: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+
+    .shopper-total {
+        font-size: 0.9em;
+        color: gray;
+        font-weight: 400;
+    }
+
+    .shopper-sub {
+        font-size: 1.2em;
+        font-weight: 500;
+    }
+
+    .shopper-newpage-list {
+        background-color: #FEFEFF;
+        color: #1E232B;
+        font-family: 'Rubik', sans-serif;
+        position: fixed;
+        z-index: 100;
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        bottom: 0;
+        overflow-y: scroll;
+    }
+
+    .newpage-top {
+        padding: 1em;
+    }
+
+    .shopper-close {
+        font-size: 2em;
+    }
+
+    .shopper-newpage-list h1 {
+        font-weight: 500;
+        letter-spacing: -2px;
+    }
+
+   
+
+    .shopper-newpage-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #1E232B;
+        padding: 0.6em;
+        gap: 0.4em;
+    }
+
+    .shopper-newpage-block-icon {
+        font-size: 1.8em;
+    }
+
+    .shopper-newpage-block h2 {
+        font-size: 1em;
+        font-weight: 500;
+        letter-spacing: -1px;
+    }
+
+    .shopper-newpage-block p {
+        font-size: 0.7em;
+        color: gray;
+    }
+
+    .shopper-newpage-block h3 {
+        font-size: 0.9em;
+        font-weight: 400;
+    }
+
+    .shopper-pages {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.2em;
+    }
+
+    .shopper-page {
+        background-color: rgb(233, 237, 249);
+        padding: 0.6em;
+        border-radius: 5px;
+    }
+
+    .shopper-page h1 {
+        font-size: 1.2em;
+        font-weight: 500;
+        letter-spacing: -1px;
+    }
+
+    .shopper-page p {
+        font-size: 0.7em;
+        color: gray;
+    }
+
+    .shopper-ta {
+        display: block;
+        width: 100%;
+        padding: 1em;
+        margin: 0.5em 0;
+        background-color: #fbfafa;
+        font-family: 'Rubik', sans-serif;
+        border: 0;
+        min-height: 175px;
+        border-radius: 5px;
+    }
+
+    .shopper-page-icon {
+        font-size: 1.2em;
+    }
+
+    .shopper-bottom {
+        padding: 1em;
+    }
+
+    .shopper-cont {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: #C9FD3A;
+        color: #1E232B;
+        font-weight: 600;
+        font-size: 1em;
+        width: 100%;
+        padding: 0.7em;
+        border: 0;
+        border-radius: 10px;
+    }
+
+    .shopper-newpage-wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .tier {
+        padding: 0.5em;
+        background-color: #030303;
+        color: #D6DDE6;
+        font-weight: 400;
+        letter-spacing: -2px;
+    }
+    .shopper-page h4 {
+        font-size: 0.8em;
+        font-weight: 400;
+        padding-top: 0.8em;
+    }
+    .shopper-head {
+        letter-spacing: -1px;
+        font-weight: 400;
+        font-size: 1.4em;
+        background-color: #2249f7;
+        color: #f7f7f7;
+        width: fit-content;
+        padding: 0.3em 0.8em;
+        border-radius: 5px;
+        margin: 0.5em;
+        transform: rotate(-5deg);
+    }
+    .shopper-dropbox {
+        width: 100%;
+        background-color: #2249f7;
+        color: #f7f7f7;
+        padding: 0.6em;
+        font-weight: 500;
+        font-family: 'Rubik', sans-serif;
+        font-size: 1em;
+        border: 0;
+        border-radius: 10px;
+    }
+    .shopper-update {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: #C9FD3A;
+        color: #1E232B;
+        font-weight: 600;
+        font-size: 1em;
+        width: 100%;
+        padding: 0.7em;
+        border: 0;
+        border-radius: 10px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .shopper-newpage-wrap {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .shopper-newpage-block-icon {
+        font-size: 2.8em;
+    }
+
+    .shopper-newpage-block {
+        border-bottom: 0.5px solid #1E232B;
+        border-right: 1px solid #1E232B;
+        border-top: 0.5px solid #1E232B;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .shopper-newpage-wrap {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .shopper-newpage-block-icon {
+        font-size: 3.2em;
+    }
+
+    .shopper-pages {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .shopper-page {
+    }
+    .shopper-cont {
+        width: 30vw;
+        display: block;
+        margin: 1em auto;
+    }
+    .shopper-update {
+        width: 30vw;
+        display: block;
+        margin: 1em auto;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .shopper-newpage-block-icon {
+        font-size: 2.6em;
+    }
+    .shopper {
+        width: 90vw;
+        margin: 0 auto;
+    }
+    .shopper-pages {
+        padding: 1em;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .shopper-pages {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .shopper-newpage-wrap {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

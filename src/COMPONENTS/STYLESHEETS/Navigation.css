@@ -1,0 +1,80 @@
+/* FONTS
+font-family: 'Rubik', sans-serif;
+*/
+
+@media only screen and (min-width: 325px) {
+    .navbar-icon {
+        position: absolute;
+        color: #C9FD3A;
+        font-size: 2.5em;
+        right: 0.5em;
+        top: 0.5em;
+    }
+    .navbody {
+        height: 100%;
+        width: 100vw;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #151d29;
+        overflow-x: hidden;
+        transition: 0.5s;
+        color: white;
+    }
+    .navbody-icon {
+        position: absolute;
+        font-size: 2.5em;
+        color: #C9FD3A;
+        right: 0.5em;
+        top: 0.5em;
+    }
+    .nav-links {
+        margin-top: 6em;
+    }
+    .nav-link {
+        display: block;
+        color: white;
+        text-decoration: none;
+        font-family: 'Rubik', sans-serif;
+        font-size: 2em;
+        text-align: center;
+        padding: 0.3em 0.7em;
+        font-weight: 700;
+        width: fit-content;
+        margin: 0em auto;
+        border-radius: 3px;
+    }
+    .nav-footer {
+        color: #808080;
+        font-family: 'Rubik', sans-serif;
+        font-size: 0.8em;
+        position: absolute;
+        bottom: 1em;
+        text-align: center;
+        left: 0;
+        right: 0;
+    }
+    .small-nav-link {
+        display: block;
+        color: rgb(128, 170, 254);
+        text-decoration: none;
+        font-family: 'Rubik', sans-serif;
+        font-size: 1.2em;
+        text-align: center;
+        padding: 0.3em 0.7em;
+        font-weight: 400;
+        width: fit-content;
+        margin: 4em auto 0 auto;
+        border-radius: 3px;
+    }
+}
+
+@media only screen and (min-width: 600px) {}
+
+@media only screen and (min-width: 800px) {}
+
+@media only screen and (min-width: 1000px) {}
+
+@media only screen and (min-width: 1200px) {}
+

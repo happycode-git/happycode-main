@@ -1,0 +1,449 @@
+/* FONTS
+font-family: 'Rubik', sans-serif;
+*/
+/* COLORS
+#1E232B - Dark
+#C9FD3A - Yellow
+#FEFEFF - Light
+#494c51 - Gray
+#2249f7 - Purple
+*/
+
+@media only screen and (min-width: 325px) {
+    .webline-title {
+        font-family: 'Rubik', sans-serif;
+        font-size: 3em;
+        letter-spacing: -4px;
+        color: #c9fd3a;
+        padding: 0.5em;
+    }
+
+    .webline-panel1 {
+        color: #1E232B;
+        font-family: 'Rubik', sans-serif;
+        background-color: #FEFEFF;
+        border-radius: 12px;
+        padding-bottom: 1em;
+    }
+
+    .webline-login>* {
+        display: block;
+    }
+
+    .webline-login h1 {
+        letter-spacing: -4px;
+        text-align: center;
+        font-size: 3em;
+        padding: 0.5em;
+
+    }
+
+    .webline-login-inputs {
+        margin: 0.5em 0em;
+        width: 100%;
+        position: relative;
+        box-sizing: border-box;
+        padding: 1em;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+
+    .webline-login-input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 1em;
+        border: 0;
+        font-size: 1em;
+        border-radius: 12px;
+        width: 100%;
+    }
+
+    .webline-login-input:focus {
+        outline: none;
+    }
+
+    .webline-login-btn {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        font-family: 'Rubik', sans-serif;
+        background-color: #C9FD3A;
+        font-weight: 600;
+        font-size: 1.2em;
+        padding: 0.5em;
+        border: 0;
+        border-radius: 12px;
+        width: 100%;
+        letter-spacing: -1px;
+    }
+
+    .webline-panel2 {
+        padding: 2em 1em;
+        font-family: 'Rubik', sans-serif;
+        color: #FEFEFF;
+    }
+
+    .webline-panel2 h1 {
+        line-height: 80%;
+        font-size: 2.8em;
+        letter-spacing: -1px;
+    }
+
+    .apply-now {
+        padding: 0.3em 0.8em;
+        background-color: #2249f7;
+        width: fit-content;
+        font-weight: 700;
+        font-size: 1.4em;
+        border-radius: 4px;
+    }
+
+    .webline-panel2 h2 {
+        font-weight: 400;
+        font-size: 1.3em;
+        padding: 1em 0em;
+    }
+
+    .webline-panel3 {
+        padding: 1em;
+        font-family: 'Rubik', sans-serif;
+    }
+
+    .webline-promo-title {
+        font-size: 1.8em;
+        line-height: 85%;
+        letter-spacing: -1px;
+    }
+
+    .webline-promo-caption {
+        padding: 0.3em 0.8em;
+        background-color: #C9FD3A;
+        width: fit-content;
+        font-weight: 700;
+        color: #494c51;
+        border-radius: 4px;
+    }
+
+    .webline-promo-text {
+        font-size: 1em;
+        padding: 0.8em 0em;
+
+    }
+
+    .webline-panel3 h4 {
+        font-size: 1.5em;
+        color: #C9FD3A;
+    }
+
+    .webline-panel3 h1 {
+        font-size: 3em;
+    }
+
+    .webline-promo-prices {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+
+    .webline-promo-text-important {
+        font-size: 1em;
+        padding: 1em;
+        /* background-color: #1E232B; */
+        background-color: #091018;
+        border-radius: 10px;
+    }
+
+    .webline-panel4 {
+        padding: 2em 1em;
+        font-family: 'Rubik', sans-serif;
+        background-color: #FEFEFF;
+        border-radius: 20px;
+
+    }
+
+    .webline-panel4 h1 {
+        color: #1E232B;
+        line-height: 80%;
+        font-size: 2.8em;
+        letter-spacing: -1px;
+    }
+
+    .webline-steps {
+        color: #1E232B;
+    }
+
+    .webline-partnership-toggle {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        font-family: 'Rubik', sans-serif;
+        background-color: #889cbf58;
+        width: 100%;
+        padding: 0.8em;
+        border: 0;
+        font-size: 1.1em;
+        margin: 0.5em 0em;
+        border-radius: 10px;
+    }
+
+    .webline-steps h2 {
+        padding: 0.8em 0em 0.5em 0em;
+        letter-spacing: -1px;
+    }
+
+
+    .webline-app {
+        margin-top: 2em;
+        background-color: #FEFEFF;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        color: #1E232B;
+        font-family: 'Rubik', sans-serif;
+        transition: 0.5s;
+    }
+
+    .webline-app-top {
+        padding: 2em 1em;
+    }
+
+    .webline-app-top h1 {
+        font-size: 2.5em;
+        line-height: 85%;
+    }
+
+    .webline-app-top h2 {
+        width: fit-content;
+        padding: 0.3em 0.8em;
+        background-color: #2249f7;
+        font-size: 1.2em;
+        font-weight: 600;
+        color: #FEFEFF;
+        border-radius: 5px;
+    }
+    .webline-app-top p {
+        font-size: 1em;
+        line-height: 98%;
+        padding: 1em 0em;
+        font-weight: 300;
+    }
+    .webline-app-xmark {
+        font-size: 2.5em;
+    }
+    .webline-app-form {
+        padding: 0.8em;
+    }
+    .webline-app-label {
+        letter-spacing: -1px;
+        font-size: 1.1em;
+        padding: 0.2em 0em;
+        font-weight: 400;
+    }
+    .webline-app-input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: #4c5e7a31;
+        padding: 0.8em;
+        width: 100%;
+        border: 0;
+        border-radius: 10px;
+        margin-bottom: 0.5em;
+        font-family: 'Rubik', sans-serif;
+    }
+    .webline-app-select {
+        padding: 0.5em;
+        width: 40%;
+        margin-bottom: 0.5em;
+    }
+    .webline-app-textarea {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: #4c5e7a31;
+        padding: 0.8em;
+        width: 100%;
+        border: 0;
+        border-radius: 10px;
+        margin-bottom: 0.5em;
+        min-height: 150px;
+        font-family: 'Rubik', sans-serif;
+    }
+    .webline-app-form p {
+        font-size: 0.8em;
+        color: rgb(52, 133, 220);
+    }
+    .webline-app-form h3 {
+        font-size: 1.4em;
+        color: rgb(242, 79, 79);
+        font-weight: 500;
+        margin: 1em 0em;
+        letter-spacing: -1px;
+    }
+    .webline-app-btn {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: #C9FD3A;
+        color:#1E232B;
+        font-family: 'Rubik', sans-serif;
+        font-size: 1.2em;
+        padding: 0.5em;
+        width: 100%;
+        font-weight: 600;
+        letter-spacing: -1px;
+        border: 0;
+        border-radius: 10px;
+    }
+    .webline-site-err {
+        color: red;
+        font-display: 1em;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .webline-panel1 {
+        width: 70%;
+        margin: 0em auto;
+    }
+
+    .webline-panel2 h1 {
+        font-size: 3.5em;
+        text-align: center;
+    }
+
+    .webline-panel2 p {
+        margin: 0em auto;
+    }
+
+    .webline-panel2 h2 {
+        width: 85%;
+        margin: 0em auto;
+    }
+
+    .webline-promo-title {
+        font-size: 2.8em;
+    }
+
+    .webline-promo-prices {
+        font-size: 1.6em;
+    }
+
+    .webline-promo-text {
+        font-size: 1.2em;
+    }
+
+    .webline-promo-text-important {
+        font-size: 1.2em;
+    }
+    .webline-app {
+        padding: 1em;
+    }
+    .webline-app-form {
+        width: 80%;
+        margin: 0em auto;
+    }
+    .webline-app-input {
+        width: 100%;
+    }
+    .webline-app-textarea {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .webline-panel1 {
+        width: 50%;
+    }
+
+    .webline-panel2 h1 {
+        font-size: 4em;
+        text-align: center;
+    }
+
+    .webline-panel2 h2 {
+        width: 80%;
+        font-size: 1.8em;
+        line-height: 98%;
+    }
+
+    .webline-panel3 {
+        width: 80%;
+        margin: 0em auto;
+    }
+
+    .webline-panel4 {
+        padding: 3.5em;
+        width: 85%;
+        margin: 0em auto;
+        
+    }
+    .webline-app {
+        width: 85%;
+        margin: 2em auto 0em auto;
+    }
+    .webline-app-input {
+        min-width: 350px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .webline-panel1 {
+        width: 40%;
+    }
+
+    .webline-panel2 h2 {
+        width: 75%;
+    }
+
+    .webline-panel3 {
+        width: 70%;
+    }
+
+    .webline-panel4 {
+        width: 75%;
+        padding: 5em;
+    }
+
+    .webline-steps h2 {
+        font-size: 1.8em;
+    }
+
+    .webline-steps p {
+        font-size: 1.2em;
+    }
+    .webline-app {
+        width: 75%;
+    }
+    .webline-app-top p {
+        width: 90%;
+        font-size: 1.3em;
+    }
+    .webline-app-input {
+        width: 45%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .webline-panel1 {
+        width: 30%;
+    }
+
+    .webline-panel2 h2 {
+        width: 60%;
+    }
+
+    .webline-panel3 {
+        width: 90%;
+    }
+
+    .webline-panel4 {
+        padding: 2em;
+        width: 90%;
+    }
+    .webline-app {
+        margin-top: 4em;
+        width: 50%;
+    }
+
+    .split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}

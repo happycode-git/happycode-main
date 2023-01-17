@@ -1,0 +1,56 @@
+/* FONTS
+font-family: 'Rubik', sans-serif;
+*/
+/* COLORS
+#1E232B - Dark
+#C9FD3A - Yellow
+#FEFEFF - Light
+#494c51 - Gray
+#2249f7 - Purple
+*/
+
+@media only screen and (min-width: 350px) {
+    .ticket-id {
+        font-weight: 500;
+        padding: 0.5em;
+        width: fit-content;
+        font-size: 1.2em;
+        border-radius: 4px;
+    }
+
+    .ticket-complete {
+        font-size: 2.5em;
+    }
+
+    .project-URL {
+        margin: 0.8em;
+        display: flex;
+        gap: 0.5em;
+        align-items: center;
+    }
+
+    .project-URL-btn {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: rgba(0, 0, 0, 0);
+        color: #2249f7;
+        font-size: 2em;
+        font-weight: 700;
+        border-radius: 10px;
+        border: 0;
+    }
+
+    .outline-icon {
+        font-size: 2.2em;
+        margin-right: 1em;
+        color: #2249f7;
+    }
+}
+
+@media only screen and (min-width: 600px) {}
+
+@media only screen and (min-width: 800px) {}
+
+@media only screen and (min-width: 1000px) {}
+
+@media only screen and (min-width: 1200px) {}

@@ -1,0 +1,46 @@
+/* FONTS
+font-family: 'Rubik', sans-serif;
+*/
+/* COLORS
+#1E232B - Dark
+#C9FD3A - Yellow
+#FEFEFF - Light
+#494c51 - Gray
+#2249f7 - Purple
+*/
+
+@media only screen and (min-width: 350px) {
+    .confirmation {
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(0,0,0,0.8);
+        z-index: 1000;
+        font-family: 'Rubik', sans-serif;
+        
+    }
+    .confirmation-block {
+        z-index: 1001;
+        display: block;
+        margin: 0 auto;
+        line-height: 100vh;
+        color: #C9FD3A;
+        text-align: center;
+    }
+    .confirmation-icon {
+        font-size: 6em;
+    }
+    .confirmation-block h1 {
+        color: #C9FD3A;
+    }
+
+}
+
+@media only screen and (min-width: 600px) {}
+
+@media only screen and (min-width: 800px) {}
+
+@media only screen and (min-width: 1000px) {}
+
+@media only screen and (min-width: 1200px) {}
+

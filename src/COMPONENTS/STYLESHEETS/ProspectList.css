@@ -1,0 +1,213 @@
+/* FONTS
+font-family: 'Rubik', sans-serif;
+*/
+/* COLORS
+#1E232B - Dark
+#C9FD3A - Yellow
+#FEFEFF - Light
+#494c51 - Gray
+#2249f7 - Purple
+*/
+
+@media only screen and (min-width: 350px) {
+    .prospects {
+        font-family: 'Rubik', sans-serif;
+        background-color: #FEFEFF;
+        padding: 1em;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .prospects-btn {
+        background-color: rgba(0, 0, 0, 0);
+        border: 0;
+    }
+
+    .prospects-btn-icon {
+        color: #2249f7;
+        font-size: 3em;
+    }
+
+    .prospects h1 {
+        color: #1E232B;
+        font-weight: 500;
+        letter-spacing: -1px;
+        font-size: 1.5em;
+    }
+
+    .prospect-form {
+        color: #1E232B;
+        padding: 1em 0;
+
+    }
+
+    .prospect-form-info {
+        font-size: 0.9em;
+        color: orangered;
+    }
+
+    .prospect-form-block {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.3em;
+        padding: 0.3em 0;
+    }
+
+    .prospect-form-block label {
+        font-size: 1em;
+        letter-spacing: -1px;
+    }
+
+    .prospect-form-block input[type=text] {
+        background-color: #ddddddcb;
+        padding: 0.8em;
+        border: 0;
+        border-radius: 10px;
+    }
+
+    .prospect-form-block input[type=text]:focus {
+        outline: none;
+    }
+
+    .prospect-form-block input[type=email] {
+        background-color: #ddddddcb;
+        padding: 0.8em;
+        border: 0;
+        border-radius: 10px;
+    }
+
+    .prospect-form-block input[type=email]:focus {
+        outline: none;
+    }
+
+    .prospect-ta {
+        font-family: 'Rubik', sans-serif;
+        background-color: #ddddddcb;
+        padding: 0.8em;
+        border: 0;
+        border-radius: 10px;
+        min-height: 175px;
+    }
+
+    .prospect-ta:focus {
+        outline: none;
+    }
+
+    .prospect-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .prospects-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.6em;
+        color: #1E232B;
+    }
+
+    .prospect-block {
+        padding: 0.8em;
+        border-radius: 10px;
+    }
+
+    .border1 {
+        border: 2px solid #1994ff;
+    }
+
+    .border2 {
+        border: 1px solid #d0d0d0;
+    }
+
+
+
+    .prospect-block h2 {
+        font-size: 1.2em;
+        letter-spacing: -1px;
+        font-weight: 500;
+    }
+
+    .prospect-type {
+        font-size: 0.8em;
+        font-weight: 300;
+        color: rgb(85, 85, 85);
+    }
+
+    .prospect-city {
+        font-size: 0.9em;
+        font-weight: 400;
+        letter-spacing: -1px;
+        color: #001d35;
+
+    }
+
+    .prospect-block p {
+        font-size: 0.8em;
+    }
+
+    .web-icon {
+        font-size: 1.8em;
+    }
+
+    .prospect-btns {
+        display: flex;
+        gap: 0.8em;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .prospect-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: rgba(0, 0, 0, 0);
+        border: 0;
+        font-size: 2em;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .prospect-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+        padding: 0.6em 0;
+    }
+
+    .prospect-form-block {
+        padding: 0;
+    }
+
+    .prospect-ta {
+        margin: 0.6em 0;
+        width: 70vw;
+    }
+
+    .prospect-btn {
+        width: 40vw;
+        margin: 1em auto;
+    }
+
+    .prospects-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 800px) {}
+
+@media only screen and (min-width: 1000px) {
+    .prospect-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .prospect-ta {
+        width: 60vw;
+    }
+
+    .prospects-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .prospects-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
