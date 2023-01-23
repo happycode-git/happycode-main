@@ -127,15 +127,14 @@ export default function Shopper() {
                                         <h2>Home</h2>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
-
+                                    <p>Hook the user in with a essential information and statements. The user should have a great idea of what the business is and does in this page.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Home",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "Hook the user in with a essential information and statements. The user should have a great idea of what the business is and does in this page.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -151,14 +150,14 @@ export default function Shopper() {
                                         <h2>About</h2>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>Talk about the way the business came to be. This is for users who want to know exactly who they are doing business with.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "About",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "Talk about the way the business came to be. This is for users who want to know exactly who they are doing business with.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -174,14 +173,38 @@ export default function Shopper() {
                                         <h2>History</h2>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>Give the user a glimpse into the history of the business. This helps gain credibility and trust.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "History",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "Give the user a glimpse into the history of the business. This helps gain credibility and trust.",
+                                        Price: 100
+                                    })
+                                    setPages(tempArr)
+                                    var tempTot = total
+                                    tempTot += 100
+                                    setTotal(tempTot)
+                                    setTogglePageList(false)
+                                }} className='shopper-newpage-block-icon' />
+                            </div>
+                            <div className='shopper-newpage-block'>
+                                <div>
+                                    <div className='flex'>
+
+                                        <h2>Contact</h2>
+                                        <h3>$100</h3>
+                                    </div>
+                                    <p>A simple form to get users to give their input or ask questions.</p>
+                                </div>
+                                <BsArrowRightCircle onClick={() => {
+                                    var tempArr = pages
+                                    tempArr.push({
+                                        id: randomString(5),
+                                        Name: "Contact",
+                                        Details: "A simple form to get users to give their input or ask questions.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -197,14 +220,14 @@ export default function Shopper() {
                                         <h2>Services</h2>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>Show a list of services the business provides with interactive show and hide features.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Services",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "Show a list of services the business provides with interactive show and hide features.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -220,14 +243,14 @@ export default function Shopper() {
                                         <h2>Products {"("}Simple{")"}</h2>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>Show all products and provide simple information individually. For reading purposes only.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: `Products ${"("}Simple${")"}`,
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "Show all products and provide simple information individually. For reading purposes only.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -240,17 +263,17 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Careers</h2>
+                                        <h2>Careers (Simple)</h2>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>In the case that the business is hiring, this will provide essential information about the hiring process and open positions.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
-                                        Name: "Careers",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Name: "Careers (Simple)",
+                                        Details: "In the case that the business is hiring, this will provide essential information about the hiring process and open positions.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -266,14 +289,14 @@ export default function Shopper() {
                                         <h2>Partners</h2>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>Show all vendors that are affiliated with the business. Their links will be provided to help with SEO.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Partners",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "Show all vendors that are affiliated with the business. Their links will be provided to help with SEO.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -289,14 +312,14 @@ export default function Shopper() {
                                         <h2>Bio</h2>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>Allow users to meet the essential workers of the business in a simple yet structured biography page.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Bio",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "Allow users to meet the essential workers of the business in a simple yet structured biography page.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -312,14 +335,14 @@ export default function Shopper() {
                                         <h2>Pricing</h2>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>If the business offers services, a set of pricing options can be displayed with information about what can be attained for each tier.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Pricing",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "If the business offers services, a set of pricing options can be displayed with information about what can be attained for each tier.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -335,14 +358,14 @@ export default function Shopper() {
                                         <h2>Gallery (Simple)</h2>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>Display a set of pictures or videos in a neat and clean gallery. Responsive to avoid unwanted whitespace.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Gallery (Simple)",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "Display a set of pictures or videos in a neat and clean gallery. Responsive to avoid unwanted whitespace.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -381,14 +404,14 @@ export default function Shopper() {
                                         <h2>Portfolio</h2>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>For professionals, this page will show links, images, and information of previous work.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Portfolio",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "For professionals, this page will show links, images, and information of previous work.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -404,14 +427,14 @@ export default function Shopper() {
                                         <h2>Awards</h2>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>A list of awards displayed in a way to convey the importance of professional or business achievements.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Awards",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "A list of awards displayed in a way to convey the importance of professional or business achievements.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -427,14 +450,14 @@ export default function Shopper() {
                                         <h2>Coupons (Simple)</h2>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>In-store coupons can be displayed along with any information and conditions. For reading purposes only.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Coupons (Simple)",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "In-store coupons can be displayed along with any information and conditions. For reading purposes only.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -450,14 +473,14 @@ export default function Shopper() {
                                         <h2>Join Email List</h2>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>Get users to stay updated with the business by allowing them to enter their email and submit to join an email list.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Join Email List",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "Get users to stay updated with the business by allowing them to enter their email and submit to join an email list.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -473,14 +496,14 @@ export default function Shopper() {
                                         <h2>Rewards (Simple)</h2>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>Display information about current rewards and their conditions. For reading purposes only.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Rewards (Simple)",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "Display information about current rewards and their conditions. For reading purposes only.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -496,14 +519,14 @@ export default function Shopper() {
                                         <h2>Locations</h2>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>Display all locations and their hours, along with an interactive map for each.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Locations",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "Display all locations and their hours, along with an interactive map for each.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -519,14 +542,14 @@ export default function Shopper() {
                                         <h2>Privacy Policy</h2>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>Show the company's Privacy Policy and/or Terms and Conditions in a simple way that is easy to understand.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Privacy Policy",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "Show the company's Privacy Policy and/or Terms and Conditions in a simple way that is easy to understand.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -542,14 +565,14 @@ export default function Shopper() {
                                         <h2>Quote (Simple)</h2>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>Inform the user on different quotes for several scenarios. They can also leave their information in a simple quote form for future contact.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Quote (Simple)",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "Inform the user on different quotes for several scenarios. They can also leave their information in a simple quote form for future contact.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -565,14 +588,14 @@ export default function Shopper() {
                                         <h2>Estimates (Simple)</h2>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>Similar to quotes, but provides a deep look into how estimates are determined and performed.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Estimates (Simple)",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "Similar to quotes, but provides a deep look into how estimates are determined and performed.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -588,14 +611,14 @@ export default function Shopper() {
                                         <h2>Misc (Simple)</h2>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>Simple page can be constructed with any of the information components such as text, images, videos, or links.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Misc (Simple)",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "Simple page can be constructed with any of the information components such as text, images, videos, or links.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -611,14 +634,14 @@ export default function Shopper() {
                                         <h2>Landing</h2>
                                         <h3>$150</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>A page made up of three or more panels. Home, Contact, and Misc panels.</p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Landing",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "A page made up of three or more panels. Home, Contact, and Misc panels.",
                                         Price: 150
                                     })
                                     setPages(tempArr)
@@ -660,14 +683,14 @@ export default function Shopper() {
                                         <h2>Events</h2>
                                         <h3>$200</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Events",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 200
                                     })
                                     setPages(tempArr)
@@ -683,14 +706,14 @@ export default function Shopper() {
                                         <h2>Support</h2>
                                         <h3>$200</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Support",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 200
                                     })
                                     setPages(tempArr)
@@ -706,14 +729,38 @@ export default function Shopper() {
                                         <h2>Reviews</h2>
                                         <h3>$200</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Reviews",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
+                                        Price: 200
+                                    })
+                                    setPages(tempArr)
+                                    var tempTot = total
+                                    tempTot += 200
+                                    setTotal(tempTot)
+                                    setTogglePageList(false)
+                                }} className='shopper-newpage-block-icon' />
+                            </div>
+                            <div className='shopper-newpage-block'>
+                                <div>
+                                    <div className='flex'>
+
+                                        <h2>Features</h2>
+                                        <h3>$200</h3>
+                                    </div>
+                                    <p></p>
+                                </div>
+                                <BsArrowRightCircle onClick={() => {
+                                    var tempArr = pages
+                                    tempArr.push({
+                                        id: randomString(5),
+                                        Name: "Features",
+                                        Details: "",
                                         Price: 200
                                     })
                                     setPages(tempArr)
@@ -729,14 +776,14 @@ export default function Shopper() {
                                         <h2>FAQ</h2>
                                         <h3>$200</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "FAQ",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 200
                                     })
                                     setPages(tempArr)
@@ -752,14 +799,14 @@ export default function Shopper() {
                                         <h2>Menu (Simple)</h2>
                                         <h3>$200</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Menu (Simple)",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 200
                                     })
                                     setPages(tempArr)
@@ -775,14 +822,14 @@ export default function Shopper() {
                                         <h2>Misc (Standard)</h2>
                                         <h3>$200</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Menu (Standard)",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 200
                                     })
                                     setPages(tempArr)
@@ -801,14 +848,14 @@ export default function Shopper() {
                                         <h2>Blog</h2>
                                         <h3>$300</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Blog",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 300
                                     })
                                     setPages(tempArr)
@@ -824,14 +871,14 @@ export default function Shopper() {
                                         <h2>Products (Interactive)</h2>
                                         <h3>$300</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Products (Interactive)",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 300
                                     })
                                     setPages(tempArr)
@@ -847,14 +894,14 @@ export default function Shopper() {
                                         <h2>Services (Interactive)</h2>
                                         <h3>$300</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Services (Interactive)",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 300
                                     })
                                     setPages(tempArr)
@@ -870,14 +917,14 @@ export default function Shopper() {
                                         <h2>Gallery (Interactive)</h2>
                                         <h3>$300</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Gallery (Interactive)",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 300
                                     })
                                     setPages(tempArr)
@@ -893,14 +940,14 @@ export default function Shopper() {
                                         <h2>Menu (Interactive)</h2>
                                         <h3>$300</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Menu (Interactive)",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 300
                                     })
                                     setPages(tempArr)
@@ -916,14 +963,14 @@ export default function Shopper() {
                                         <h2>Quote (Interactive)</h2>
                                         <h3>$300</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Quote (Interactive)",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 300
                                     })
                                     setPages(tempArr)
@@ -939,14 +986,14 @@ export default function Shopper() {
                                         <h2>Misc (Interactive)</h2>
                                         <h3>$300</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Misc (Interactive)",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 300
                                     })
                                     setPages(tempArr)
@@ -965,14 +1012,14 @@ export default function Shopper() {
                                         <h2>Shop/Store</h2>
                                         <h3>$400</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Shop/Store",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 400
                                     })
                                     setPages(tempArr)
@@ -988,14 +1035,14 @@ export default function Shopper() {
                                         <h2>Rewards (Interactive)</h2>
                                         <h3>$400</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Rewards (Interactive)",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 400
                                     })
                                     setPages(tempArr)
@@ -1011,14 +1058,14 @@ export default function Shopper() {
                                         <h2>Misc (Complex)</h2>
                                         <h3>$400</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Rewards (Complex)",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 400
                                     })
                                     setPages(tempArr)
@@ -1034,14 +1081,14 @@ export default function Shopper() {
                                         <h2>Login/Members</h2>
                                         <h3>$500</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Login/Members",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 500
                                     })
                                     setPages(tempArr)
@@ -1057,14 +1104,14 @@ export default function Shopper() {
                                         <h2>Dashboard</h2>
                                         <h3>$500</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Dashboard",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 500
                                     })
                                     setPages(tempArr)
@@ -1080,14 +1127,14 @@ export default function Shopper() {
                                         <h2>Forum</h2>
                                         <h3>$500</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Forum",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 500
                                     })
                                     setPages(tempArr)
@@ -1103,14 +1150,14 @@ export default function Shopper() {
                                         <h2>Inventory</h2>
                                         <h3>$500</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Inventory",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 500
                                     })
                                     setPages(tempArr)
@@ -1126,14 +1173,14 @@ export default function Shopper() {
                                         <h2>Invoices</h2>
                                         <h3>$500</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Invoices",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 500
                                     })
                                     setPages(tempArr)
@@ -1149,14 +1196,14 @@ export default function Shopper() {
                                         <h2>Misc (Innovative)</h2>
                                         <h3>$500</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p></p>
                                 </div>
                                 <BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Misc (Innovative)",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "",
                                         Price: 500
                                     })
                                     setPages(tempArr)
