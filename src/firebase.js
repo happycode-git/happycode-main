@@ -14,7 +14,7 @@ import { setPartnersState } from './REDUX/REDUCERS/PartnersSlice'
 import { setAllTicketsState } from './REDUX/REDUCERS/AllTicketsSlice'
 import { setProspectsState } from './REDUX/REDUCERS/ProspectsSlice'
 import { setOutlineState } from './REDUX/REDUCERS/OutlineSlice'
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc, getDoc } from "firebase/firestore";
 import { randomString } from "./Global";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -343,18 +343,69 @@ export const setTicket = async (userID, ticketID, ticket, projectID) => {
 }
 export const updateTicketCount = async (userID, ticketCount) => {
   const ticketCountRef = doc(db, "Members", userID);
+  const newTicketCount = ticketCount + 1
 
   await updateDoc(ticketCountRef, {
-    TicketCount: ticketCount + 1
+    TicketCount: newTicketCount
   });
 }
 export const updateTicketMinusCount = async (userID, ticketCount) => {
   const ticketCountRef = doc(db, "Members", userID)
-
+  const newTicketCount = ticketCount - 1
   await updateDoc(ticketCountRef, {
-    TicketCount: ticketCount - 1
+    TicketCount: newTicketCount
   })
 }
+export const updateTicketPartner = async (userID, dispatch) => {
+  const docRef = doc(db, "Members", userID);
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    console.log("Document data:", docSnap.data());
+    const snap = docSnap.data()
+    const user = {
+      id: doc.id,
+      Address: snap.Address,
+      BusinessEmail: snap.BusinessEmail,
+      BusinessName: snap.BusinessName,
+      Email: snap.Email,
+      FirstName: snap.FirstName,
+      LastName: snap.LastName,
+      Phone: snap.Phone,
+      TicketCount: snap.TicketCount
+    }
+    dispatch(setPartnersState(user))
+
+  } else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+  }
+}
+export const updateTicketUser = async (userID, dispatch) => {
+  const docRef = doc(db, "Members", userID);
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    console.log("Document data:", docSnap.data());
+    const snap = docSnap.data()
+    const user = {
+      id: doc.id,
+      Address: snap.Address,
+      BusinessEmail: snap.BusinessEmail,
+      BusinessName: snap.BusinessName,
+      Email: snap.Email,
+      FirstName: snap.FirstName,
+      LastName: snap.LastName,
+      Phone: snap.Phone,
+      TicketCount: snap.TicketCount
+    }
+    dispatch(setUserState(user))
+  } else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+  }
+}
+
 export const updateOutline = async (memberID, projID, outline) => {
   for (var idx in outline) {
     const comp = outline[idx]

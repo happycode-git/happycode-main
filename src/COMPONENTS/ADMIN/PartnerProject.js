@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 // 
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom';
-import { completePartnerTicket, getTickets, rejectPartnerTicket, updateTicketMinusCount } from '../../firebase';
+import { completePartnerTicket, getPartners, getTickets, rejectPartnerTicket, updateTicketMinusCount, updateTicketPartner } from '../../firebase';
 // 
 import '../STYLESHEETS/PartnerProject.css'
 // 
@@ -13,6 +13,7 @@ import { RxDotFilled } from 'react-icons/rx'
 import { setLoadingState } from '../../REDUX/REDUCERS/LoadingSlice';
 import { setConfirmationState } from '../../REDUX/REDUCERS/ConfirmationSlice';
 import { setFailureState } from '../../REDUX/REDUCERS/FailureSlice';
+import { setPartnersState } from '../../REDUX/REDUCERS/PartnersSlice';
 import { FaClipboardList } from 'react-icons/fa';
 
 export default function PartnerDetail() {
@@ -99,8 +100,8 @@ export default function PartnerDetail() {
                 </div>
                 <div className='project-previews-split'>
                     <div className='preview-btn-split'>
-                    <button className='preview-btn' onClick={() => { previewMode != "mobile" ? setPreviewMode("mobile") : setPreviewMode("") }}>View in Mobile</button>
-                    {window.innerWidth >= 800 ? <button className='preview-btn' onClick={() => { previewMode != "desktop" ? setPreviewMode("desktop") : setPreviewMode("") }}>View in Desktop</button> : <p></p>}
+                        <button className='preview-btn' onClick={() => { previewMode != "mobile" ? setPreviewMode("mobile") : setPreviewMode("") }}>View in Mobile</button>
+                        {window.innerWidth >= 800 ? <button className='preview-btn' onClick={() => { previewMode != "desktop" ? setPreviewMode("desktop") : setPreviewMode("") }}>View in Desktop</button> : <p></p>}
                     </div>
                     {
                         previewMode == "mobile" ?
@@ -183,8 +184,27 @@ export default function PartnerDetail() {
                                                 <div className='flex'>
                                                     <h2 className='ticket-id bg-purple light'>Ticket #{tik.id}</h2>
                                                     <div className='together'>
-                                                        <AiFillCloseCircle onClick={() => { updateTicketMinusCount(partner.id, partner.TicketCount); rejectTicket(chosenTicketID, tik) }} className='ticket-complete red' />
-                                                        <AiFillCheckCircle onClick={() => { updateTicketMinusCount(partner.id, partner.TicketCount); completeTicket(chosenTicketID, tik) }} className='ticket-complete green' />
+                                                        <AiFillCloseCircle onClick={() => {
+                                                            updateTicketMinusCount(partner.id, partner.TicketCount)
+                                                            .then(() => {
+                                                                updateTicketPartner(partner.id, dispatch)
+                                                                .then(() => {
+                                                                    getPartners(dispatch)
+                                                                })
+                                                            })
+                                                            rejectTicket(chosenTicketID, tik);
+                                                        }} className='ticket-complete red' />
+                                                        <AiFillCheckCircle onClick={() => {
+                                                            updateTicketMinusCount(partner.id, partner.TicketCount)
+                                                            .then(() => {
+                                                                updateTicketPartner(partner.id, dispatch)
+                                                                .then(() => {
+                                                                    getPartners(dispatch)
+                                                                })
+                                                            })
+                                                            completeTicket(chosenTicketID, tik);
+                                                            console.log(`USER: ${partner.TicketCount}`)
+                                                        }} className='ticket-complete green' />
                                                     </div>
                                                 </div>
                                             </div>

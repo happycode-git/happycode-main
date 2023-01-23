@@ -12,7 +12,8 @@ import { setConfirmationState } from '../../REDUX/REDUCERS/ConfirmationSlice'
 import { setFailureState } from '../../REDUX/REDUCERS/FailureSlice'
 import { setLoadingState } from '../../REDUX/REDUCERS/LoadingSlice'
 // 
-import { setTicket, updateTicketCount } from '../../firebase'
+import { setTicket, updateTicketCount, updateTicketUser } from '../../firebase'
+import { setUserState } from '../../REDUX/REDUCERS/UserSlice'
 
 export default function TicketForm() {
     const user = useSelector((state) => state.user.value)
@@ -36,6 +37,9 @@ export default function TicketForm() {
                 ProjectID: project.id
             }
             updateTicketCount(user.id, user.TicketCount)
+            .then(() => {
+                updateTicketUser(user.id, dispatch)
+            })
             setTicket(user.id, ticketID, ticket, project.id)
                 .then(() => {
                     dispatch(setLoadingState(false))

@@ -12,7 +12,8 @@ import { setConfirmationState } from '../../REDUX/REDUCERS/ConfirmationSlice'
 import { setFailureState } from '../../REDUX/REDUCERS/FailureSlice'
 import { setLoadingState } from '../../REDUX/REDUCERS/LoadingSlice'
 // 
-import { setTicket, updateTicketCount } from '../../firebase'
+import { getPartners, getUser, setTicket, updateTicketCount, updateTicketPartner } from '../../firebase'
+import { setPartnersState } from '../../REDUX/REDUCERS/PartnersSlice'
 
 export default function PartnerTicketForm() {
     const admin = useSelector((state) => state.admin.value)
@@ -37,6 +38,12 @@ export default function PartnerTicketForm() {
                 ProjectID: project.id
             }
             updateTicketCount(partner.id, partner.TicketCount)
+            .then(() => {
+                updateTicketPartner(partner.id, dispatch)
+                .then(() => {
+                    getPartners(dispatch)
+                })
+            })
             setTicket(partner.id, ticketID, ticket, project.id)
                 .then(() => {
                     dispatch(setLoadingState(false))

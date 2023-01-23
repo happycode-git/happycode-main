@@ -194,29 +194,6 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Contact</h2>
-                                        <h3>$100</h3>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
-                                </div>
-                                <BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
-                                    tempArr.push({
-                                        id: randomString(5),
-                                        Name: "Contact",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
-                                        Price: 100
-                                    })
-                                    setPages(tempArr)
-                                    var tempTot = total
-                                    tempTot += 100
-                                    setTotal(tempTot)
-                                    setTogglePageList(false)
-                                }} className='shopper-newpage-block-icon' />
-                            </div>
-                            <div className='shopper-newpage-block'>
-                                <div>
-                                    <div className='flex'>
                                         <h2>Services</h2>
                                         <h3>$100</h3>
                                     </div>
@@ -365,6 +342,29 @@ export default function Shopper() {
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Gallery (Simple)",
+                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Price: 100
+                                    })
+                                    setPages(tempArr)
+                                    var tempTot = total
+                                    tempTot += 100
+                                    setTotal(tempTot)
+                                    setTogglePageList(false)
+                                }} className='shopper-newpage-block-icon' />
+                            </div>
+                            <div className='shopper-newpage-block'>
+                                <div>
+                                    <div className='flex'>
+                                        <h2>Features</h2>
+                                        <h3>$100</h3>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                </div>
+                                <BsArrowRightCircle onClick={() => {
+                                    var tempArr = pages
+                                    tempArr.push({
+                                        id: randomString(5),
+                                        Name: "Features",
                                         Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
                                         Price: 100
                                     })
@@ -634,6 +634,29 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
+                                        <h2>Contact</h2>
+                                        <h3>$200</h3>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                </div>
+                                <BsArrowRightCircle onClick={() => {
+                                    var tempArr = pages
+                                    tempArr.push({
+                                        id: randomString(5),
+                                        Name: "Contact",
+                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Price: 200
+                                    })
+                                    setPages(tempArr)
+                                    var tempTot = total
+                                    tempTot += 200
+                                    setTotal(tempTot)
+                                    setTogglePageList(false)
+                                }} className='shopper-newpage-block-icon' />
+                            </div>
+                            <div className='shopper-newpage-block'>
+                                <div>
+                                    <div className='flex'>
                                         <h2>Events</h2>
                                         <h3>$200</h3>
                                     </div>
@@ -690,29 +713,6 @@ export default function Shopper() {
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Reviews",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
-                                        Price: 200
-                                    })
-                                    setPages(tempArr)
-                                    var tempTot = total
-                                    tempTot += 200
-                                    setTotal(tempTot)
-                                    setTogglePageList(false)
-                                }} className='shopper-newpage-block-icon' />
-                            </div>
-                            <div className='shopper-newpage-block'>
-                                <div>
-                                    <div className='flex'>
-                                        <h2>Features</h2>
-                                        <h3>$200</h3>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
-                                </div>
-                                <BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
-                                    tempArr.push({
-                                        id: randomString(5),
-                                        Name: "Features",
                                         Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
                                         Price: 200
                                     })
