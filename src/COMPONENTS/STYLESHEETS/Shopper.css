@@ -84,8 +84,6 @@ font-family: 'Rubik', sans-serif;
         letter-spacing: -2px;
     }
 
-   
-
     .shopper-newpage-block {
         display: flex;
         justify-content: space-between;
@@ -96,7 +94,7 @@ font-family: 'Rubik', sans-serif;
     }
 
     .shopper-newpage-block-icon {
-        font-size: 1.8em;
+        max-width: 25px
     }
 
     .shopper-newpage-block h2 {
@@ -222,6 +220,9 @@ font-family: 'Rubik', sans-serif;
         padding: 0.7em;
         border: 0;
         border-radius: 10px;
+    }
+    .template-icon {
+        font-size: 1.4em;
     }
 }
 
