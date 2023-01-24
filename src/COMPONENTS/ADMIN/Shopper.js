@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom'
 // 
 import '../STYLESHEETS/Shopper.css'
 // 
-import { BsArrowRightCircle, BsChevronLeft, BsFillXCircleFill, BsThreeDotsVertical } from 'react-icons/bs'
-import { MdOutlineOpenInBrowser } from 'react-icons/md'
+import { BsArrowRightCircle, BsChevronLeft, BsFillXCircleFill, BsThreeDotsVertical, BsEye } from 'react-icons/bs'
 import { AiFillPlusCircle } from 'react-icons/ai'
 import { randomString } from '../../Global'
 import { setOutlineState } from '../../REDUX/REDUCERS/OutlineSlice'
@@ -58,61 +57,63 @@ export default function Shopper() {
                 <Link className='back' to="/admindash"><BsChevronLeft /></Link>
                 <h2 className='project-title'>Website Outline</h2>
             </div>
-
-            <div className='shopper'>
-                <p className='shopper-info'>Before you begin, make sure you are filling out this form with the business owner/manager. This will keep all details as accurate as possible.</p>
-
-                <div className='shopper-pages'>
-                    {
-                        pages.map((page, i) => {
-                            return (
-                                <div key={i} className={`shopper-page ${i == 0 ? "block1" : ""}`}>
-                                    <div className='flex'>
-                                        <h1>{page.Name}</h1>
-                                        <BsThreeDotsVertical onClick={() => {
-                                            page.id != chosenPageID ?
-                                                setChosenPageID(page.id) : setChosenPageID("");
-                                        }} className='shopper-page-icon' color="gray" />
-                                    </div>
-                                    <p>{page.Details}</p>
-                                    <div>
-                                        <h4>Details</h4>
-                                        <textarea id={`taInfo${i}`} className='shopper-ta' placeholder='Enter all information describing the structure and content of this page. Everything here will determine the construction of the page.'></textarea>
-                                        {/* <textarea id={`taRequests${i}`} className='shopper-ta' placeholder='Enter any extra requests for ideas aside from the details given above.'></textarea> */}
-                                        {
-                                            page.id == chosenPageID ?
-                                                <button onClick={() => {
-                                                    dispatch(setLoadingState(true))
-                                                    setChosenPageID("")
-                                                    var tempTot = total
-                                                    tempTot -= page.Price
-                                                    setTotal(tempTot)
-                                                    var tempArr = pages
-                                                    for (var p in tempArr) {
-                                                        if (tempArr[p].id == page.id) {
-                                                            tempArr.splice(p, 1)
-                                                        }
-                                                    }
-                                                    setPages(tempArr)
-                                                    dispatch(setLoadingState(false))
-                                                }} className='shopper-remove'>Remove</button> : <p></p>
-                                        }
-                                    </div>
-                                </div>
-                            )
-                        })
-                    }
-                </div>
-                {
-                    pages.length > 0 ?
-                        <div className='shopper-bottom'>
-                            <h3 className='shopper-total'>Total: ${total}</h3>
-                            <h1 className='shopper-sub'>Subscribe and only pay <span className='underline'>${total * 0.25}</span>! <br />then $<span className='underline'>{total * 0.25 * 0.15}</span> a month!</h1>
-                            <br />
-                            <button className='shopper-cont' onClick={continueForm}>Continue</button>
-                        </div> : <div></div>
-                }
-            </div>
+            <p className='shopper-info'>Before you begin, make sure you are filling out this form with the business owner/manager. This will keep all details as accurate as possible. Use the plus button in the bottom right corner to add new pages.</p>
+            {
+                pages.length > 0 ?
+                    <div className='shopper'>
+                        <div className='shopper-pages'>
+                            {
+                                pages.map((page, i) => {
+                                    return (
+                                        <div key={i} className={`shopper-page ${i == 0 ? "block1" : ""}`}>
+                                            <div className='flex'>
+                                                <h1>{page.Name}</h1>
+                                                <BsThreeDotsVertical onClick={() => {
+                                                    page.id != chosenPageID ?
+                                                        setChosenPageID(page.id) : setChosenPageID("");
+                                                }} className='shopper-page-icon' color="gray" />
+                                            </div>
+                                            <p>{page.Details}</p>
+                                            <div>
+                                                <h4>Details</h4>
+                                                <textarea id={`taInfo${i}`} className='shopper-ta' placeholder='Enter all information describing the structure and content of this page. Everything here will determine the construction of the page.'></textarea>
+                                                {/* <textarea id={`taRequests${i}`} className='shopper-ta' placeholder='Enter any extra requests for ideas aside from the details given above.'></textarea> */}
+                                                {
+                                                    page.id == chosenPageID ?
+                                                        <button onClick={() => {
+                                                            dispatch(setLoadingState(true))
+                                                            setChosenPageID("")
+                                                            var tempTot = total
+                                                            tempTot -= page.Price
+                                                            setTotal(tempTot)
+                                                            var tempArr = pages
+                                                            for (var p in tempArr) {
+                                                                if (tempArr[p].id == page.id) {
+                                                                    tempArr.splice(p, 1)
+                                                                }
+                                                            }
+                                                            setPages(tempArr)
+                                                            dispatch(setLoadingState(false))
+                                                        }} className='shopper-remove'>Remove</button> : <p></p>
+                                                }
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                        {
+                            pages.length > 0 ?
+                                <div className='shopper-bottom'>
+                                    <h3 className='shopper-total'>Total: ${total}</h3>
+                                    <h1 className='shopper-sub'>Subscribe and only pay <span className='underline'>${total * 0.25}</span>! <br />then $<span className='underline'>{total * 0.25 * 0.15}</span> a month!</h1>
+                                    <br />
+                                    <button className='shopper-cont' onClick={continueForm}>Continue</button>
+                                </div> : <div></div>
+                        }
+                    </div>
+                    : <div></div>
+            }
             {
                 togglePageList ?
                     <div className='shopper-newpage-list'>
@@ -127,7 +128,7 @@ export default function Shopper() {
                                     <div className='flex'>
                                         <div className='together'>
                                             <h2>Home</h2>
-                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app"><MdOutlineOpenInBrowser color="111" /></a>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app"><BsEye color="161D29" /></a>
                                         </div>
                                         <h3>$100</h3>
                                     </div>
@@ -151,7 +152,10 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>About</h2>
+                                        <div className='together'>
+                                            <h2>About</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/about"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$100</h3>
                                     </div>
                                     <p>Talk about the way the business came to be. This is for users who want to know exactly who they are doing business with.</p>
@@ -174,7 +178,10 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>History</h2>
+                                        <div className='together'>
+                                            <h2>History</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/history"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$100</h3>
                                     </div>
                                     <p>Give the user a glimpse into the history of the business. This helps gain credibility and trust.</p>
@@ -197,7 +204,10 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Services</h2>
+                                        <div className='together'>
+                                            <h2>Services</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/services"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$100</h3>
                                     </div>
                                     <p>Show a list of services the business provides with interactive show and hide features.</p>
@@ -220,7 +230,10 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Products {"("}Simple{")"}</h2>
+                                        <div className='together'>
+                                            <h2>Products {"("}Simple{")"}</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/products"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$100</h3>
                                     </div>
                                     <p>Show all products and provide simple information individually. For reading purposes only.</p>
@@ -243,7 +256,10 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Careers (Simple)</h2>
+                                        <div className='together'>
+                                            <h2>Careers (Simple)</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/careers"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$100</h3>
                                     </div>
                                     <p>In the case that the business is hiring, this will provide essential information about the hiring process and open positions.</p>
@@ -266,7 +282,10 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Partners</h2>
+                                        <div className='together'>
+                                            <h2>Partners</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/partners"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$100</h3>
                                     </div>
                                     <p>Show all vendors that are affiliated with the business. Their links will be provided to help with SEO.</p>
@@ -289,7 +308,10 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Bio</h2>
+                                        <div className='together'>
+                                            <h2>Bio</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/bio"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$100</h3>
                                     </div>
                                     <p>Allow users to meet the essential workers of the business in a simple yet structured biography page.</p>
@@ -312,7 +334,10 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Pricing</h2>
+                                        <div className='together'>
+                                            <h2>Pricing</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/pricing"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$100</h3>
                                     </div>
                                     <p>If the business offers services, a set of pricing options can be displayed with information about what can be attained for each tier.</p>
@@ -335,7 +360,10 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Gallery (Simple)</h2>
+                                        <div className='together'>
+                                            <h2>Gallery (Simple)</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/gallery"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$100</h3>
                                     </div>
                                     <p>Display a set of pictures or videos in a neat and clean gallery. Responsive to avoid unwanted whitespace.</p>
@@ -358,17 +386,20 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Features</h2>
+                                        <div className='together'>
+                                            <h2>Features</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/features"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$100</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>If you offer products or services, show off your greatest features and how they will benefit the customer.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Features",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "If you offer products or services, show off your greatest features and how they will benefit the customer.",
                                         Price: 100
                                     })
                                     setPages(tempArr)
@@ -381,7 +412,10 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Portfolio</h2>
+                                        <div className='together'>
+                                            <h2>Portfolio</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/portfolio"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$100</h3>
                                     </div>
                                     <p>For professionals, this page will show links, images, and information of previous work.</p>
@@ -404,7 +438,10 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Awards</h2>
+                                        <div className='together'>
+                                            <h2>Awards</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/awards"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$100</h3>
                                     </div>
                                     <p>A list of awards displayed in a way to convey the importance of professional or business achievements.</p>
@@ -427,7 +464,10 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Coupons (Simple)</h2>
+                                        <div className='together'>
+                                            <h2>Coupons (Simple)</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/coupons"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$100</h3>
                                     </div>
                                     <p>In-store coupons can be displayed along with any information and conditions. For reading purposes only.</p>
@@ -450,7 +490,10 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Join Email List</h2>
+                                        <div className='together'>
+                                            <h2>Join Email List</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/mailinglist"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$100</h3>
                                     </div>
                                     <p>Get users to stay updated with the business by allowing them to enter their email and submit to join an email list.</p>
@@ -473,7 +516,10 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Rewards (Simple)</h2>
+                                        <div className='together'>
+                                            <h2>Rewards (Simple)</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/rewards"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$100</h3>
                                     </div>
                                     <p>Display information about current rewards and their conditions. For reading purposes only.</p>
@@ -496,7 +542,36 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Locations</h2>
+                                        <div className='together'>
+                                            <h2>Team</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/locations"><BsEye color="161D29" /></a>
+                                        </div>
+                                        <h3>$100</h3>
+                                    </div>
+                                    <p>Get to know the team members of your business and what they do; maybe even where they come from.</p>
+                                </div>
+                                <div><BsArrowRightCircle onClick={() => {
+                                    var tempArr = pages
+                                    tempArr.push({
+                                        id: randomString(5),
+                                        Name: "Team",
+                                        Details: "Display all locations and their hours, along with an interactive map for each.",
+                                        Price: 100
+                                    })
+                                    setPages(tempArr)
+                                    var tempTot = total
+                                    tempTot += 100
+                                    setTotal(tempTot)
+                                    setTogglePageList(false)
+                                }} className='shopper-newpage-block-icon' /></div>
+                            </div>
+                            <div className='shopper-newpage-block'>
+                                <div>
+                                    <div className='flex'>
+                                        <div className='together'>
+                                            <h2>Locations</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/locations"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$100</h3>
                                     </div>
                                     <p>Display all locations and their hours, along with an interactive map for each.</p>
@@ -519,7 +594,10 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Privacy Policy</h2>
+                                        <div className='together'>
+                                            <h2>Privacy Policy</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/privacy"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$100</h3>
                                     </div>
                                     <p>Show the company's Privacy Policy and/or Terms and Conditions in a simple way that is easy to understand.</p>
@@ -542,7 +620,10 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Quote (Simple)</h2>
+                                        <div className='together'>
+                                            <h2>Quote (Simple)</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/quote"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$100</h3>
                                     </div>
                                     <p>Inform the user on different quotes for several scenarios. They can also leave their information in a simple quote form for future contact.</p>
@@ -565,7 +646,10 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Estimates (Simple)</h2>
+                                        <div className='together'>
+                                            <h2>Estimates (Simple)</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/estimates"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$100</h3>
                                     </div>
                                     <p>Similar to quotes, but provides a deep look into how estimates are determined and performed.</p>
@@ -611,7 +695,10 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Landing</h2>
+                                        <div className='together'>
+                                            <h2>Landing</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/landing"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$150</h3>
                                     </div>
                                     <p>A page made up of three or more panels. Home, Contact, and Misc panels.</p>
@@ -637,10 +724,13 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Contact</h2>
+                                        <div className='together'>
+                                            <h2>Contact</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/contact"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$200</h3>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.</p>
+                                    <p>Give your visitors an easy way to contact you or get in touch with you. All entries will be sent to your account.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
@@ -660,17 +750,20 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Events</h2>
+                                        <div className='together'>
+                                            <h2>Events</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/events"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$200</h3>
                                     </div>
-                                    <p></p>
+                                    <p>Display upcoming events with pictures and full explanations. Sorted by most recent date.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Events",
-                                        Details: "",
+                                        Details: "Display upcoming events with pictures and full explanations. Sorted by most recent date.",
                                         Price: 200
                                     })
                                     setPages(tempArr)
@@ -683,17 +776,20 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Support</h2>
+                                        <div className='together'>
+                                            <h2>Support</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/support"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$200</h3>
                                     </div>
-                                    <p></p>
+                                    <p>Display videos, articles, and information that may help the visitor answer any unanswered question.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Support",
-                                        Details: "",
+                                        Details: "Display videos, articles, and information that may help the visitor answer any unanswered question.",
                                         Price: 200
                                     })
                                     setPages(tempArr)
@@ -706,10 +802,13 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Reviews</h2>
+                                        <div className='together'>
+                                            <h2>Reviews</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/reviews"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$200</h3>
                                     </div>
-                                    <p></p>
+                                    <p>Show what people are saying about your business. All reviews can be pulled from Yelp or other review sites.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
@@ -729,41 +828,20 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-
-                                        <h2>Features</h2>
+                                        <div className='together'>
+                                            <h2>FAQ</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/faq"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$200</h3>
                                     </div>
-                                    <p></p>
-                                </div>
-                                <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
-                                    tempArr.push({
-                                        id: randomString(5),
-                                        Name: "Features",
-                                        Details: "",
-                                        Price: 200
-                                    })
-                                    setPages(tempArr)
-                                    var tempTot = total
-                                    tempTot += 200
-                                    setTotal(tempTot)
-                                    setTogglePageList(false)
-                                }} className='shopper-newpage-block-icon' /></div>
-                            </div>
-                            <div className='shopper-newpage-block'>
-                                <div>
-                                    <div className='flex'>
-                                        <h2>FAQ</h2>
-                                        <h3>$200</h3>
-                                    </div>
-                                    <p></p>
+                                    <p>Answer your customer's most frequently asked questions. Page will come with a search for better experience.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "FAQ",
-                                        Details: "",
+                                        Details: "Answer your customer's most frequently asked questions. Page will come with a search for better experience.",
                                         Price: 200
                                     })
                                     setPages(tempArr)
@@ -776,17 +854,20 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Menu (Simple)</h2>
+                                        <div className='together'>
+                                            <h2>Menu (Simple)</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/menu"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$200</h3>
                                     </div>
-                                    <p></p>
+                                    <p>Show a simple menu with all menu items, descriptions, and prices. Perfect for restaurants, cafes, and other eateries.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Menu (Simple)",
-                                        Details: "",
+                                        Details: "Show a simple menu with all menu items, descriptions, and prices. Perfect for restaurants, cafes, and other eateries.",
                                         Price: 200
                                     })
                                     setPages(tempArr)
@@ -802,14 +883,14 @@ export default function Shopper() {
                                         <h2>Misc (Standard)</h2>
                                         <h3>$200</h3>
                                     </div>
-                                    <p></p>
+                                    <p>Page with more interaction and customization. Comes with an extra customized page that it will redirect to.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Menu (Standard)",
-                                        Details: "",
+                                        Details: "Page with more interaction and customization. Comes with an extra customized page that it will redirect to.",
                                         Price: 200
                                     })
                                     setPages(tempArr)
@@ -825,17 +906,20 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Blog</h2>
+                                        <div className='together'>
+                                            <h2>Blog</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/blog"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$300</h3>
                                     </div>
-                                    <p></p>
+                                    <p>Let your customers keep up with the latest information about the business, services, products, news, etc in blog form.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Blog",
-                                        Details: "",
+                                        Details: "Let your customers keep up with the latest information about the business, services, products, news, etc in blog form.",
                                         Price: 300
                                     })
                                     setPages(tempArr)
@@ -848,17 +932,20 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Products (Interactive)</h2>
+                                        <div className='together'>
+                                            <h2>Products (Interactive)</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/products-interative"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$300</h3>
                                     </div>
-                                    <p></p>
+                                    <p>Display all products in a clean and organized way. Each product will have its own page displaying more pictures and more information.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Products (Interactive)",
-                                        Details: "",
+                                        Details: "Display all products in a clean and organized way. Each product will have its own page displaying more pictures and more information.",
                                         Price: 300
                                     })
                                     setPages(tempArr)
@@ -871,17 +958,20 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Services (Interactive)</h2>
+                                        <div className='together'>
+                                            <h2>Services (Interactive)</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/services-interactive"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$300</h3>
                                     </div>
-                                    <p></p>
+                                    <p>Give deeper information about the services the business provides. Innclude an extra detailed page with dives into more pictures and details.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Services (Interactive)",
-                                        Details: "",
+                                        Details: "Give deeper information about the services the business provides. Innclude an extra detailed page with dives into more pictures and details.",
                                         Price: 300
                                     })
                                     setPages(tempArr)
@@ -894,17 +984,20 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Gallery (Interactive)</h2>
+                                        <div className='together'>
+                                            <h2>Gallery (Interactive)</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/gallery-interactive"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$300</h3>
                                     </div>
-                                    <p></p>
+                                    <p>Show a category of picture types and provide the set of pictures that belongs to each. Provides textual information on each picture when clicking or hovering.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Gallery (Interactive)",
-                                        Details: "",
+                                        Details: "Show a category of picture types and provide the set of pictures that belongs to each. Provides textual information on each picture when clicking or hovering.",
                                         Price: 300
                                     })
                                     setPages(tempArr)
@@ -917,17 +1010,20 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Menu (Interactive)</h2>
+                                        <div className='together'>
+                                            <h2>Menu (Interactive)</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$300</h3>
                                     </div>
-                                    <p></p>
+                                    <p>A full menu with all menu items, details, and prices. When clicking on an item, a new page with more pictures and full description will appear.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Menu (Interactive)",
-                                        Details: "",
+                                        Details: "A full menu with all menu items, details, and prices. When clicking on an item, a new page with more pictures and full description will appear.",
                                         Price: 300
                                     })
                                     setPages(tempArr)
@@ -940,17 +1036,20 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Quote (Interactive)</h2>
+                                        <div className='together'>
+                                            <h2>Quote (Interactive)</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/quote-interactive"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$300</h3>
                                     </div>
-                                    <p></p>
+                                    <p>Give an accurate quote based on given information entered by the user. Results will be calculated using custom algorithm.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Quote (Interactive)",
-                                        Details: "",
+                                        Details: "Give an accurate quote based on given information entered by the user. Results will be calculated using custom algorithm.",
                                         Price: 300
                                     })
                                     setPages(tempArr)
@@ -966,14 +1065,14 @@ export default function Shopper() {
                                         <h2>Misc (Interactive)</h2>
                                         <h3>$300</h3>
                                     </div>
-                                    <p></p>
+                                    <p>Any two connecting pages that comes with photos, videos, information, interactivity, and an algorithm.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Misc (Interactive)",
-                                        Details: "",
+                                        Details: "Any two connecting pages that comes with photos, videos, information, interactivity, and an algorithm.",
                                         Price: 300
                                     })
                                     setPages(tempArr)
@@ -989,17 +1088,20 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Shop/Store</h2>
+                                        <div className='together'>
+                                            <h2>Shop/Store</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/shop"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$400</h3>
                                     </div>
-                                    <p></p>
+                                    <p>Full store with payment capabilities. All products will be available for purchase. One time payments only. Saved payment methods not available.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Shop/Store",
-                                        Details: "",
+                                        Details: "Full store with payment capabilities. All products will be available for purchase. One time payments only. Saved payment methods not available.",
                                         Price: 400
                                     })
                                     setPages(tempArr)
@@ -1012,17 +1114,20 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Rewards (Interactive)</h2>
+                                        <div className='together'>
+                                            <h2>Rewards (Interactive)</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/rewards-interactive"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$400</h3>
                                     </div>
-                                    <p></p>
+                                    <p>A rewards system that keeps track of purchases and rewards provided such as discounts. Works with Shop component.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Rewards (Interactive)",
-                                        Details: "",
+                                        Details: "A rewards system that keeps track of purchases and rewards provided such as discounts. Works with Shop component.",
                                         Price: 400
                                     })
                                     setPages(tempArr)
@@ -1038,14 +1143,14 @@ export default function Shopper() {
                                         <h2>Misc (Complex)</h2>
                                         <h3>$400</h3>
                                     </div>
-                                    <p></p>
+                                    <p>Any two customized pages with full features and database integration.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Rewards (Complex)",
-                                        Details: "",
+                                        Details: "Any two customized pages with full features and database integration.",
                                         Price: 400
                                     })
                                     setPages(tempArr)
@@ -1058,22 +1163,25 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Login/Members</h2>
-                                        <h3>$500</h3>
+                                        <div className='together'>
+                                            <h2>Login/Members</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/login"><BsEye color="161D29" /></a>
+                                        </div>
+                                        <h3>$400</h3>
                                     </div>
-                                    <p></p>
+                                    <p>Allow members to log in and with full authentication and member storage capabilities. Works with Shop, and Dashboard components.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Login/Members",
-                                        Details: "",
-                                        Price: 500
+                                        Details: "Allow members to log in and with full authentication and member storage capabilities. Works with Shop, and Dashboard components.",
+                                        Price: 400
                                     })
                                     setPages(tempArr)
                                     var tempTot = total
-                                    tempTot += 500
+                                    tempTot += 400
                                     setTotal(tempTot)
                                     setTogglePageList(false)
                                 }} className='shopper-newpage-block-icon' /></div>
@@ -1081,17 +1189,20 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Dashboard</h2>
+                                        <div className='together'>
+                                            <h2>Dashboard</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/dashboard"><BsEye color="161D29" /></a>
+                                        </div>
                                         <h3>$500</h3>
                                     </div>
-                                    <p></p>
+                                    <p>Give members a way to view their data. Will come with many components that you can choose from. All data will be based on business type.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Dashboard",
-                                        Details: "",
+                                        Details: "Give members a way to view their data. Will come with many components that you can choose from. All data will be based on business type.",
                                         Price: 500
                                     })
                                     setPages(tempArr)
@@ -1104,22 +1215,25 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Forum</h2>
-                                        <h3>$500</h3>
+                                        <div className='together'>
+                                            <h2>Forum</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/forum"><BsEye color="161D29" /></a>
+                                        </div>
+                                        <h3>$600</h3>
                                     </div>
-                                    <p></p>
+                                    <p>Allow members to create a community around your business and discuss important matter, ask questions, etc.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Forum",
-                                        Details: "",
-                                        Price: 500
+                                        Details: "Allow members to create a community around your business and discuss important matter, ask questions, etc.",
+                                        Price: 600
                                     })
                                     setPages(tempArr)
                                     var tempTot = total
-                                    tempTot += 500
+                                    tempTot += 600
                                     setTotal(tempTot)
                                     setTogglePageList(false)
                                 }} className='shopper-newpage-block-icon' /></div>
@@ -1127,22 +1241,25 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Inventory</h2>
-                                        <h3>$500</h3>
+                                        <div className='together'>
+                                            <h2>Inventory</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/inventory"><BsEye color="161D29" /></a>
+                                        </div>
+                                        <h3>$600</h3>
                                     </div>
-                                    <p></p>
+                                    <p>Keep track of your inventory using our custom and beautifully laid out system. Works with Shop, Dashboard, and Invoices components.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Inventory",
-                                        Details: "",
-                                        Price: 500
+                                        Details: "Keep track of your inventory using our custom and beautifully laid out system. Works with Shop, Dashboard, and Invoices components.",
+                                        Price: 600
                                     })
                                     setPages(tempArr)
                                     var tempTot = total
-                                    tempTot += 500
+                                    tempTot += 600
                                     setTotal(tempTot)
                                     setTogglePageList(false)
                                 }} className='shopper-newpage-block-icon' /></div>
@@ -1150,22 +1267,25 @@ export default function Shopper() {
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
-                                        <h2>Invoices</h2>
-                                        <h3>$500</h3>
+                                        <div className='together'>
+                                            <h2>Invoices</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/invoices"><BsEye color="161D29" /></a>
+                                        </div>
+                                        <h3>$600</h3>
                                     </div>
-                                    <p></p>
+                                    <p>Create and keep track of invoices without a hastle. Comes with PDF maker, sharing, and exporting capabilities.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Invoices",
-                                        Details: "",
-                                        Price: 500
+                                        Details: "Create and keep track of invoices without a hastle. Comes with PDF maker, sharing, and exporting capabilities.",
+                                        Price: 600
                                     })
                                     setPages(tempArr)
                                     var tempTot = total
-                                    tempTot += 500
+                                    tempTot += 600
                                     setTotal(tempTot)
                                     setTogglePageList(false)
                                 }} className='shopper-newpage-block-icon' /></div>
@@ -1174,21 +1294,21 @@ export default function Shopper() {
                                 <div>
                                     <div className='flex'>
                                         <h2>Misc (Innovative)</h2>
-                                        <h3>$500</h3>
+                                        <h3>$800</h3>
                                     </div>
-                                    <p></p>
+                                    <p>A page that has features that are considered innovative. Meant to give users a unique experience.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = pages
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Misc (Innovative)",
-                                        Details: "",
-                                        Price: 500
+                                        Details: ">A page that has features that are considered innovative. Meant to give users a unique experience.",
+                                        Price: 800
                                     })
                                     setPages(tempArr)
                                     var tempTot = total
-                                    tempTot += 500
+                                    tempTot += 800
                                     setTotal(tempTot)
                                     setTogglePageList(false)
                                 }} className='shopper-newpage-block-icon' /></div>

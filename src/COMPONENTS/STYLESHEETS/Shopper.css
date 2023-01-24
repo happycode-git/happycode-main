@@ -16,13 +16,17 @@ font-family: 'Rubik', sans-serif;
         font-family: 'Rubik', sans-serif;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
-       
+
     }
 
     .shopper-info {
-        font-size: 0.8em;
-        color: #2249f7;
+        font-family: 'Rubik', sans-serif;
+        font-size: 1.5em;
+        color: #C9FD3A;
         padding: 1em;
+        font-weight: 300;
+        width: 80vw;
+        margin: 0 auto;
     }
 
     .shopper-new-btn {
@@ -59,8 +63,8 @@ font-family: 'Rubik', sans-serif;
     }
 
     .shopper-newpage-list {
-        background-color: #FEFEFF;
-        color: #1E232B;
+        background-color: #161D29;
+        color: #fefefe;
         font-family: 'Rubik', sans-serif;
         position: fixed;
         z-index: 100;
@@ -88,19 +92,24 @@ font-family: 'Rubik', sans-serif;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid #1E232B;
         padding: 0.6em;
         gap: 0.4em;
+        background-color: #ffffff;
+        margin: 0.2em;
+        border-radius: 8px;
     }
 
     .shopper-newpage-block-icon {
-        max-width: 25px
+        font-size: 25px;
+        max-width: 30px;
+        color: #030303;
     }
 
     .shopper-newpage-block h2 {
-        font-size: 1em;
-        font-weight: 500;
+        font-size: 1.2em;
+        font-weight: 400;
         letter-spacing: -1px;
+        color: #030303;
     }
 
     .shopper-newpage-block p {
@@ -111,6 +120,7 @@ font-family: 'Rubik', sans-serif;
     .shopper-newpage-block h3 {
         font-size: 0.9em;
         font-weight: 400;
+        color: #030303;
     }
 
     .shopper-pages {
@@ -175,17 +185,22 @@ font-family: 'Rubik', sans-serif;
     }
 
     .tier {
+        font-size: 2.5em;
         padding: 0.5em;
-        background-color: #030303;
+        /* background-color: #131519; */
         color: #D6DDE6;
-        font-weight: 400;
+        font-weight: 800;
         letter-spacing: -2px;
+        width: fit-content;
+        border-radius: 10px;
     }
+
     .shopper-page h4 {
         font-size: 0.8em;
         font-weight: 400;
         padding-top: 0.8em;
     }
+
     .shopper-head {
         letter-spacing: -1px;
         font-weight: 400;
@@ -198,6 +213,7 @@ font-family: 'Rubik', sans-serif;
         margin: 0.5em;
         transform: rotate(-5deg);
     }
+
     .shopper-dropbox {
         width: 100%;
         background-color: #2249f7;
@@ -209,6 +225,7 @@ font-family: 'Rubik', sans-serif;
         border: 0;
         border-radius: 10px;
     }
+
     .shopper-update {
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -221,8 +238,10 @@ font-family: 'Rubik', sans-serif;
         border: 0;
         border-radius: 10px;
     }
+
     .template-icon {
-        font-size: 1.4em;
+        font-size: 1.3em;
+        margin-left: 1em;
     }
 }
 
@@ -235,11 +254,7 @@ font-family: 'Rubik', sans-serif;
         font-size: 2.8em;
     }
 
-    .shopper-newpage-block {
-        border-bottom: 0.5px solid #1E232B;
-        border-right: 1px solid #1E232B;
-        border-top: 0.5px solid #1E232B;
-    }
+
 }
 
 @media only screen and (min-width: 800px) {
@@ -256,13 +271,14 @@ font-family: 'Rubik', sans-serif;
         grid-template-columns: 1fr 1fr;
     }
 
-    .shopper-page {
-    }
+    .shopper-page {}
+
     .shopper-cont {
         width: 30vw;
         display: block;
         margin: 1em auto;
     }
+
     .shopper-update {
         width: 30vw;
         display: block;
@@ -274,10 +290,12 @@ font-family: 'Rubik', sans-serif;
     .shopper-newpage-block-icon {
         font-size: 2.6em;
     }
+
     .shopper {
         width: 90vw;
         margin: 0 auto;
     }
+
     .shopper-pages {
         padding: 1em;
     }
@@ -287,6 +305,7 @@ font-family: 'Rubik', sans-serif;
     .shopper-pages {
         grid-template-columns: 1fr 1fr 1fr;
     }
+
     .shopper-newpage-wrap {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
