@@ -341,12 +341,23 @@ export const setTicket = async (userID, ticketID, ticket, projectID) => {
     ProjectID: projectID
   });
 }
+export const getTicketCount = async (userID, dispatch) => {
+  const q = query(collection(db, "Members", userID, "Tickets"));
+  const querySnapshot = await getDocs(q);
+  const num = querySnapshot.size
+  updateTicketCount(userID, num)
+    .then(() => {
+      updateTicketPartner(userID, dispatch)
+      .then(() => {
+        getPartners(dispatch)
+      })
+    })
+}
 export const updateTicketCount = async (userID, ticketCount) => {
   const ticketCountRef = doc(db, "Members", userID);
-  const newTicketCount = ticketCount + 1
 
   await updateDoc(ticketCountRef, {
-    TicketCount: newTicketCount
+    TicketCount: ticketCount
   });
 }
 export const updateTicketMinusCount = async (userID, ticketCount) => {

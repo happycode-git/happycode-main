@@ -49,6 +49,19 @@ font-family: 'Rubik', sans-serif;
         text-align: center;
         align-items: center;
         border-radius: 10px;
+        font-size: 0.8em;
+    }
+
+    .shopper-view {
+        display: block;
+        background-color: #2249f7;
+        padding: 0.8em 0;
+        text-align: center;
+        text-decoration: none;
+        color: #fefefe;
+        font-size: 0.8em;
+        margin: 0.5em 0;
+        border-radius: 10px;
     }
 
     .shopper-total {
@@ -133,6 +146,7 @@ font-family: 'Rubik', sans-serif;
         background-color: rgb(233, 237, 249);
         padding: 0.6em;
         border-radius: 5px;
+        height: fit-content;
     }
 
     .shopper-page h1 {

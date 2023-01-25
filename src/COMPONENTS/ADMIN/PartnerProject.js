@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 // 
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom';
-import { completePartnerTicket, getPartners, getTickets, rejectPartnerTicket, updateTicketMinusCount, updateTicketPartner } from '../../firebase';
+import { completePartnerTicket, getPartners, getTicketCount, getTickets, rejectPartnerTicket, updateTicketMinusCount, updateTicketPartner } from '../../firebase';
 // 
 import '../STYLESHEETS/PartnerProject.css'
 // 
@@ -19,6 +19,7 @@ import { FaClipboardList } from 'react-icons/fa';
 export default function PartnerDetail() {
     const admin = useSelector((state) => state.admin.value)
     const partner = useSelector((state) => state.partner.value)
+    const partners = useSelector((state) => state.partners.value)
     const project = useSelector((state) => state.project.value)
     const tickets = useSelector((state) => state.memberTickets.value)
     const dispatch = useDispatch()
@@ -32,6 +33,7 @@ export default function PartnerDetail() {
         dispatch(setLoadingState(true))
         completePartnerTicket(partner.id, ticketID, ticket)
             .then(() => {
+                getTicketCount(partner.id, dispatch)
                 dispatch(setLoadingState(false))
                 dispatch(setConfirmationState(true))
                 setTimeout(() => {
@@ -51,6 +53,7 @@ export default function PartnerDetail() {
         dispatch(setLoadingState(true))
         rejectPartnerTicket(partner.id, ticketID, ticket)
             .then(() => {
+                getTicketCount(partner.id, dispatch)
                 dispatch(setLoadingState(false))
                 dispatch(setConfirmationState(true))
                 setTimeout(() => {
@@ -185,23 +188,10 @@ export default function PartnerDetail() {
                                                     <h2 className='ticket-id bg-purple light'>Ticket #{tik.id}</h2>
                                                     <div className='together'>
                                                         <AiFillCloseCircle onClick={() => {
-                                                            updateTicketMinusCount(partner.id, partner.TicketCount)
-                                                            .then(() => {
-                                                                updateTicketPartner(partner.id, dispatch)
-                                                                .then(() => {
-                                                                    getPartners(dispatch)
-                                                                })
-                                                            })
-                                                            rejectTicket(chosenTicketID, tik);
+                                                            rejectTicket(chosenTicketID, tik)
                                                         }} className='ticket-complete red' />
                                                         <AiFillCheckCircle onClick={() => {
-                                                            updateTicketMinusCount(partner.id, partner.TicketCount)
-                                                            .then(() => {
-                                                                updateTicketPartner(partner.id, dispatch)
-                                                                .then(() => {
-                                                                    getPartners(dispatch)
-                                                                })
-                                                            })
+                                                            getTicketCount(partner.id, dispatch)
                                                             completeTicket(chosenTicketID, tik);
                                                             console.log(`USER: ${partner.TicketCount}`)
                                                         }} className='ticket-complete green' />

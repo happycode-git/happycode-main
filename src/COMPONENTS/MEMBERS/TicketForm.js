@@ -12,7 +12,7 @@ import { setConfirmationState } from '../../REDUX/REDUCERS/ConfirmationSlice'
 import { setFailureState } from '../../REDUX/REDUCERS/FailureSlice'
 import { setLoadingState } from '../../REDUX/REDUCERS/LoadingSlice'
 // 
-import { setTicket, updateTicketCount, updateTicketUser } from '../../firebase'
+import { getTicketCount, setTicket, updateTicketCount, updateTicketUser } from '../../firebase'
 import { setUserState } from '../../REDUX/REDUCERS/UserSlice'
 
 export default function TicketForm() {
@@ -36,12 +36,9 @@ export default function TicketForm() {
                 Description: desc,
                 ProjectID: project.id
             }
-            updateTicketCount(user.id, user.TicketCount)
-            .then(() => {
-                updateTicketUser(user.id, dispatch)
-            })
             setTicket(user.id, ticketID, ticket, project.id)
                 .then(() => {
+                    getTicketCount(user.id, dispatch)
                     dispatch(setLoadingState(false))
                     dispatch(setConfirmationState(true))
                     setTimeout(() => {
