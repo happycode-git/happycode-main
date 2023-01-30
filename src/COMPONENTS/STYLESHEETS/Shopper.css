@@ -229,15 +229,13 @@ font-family: 'Rubik', sans-serif;
     }
 
     .shopper-dropbox {
+        display: block;
         width: 100%;
         background-color: #2249f7;
+        padding: 0.8em;
+        text-align: center;
         color: #f7f7f7;
-        padding: 0.6em;
-        font-weight: 500;
-        font-family: 'Rubik', sans-serif;
-        font-size: 1em;
-        border: 0;
-        border-radius: 10px;
+        border-radius: 5px;
     }
 
     .shopper-update {

@@ -2,18 +2,17 @@ import React, { useEffect, useState } from 'react'
 // 
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom';
-import { completePartnerTicket, getPartners, getTicketCount, getTickets, rejectPartnerTicket, updateTicketMinusCount, updateTicketPartner } from '../../firebase';
+import { completePartnerTicket, getTicketCount, getTickets, rejectPartnerTicket, updateFirebaseURL, updateDropboxURL } from '../../firebase';
 // 
 import '../STYLESHEETS/PartnerProject.css'
 // 
-import { BsChevronLeft, BsFillArrowRightCircleFill } from 'react-icons/bs'
+import { BsChevronLeft, BsFillArrowRightCircleFill, BsArrowCounterclockwise } from 'react-icons/bs'
 import { IoChevronUpCircleOutline, IoChevronDownCircleOutline } from 'react-icons/io5'
 import { AiFillCheckCircle, AiFillCloseCircle } from 'react-icons/ai'
 import { RxDotFilled } from 'react-icons/rx'
 import { setLoadingState } from '../../REDUX/REDUCERS/LoadingSlice';
 import { setConfirmationState } from '../../REDUX/REDUCERS/ConfirmationSlice';
 import { setFailureState } from '../../REDUX/REDUCERS/FailureSlice';
-import { setPartnersState } from '../../REDUX/REDUCERS/PartnersSlice';
 import { FaClipboardList } from 'react-icons/fa';
 
 export default function PartnerDetail() {
@@ -82,6 +81,8 @@ export default function PartnerDetail() {
         getTickets(partner.id, project.id, dispatch)
         setWebsiteURL(project.URL)
         document.querySelector('#tbURL').value = project.URL
+        document.querySelector('#tbFirebaseURL').value = project.URL
+        document.querySelector('#tbDropboxURL').value = project.DropboxURL
     }, [])
 
     return (
@@ -157,6 +158,34 @@ export default function PartnerDetail() {
                         <div className='project-details-block'>
                             <h3>Contract Start Date:</h3>
                             <p>{project.ContractSigned}</p>
+                        </div>
+                        <div className='project-details-block'>
+                            <h3>Firebase Host URL:</h3>
+                            <div className='together'>
+                                <input type="text" id="tbFirebaseURL" placeholder='Firebase Host URL' className='project-info-input' />
+                                <BsArrowCounterclockwise onClick={() => {
+                                    updateFirebaseURL(partner.id, project.id, document.querySelector('#tbFirebaseURL').value);
+                                    document.querySelector('#tbURL').value = document.querySelector('#tbFirebaseURL').value
+                                    setWebsiteURL(document.querySelector('#tbFirebaseURL').value)
+                                    dispatch(setConfirmationState(true))
+                                    setTimeout(() => {
+                                        dispatch(setConfirmationState(false))
+                                    }, 2000);
+                                }} className='update-icon' />
+                            </div>
+                        </div>
+                        <div className='project-details-block'>
+                            <h3>Dropbox URL:</h3>
+                            <div className='together'>
+                                <input type="text" id="tbDropboxURL" placeholder='Dropbox URL' className='project-info-input' />
+                                <BsArrowCounterclockwise onClick={() => {
+                                    updateDropboxURL(partner.id, project.id, document.querySelector('#tbDropboxURL').value);
+                                    dispatch(setConfirmationState(true))
+                                    setTimeout(() => {
+                                        dispatch(setConfirmationState(false))
+                                    }, 2000);
+                                }} className='update-icon' />
+                            </div>
                         </div>
                     </div>
                 </div>

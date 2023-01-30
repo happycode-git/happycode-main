@@ -348,9 +348,9 @@ export const getTicketCount = async (userID, dispatch) => {
   updateTicketCount(userID, num)
     .then(() => {
       updateTicketPartner(userID, dispatch)
-      .then(() => {
-        getPartners(dispatch)
-      })
+        .then(() => {
+          getPartners(dispatch)
+        })
     })
 }
 export const updateTicketCount = async (userID, ticketCount) => {
@@ -415,6 +415,20 @@ export const updateTicketUser = async (userID, dispatch) => {
     // doc.data() will be undefined in this case
     console.log("No such document!");
   }
+}
+export const updateFirebaseURL = async (userID, projectID, URL) => {
+  const projectRef = doc(db, "Members", userID, "Projects", projectID)
+
+  await updateDoc(projectRef, {
+    URL: URL
+  })
+}
+export const updateDropboxURL = async (userID, projectID, URL) => {
+  const projectRef = doc(db, "Members", userID, "Projects", projectID)
+
+  await updateDoc(projectRef, {
+    DropboxURL: URL
+  })
 }
 
 export const updateOutline = async (memberID, projID, outline) => {

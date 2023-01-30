@@ -42,7 +42,7 @@ export default function NewPartner() {
             Description: document.querySelector('#taProjectDesc').value,
             InitialPayment: document.querySelector('#tbBudget').value,
             Subscription: parseInt(document.querySelector('#tbMonthly').value),
-            URL: document.querySelector('#tbURL').value,
+            URL: "",
             DropboxURL: document.querySelector('#tbDropboxURL').value
         }
         createPartnerAccount(form, project, outline)
@@ -61,7 +61,6 @@ export default function NewPartner() {
                 document.querySelector('#taProjectDesc').value = ""
                 document.querySelector('#tbBudget').value = ""
                 document.querySelector('#tbMonthly').value = ""
-                document.querySelector('#tbURL').value = ""
                 document.querySelector('#tbDropboxURL').value = ""
 
                 dispatch(setConfirmationState(true))
@@ -165,21 +164,21 @@ export default function NewPartner() {
                         <input id="tbMonthly" type="text" placeholder='Monthly Fee Amount $' className='webline-app-input' />
                     </div>
 
-                    <div className='ticketform-form-block'>
+                    {/* <div className='ticketform-form-block'>
                         <h3>Firebase URL:</h3>
                         <p>Create a project in the firebase console. Once created, set up Hosting and enter the URL below.</p>
                         <div className='flex-around link-pair'>
                             <SiFirebase color="FEA20C" className='firebase-icon' /> <a target="_blank" className='form-link' href="https://console.firebase.google.com">Firebase Console Link</a>
                         </div>
                         <input id="tbURL" type="text" placeholder='https://weblineproject.web.app' className='webline-app-input' />
-                    </div>
+                    </div> */}
                     <div className='ticketform-form-block'>
                         <h3>Dropbox URL:</h3>
                         <p>Create a new project Dropbox folder and share with the contact email provided. Enter the URL of this folder below.</p>
                         <div className='flex-around link-pair'>
                             <ImDropbox color="015EF6" className='firebase-icon' /> <a target="_blank" className='form-link' href="https://www.dropbox.com/home">Dropbox Folder Link</a>
                         </div>
-                        <input id="tbDropboxURL" type="text" placeholder='https://www.dropbox.com/home/WeblineProjectTicketMedia' className='webline-app-input' />
+                        <input id="tbDropboxURL" type="text" placeholder='https://www.dropbox.com/home/WeblineProject' className='webline-app-input' />
                     </div>
 
                     <div className='ticketform-form-block'>

@@ -62,13 +62,9 @@ export default function AdminOutline() {
             navigate("/admin")
             return
         }
-        window.scrollTo(0, 0)
         getOutline(partner.id, project.id, dispatch)
-            .then(() => {
-                for (var i in pages) {
-                    document.querySelector(`#taInfo${i}`).value = pages[i].Info.replaceAll("jjj", "\n")
-                }
-            })
+        window.scrollTo(0, 0)
+
     }, [])
 
     return (
@@ -95,11 +91,13 @@ export default function AdminOutline() {
                                     <p>{page.Details}</p>
                                     <div>
                                         <h4>Details</h4>
-                                        <textarea id={`taInfo${i}`} className='shopper-ta' placeholder='Enter all information describing the structure and content of this page. Everything here will determine the construction of the page.'></textarea>
+                                        <textarea id={`taInfo${i}`} className='shopper-ta' placeholder='Enter all information describing the structure and content of this page. Everything here will determine the construction of the page.'>
+                                            {page.Info.replaceAll("jjj", "\n")}
+                                        </textarea>
                                         {/* <textarea id={`taRequests${i}`} className='shopper-ta' placeholder='Enter any extra requests for ideas aside from the details given above.'></textarea> */}
                                         {
                                             page.id == chosenPageID ?
-                                                <button className='shopper-dropbox'>Dropbox</button> : <p></p>
+                                                <a href={project.DropboxURL} target="_blank" className='shopper-dropbox'>Dropbox</a> : <p></p>
                                         }
                                     </div>
                                 </div>

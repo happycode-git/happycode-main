@@ -45,6 +45,21 @@ font-family: 'Rubik', sans-serif;
         margin-right: 1em;
         color: #2249f7;
     }
+
+    .project-info-input {
+        font-family: 'Rubik', sans-serif;
+        background-color: #eaeaf2;
+        padding: 0.5em;
+        width: 345px;
+        border-radius: 5px;
+        border: 0;
+    }
+
+    .update-icon {
+        font-size: 1.8em;
+        color: #C9FD3A;
+        margin-left: 0.8em;
+    }
 }
 
 @media only screen and (min-width: 600px) {}
