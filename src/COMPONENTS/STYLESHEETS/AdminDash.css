@@ -69,8 +69,12 @@ font-family: 'Rubik', sans-serif;
         font-size: 1.6em;
     }
     .admin-plus {
-        margin-right: 0.5em;
-        font-size: 2.5em;
+        text-decoration: none;
+        color: #FEFEFF;
+        background-color: #2249f7;
+        padding: 0.8em 1em;
+        margin-right: 1em;
+        border-radius: 8px;
     }
 }
 

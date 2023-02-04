@@ -16,6 +16,7 @@ import { setProspectsState } from './REDUX/REDUCERS/ProspectsSlice'
 import { setOutlineState } from './REDUX/REDUCERS/OutlineSlice'
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { randomString } from "./Global";
+import { setProjectState } from "./REDUX/REDUCERS/ProjectSlice";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -129,7 +130,7 @@ export const getUser = async (email, navigate, dispatch) => {
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
+    // //console.log(doc.id, " => ", doc.data());
     const snap = doc.data()
     dispatch(setUserState({
       id: doc.id,
@@ -153,7 +154,7 @@ export const getAdminUser = async (email, navigate, dispatch) => {
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
+    // //console.log(doc.id, " => ", doc.data());
     const snap = doc.data()
     dispatch(setAdminUserState({
       id: doc.id,
@@ -196,7 +197,7 @@ export const getTickets = async (userID, projectID, dispatch) => {
   const tickets = []
   querySnapshot.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
+    //console.log(doc.id, " => ", doc.data());
     const snap = doc.data()
     const ticket = {
       id: doc.id,
@@ -218,7 +219,7 @@ export const getAllTickets = async (userID, dispatch) => {
   const tickets = []
   querySnapshot.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
+    //console.log(doc.id, " => ", doc.data());
     const snap = doc.data()
     const ticket = {
       id: doc.id,
@@ -237,7 +238,7 @@ export const getOutline = async (userID, projectID, dispatch) => {
   var outlineComps = []
   querySnapshot.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
+    //console.log(doc.id, " => ", doc.data());
     const snap = doc.data()
     const comp = {
       id: doc.id,
@@ -257,7 +258,7 @@ export const getPartners = async (dispatch) => {
   const partners = []
   querySnapshot.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
+    //console.log(doc.id, " => ", doc.data());
     const snap = doc.data()
     const partner = {
       id: doc.id,
@@ -306,7 +307,7 @@ export const getProspects = async (dispatch) => {
   const prospects = []
   querySnapshot.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
+    //console.log(doc.id, " => ", doc.data());
     const snap = doc.data()
     const prospect = {
       id: doc.id,
@@ -416,19 +417,33 @@ export const updateTicketUser = async (userID, dispatch) => {
     console.log("No such document!");
   }
 }
-export const updateFirebaseURL = async (userID, projectID, URL) => {
-  const projectRef = doc(db, "Members", userID, "Projects", projectID)
+export const updateFirebaseURL = async (userID, project, URL, dispatch) => {
+  const projectRef = doc(db, "Members", userID, "Projects", project.id)
 
   await updateDoc(projectRef, {
     URL: URL
   })
+    .then(() => {
+      const newProj = {
+        ...project,
+        DropboxURL: URL
+      }
+      dispatch(setProjectState(newProj))
+    })
 }
-export const updateDropboxURL = async (userID, projectID, URL) => {
-  const projectRef = doc(db, "Members", userID, "Projects", projectID)
+export const updateDropboxURL = async (userID, project, URL, dispatch) => {
+  const projectRef = doc(db, "Members", userID, "Projects", project.id)
 
   await updateDoc(projectRef, {
     DropboxURL: URL
   })
+    .then(() => {
+      const newProj = {
+        ...project,
+        DropboxURL: URL
+      }
+      dispatch(setProjectState(newProj))
+    })
 }
 
 export const updateOutline = async (memberID, projID, outline) => {

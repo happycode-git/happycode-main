@@ -80,7 +80,7 @@ export default function Newproject() {
                 <h2 className='project-title'>New Project</h2>
             </div>
             <div className='ticketform-wrapper'>
-                <h1>You are now creating an account for {partner.BusinessName}</h1>
+                <h1>You are now creating an Project for {partner.BusinessName}</h1>
                 <div className='ticketform-form'>
                         <div className='ticketform-form-block'>
                             <div className='together'>
@@ -103,9 +103,7 @@ export default function Newproject() {
                         <div className='ticketform-form-block'>
                             <h3>Initial Payment:</h3>
                             <p>Use the HappyCode Webline Shopping Form to determine this amount.</p>
-                            <div className='flex-around'>
                                 <input id="tbBudget" type="text" placeholder='Initial Fee Amount $' className='webline-app-input' />
-                            </div>
                         </div>
                         <div className='ticketform-form-block'>
                             <h3>Monthly Subscription:</h3>

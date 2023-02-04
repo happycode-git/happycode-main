@@ -69,6 +69,24 @@ export default function PartnerDetail() {
             })
 
     }
+    const update_DropboxURL = () => {
+        const url = document.querySelector('#tbDropboxURL').value
+        dispatch(setConfirmationState(true))
+        updateDropboxURL(partner.id, project, url, dispatch)
+        setTimeout(() => {
+            dispatch(setConfirmationState(false))
+        }, 2000);
+    }
+    const update_FirebaseURL = () => {
+        const url = document.querySelector('#tbFirebaseURL').value
+        updateFirebaseURL(partner.id, project, url, dispatch);
+        document.querySelector('#tbURL').value = document.querySelector('#tbFirebaseURL').value
+        setWebsiteURL(document.querySelector('#tbFirebaseURL').value)
+        dispatch(setConfirmationState(true))
+        setTimeout(() => {
+            dispatch(setConfirmationState(false))
+        }, 2000);
+    }
 
 
     useEffect(() => {
@@ -163,28 +181,14 @@ export default function PartnerDetail() {
                             <h3>Firebase Host URL:</h3>
                             <div className='together'>
                                 <input type="text" id="tbFirebaseURL" placeholder='Firebase Host URL' className='project-info-input' />
-                                <BsArrowCounterclockwise onClick={() => {
-                                    updateFirebaseURL(partner.id, project.id, document.querySelector('#tbFirebaseURL').value);
-                                    document.querySelector('#tbURL').value = document.querySelector('#tbFirebaseURL').value
-                                    setWebsiteURL(document.querySelector('#tbFirebaseURL').value)
-                                    dispatch(setConfirmationState(true))
-                                    setTimeout(() => {
-                                        dispatch(setConfirmationState(false))
-                                    }, 2000);
-                                }} className='update-icon' />
+                                <BsArrowCounterclockwise onClick={update_FirebaseURL} className='update-icon' />
                             </div>
                         </div>
                         <div className='project-details-block'>
                             <h3>Dropbox URL:</h3>
                             <div className='together'>
                                 <input type="text" id="tbDropboxURL" placeholder='Dropbox URL' className='project-info-input' />
-                                <BsArrowCounterclockwise onClick={() => {
-                                    updateDropboxURL(partner.id, project.id, document.querySelector('#tbDropboxURL').value);
-                                    dispatch(setConfirmationState(true))
-                                    setTimeout(() => {
-                                        dispatch(setConfirmationState(false))
-                                    }, 2000);
-                                }} className='update-icon' />
+                                <BsArrowCounterclockwise onClick={update_DropboxURL} className='update-icon' />
                             </div>
                         </div>
                     </div>

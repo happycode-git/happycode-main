@@ -343,7 +343,7 @@ font-family: 'Rubik', sans-serif;
         width: 100%;
     }
     .webline-app-textarea {
-        width: 90%;
+        width: 100%;
     }
 }
 
@@ -378,9 +378,9 @@ font-family: 'Rubik', sans-serif;
         width: 85%;
         margin: 2em auto 0em auto;
     }
-    .webline-app-input {
+    /* .webline-app-input {
         min-width: 350px;
-    }
+    } */
 }
 
 @media only screen and (min-width: 1000px) {
@@ -415,9 +415,7 @@ font-family: 'Rubik', sans-serif;
         width: 90%;
         font-size: 1.3em;
     }
-    .webline-app-input {
-        width: 45%;
-    }
+    
 }
 
 @media only screen and (min-width: 1200px) {

@@ -57,7 +57,7 @@ export default function Shopper() {
                 <Link className='back' to="/admindash"><BsChevronLeft /></Link>
                 <h2 className='project-title'>Website Outline</h2>
             </div>
-            <p className='shopper-info'>Before you begin, make sure you are filling out this form with the business owner/manager. This will keep all details as accurate as possible. Use the plus button in the bottom right corner to add new pages.</p>
+            <p className='shopper-info'>Before you begin, make sure you are filling out this form with the business owner/manager. This will keep all details as accurate as possible. Use the plus button on the bottom right corner to add new pages.</p>
             {
                 pages.length > 0 ?
                     <div className='shopper'>
@@ -966,7 +966,7 @@ export default function Shopper() {
                                     <div className='flex'>
                                         <div className='together'>
                                             <h2>Schedule</h2>
-                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/blog"><BsEye color="161D29" /></a>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/schedule"><BsEye color="161D29" /></a>
                                         </div>
                                         <h3>$300</h3>
                                     </div>
@@ -1180,33 +1180,6 @@ export default function Shopper() {
                                 <div>
                                     <div className='flex'>
                                         <div className='together'>
-                                            <h2>Shop/Store</h2>
-                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/shop"><BsEye color="161D29" /></a>
-                                        </div>
-                                        <h3>$400</h3>
-                                    </div>
-                                    <p>Full store with payment capabilities. All products will be available for purchase. One time payments only. Saved payment methods not available.</p>
-                                </div>
-                                <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
-                                    tempArr.push({
-                                        id: randomString(5),
-                                        Name: "Shop/Store",
-                                        Details: "Full store with payment capabilities. All products will be available for purchase. One time payments only. Saved payment methods not available.",
-                                        Price: 400,
-                                        URL: "https://happy-code-templates.web.app/shop"
-                                    })
-                                    setPages(tempArr)
-                                    var tempTot = total
-                                    tempTot += 400
-                                    setTotal(tempTot)
-                                    setTogglePageList(false)
-                                }} className='shopper-newpage-block-icon' /></div>
-                            </div>
-                            <div className='shopper-newpage-block'>
-                                <div>
-                                    <div className='flex'>
-                                        <div className='together'>
                                             <h2>Rewards (Interactive)</h2>
                                             <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/rewards-interactive"><BsEye color="161D29" /></a>
                                         </div>
@@ -1303,6 +1276,33 @@ export default function Shopper() {
                                     setPages(tempArr)
                                     var tempTot = total
                                     tempTot += 500
+                                    setTotal(tempTot)
+                                    setTogglePageList(false)
+                                }} className='shopper-newpage-block-icon' /></div>
+                            </div>
+                            <div className='shopper-newpage-block'>
+                                <div>
+                                    <div className='flex'>
+                                        <div className='together'>
+                                            <h2>Shop/Store</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/shop"><BsEye color="161D29" /></a>
+                                        </div>
+                                        <h3>$600</h3>
+                                    </div>
+                                    <p>Full store with payment capabilities. All products will be available for purchase. One time payments only. Saved payment methods not available.</p>
+                                </div>
+                                <div><BsArrowRightCircle onClick={() => {
+                                    var tempArr = pages
+                                    tempArr.push({
+                                        id: randomString(5),
+                                        Name: "Shop/Store",
+                                        Details: "Full store with payment capabilities. All products will be available for purchase. One time payments only. Saved payment methods not available.",
+                                        Price: 600,
+                                        URL: "https://happy-code-templates.web.app/shop"
+                                    })
+                                    setPages(tempArr)
+                                    var tempTot = total
+                                    tempTot += 600
                                     setTotal(tempTot)
                                     setTogglePageList(false)
                                 }} className='shopper-newpage-block-icon' /></div>

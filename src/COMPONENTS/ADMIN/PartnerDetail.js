@@ -35,7 +35,9 @@ export default function PartnerDetail() {
                     <Link className='back' to="/admindash"><BsChevronLeft /></Link>
                     <h2 className='project-title'>{partner.BusinessName}</h2>
                 </div>
-                <button className='add-project-btn' onClick={() => {navigate('/newproject')}}><AiFillPlusCircle className='add-project-icon' /></button>
+                <button className='add-project-btn' onClick={() => {navigate('/newproject')}}>
+                    New Project
+                    </button>
             </div>
             <div className='partner-info'>
                 <div className='project'>

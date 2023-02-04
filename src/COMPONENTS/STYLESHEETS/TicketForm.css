@@ -20,8 +20,14 @@ font-family: 'Rubik', sans-serif;
     }
 
     .ticketform-wrapper h1 {
-        letter-spacing: -2px;
+        font-size: 1.8em;
+        letter-spacing: -1px;
         font-weight: 500;
+        background-color: #2249f7;
+        color:#FEFEFF;
+        padding: 0.4em 0.6em;
+        border-radius: 10px;
+
     }
 
     .ticketid {
@@ -157,7 +163,7 @@ font-family: 'Rubik', sans-serif;
     }
 
     .ticketform-wrapper {
-        width: 40vw;
+        width: 50vw;
     }
 }
 
@@ -167,6 +173,6 @@ font-family: 'Rubik', sans-serif;
     }
 
     .ticketform-wrapper {
-        width: 30vw;
+        width: 35vw;
     }
 }
