@@ -965,6 +965,33 @@ export default function Shopper() {
                                 <div>
                                     <div className='flex'>
                                         <div className='together'>
+                                            <h2>Custom Form</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/form"><BsEye color="161D29" /></a>
+                                        </div>
+                                        <h3>$300</h3>
+                                    </div>
+                                    <p>In some cases, you will need to gather information from your visitors whether its by application, survey, or even for calculations.</p>
+                                </div>
+                                <div><BsArrowRightCircle onClick={() => {
+                                    var tempArr = pages
+                                    tempArr.push({
+                                        id: randomString(5),
+                                        Name: "Custom Form",
+                                        Details: "In some cases, you will need to gather information from your visitors whether its by application, survey, or even for calculations.",
+                                        Price: 300,
+                                        URL: "https://happy-code-templates.web.app/form"
+                                    })
+                                    setPages(tempArr)
+                                    var tempTot = total
+                                    tempTot += 300
+                                    setTotal(tempTot)
+                                    setTogglePageList(false)
+                                }} className='shopper-newpage-block-icon' /></div>
+                            </div>
+                            <div className='shopper-newpage-block'>
+                                <div>
+                                    <div className='flex'>
+                                        <div className='together'>
                                             <h2>Schedule</h2>
                                             <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/schedule"><BsEye color="161D29" /></a>
                                         </div>
