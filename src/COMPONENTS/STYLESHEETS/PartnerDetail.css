@@ -29,7 +29,8 @@ font-family: 'Rubik', sans-serif;
         color: #FEFEFF;
         margin-right: 1em;
         border-radius: 10px;
-        font-weight: 500;
+        font-weight:400;
+        font-size: 1em;
     }
     
 }
@@ -38,6 +39,13 @@ font-family: 'Rubik', sans-serif;
 
 @media only screen and (min-width: 800px) {}
 
-@media only screen and (min-width: 1000px) {}
+@media only screen and (min-width: 1000px) {
+    .partner-project-split {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        gap: 1em;
+        padding: 1em;
+    }
+}
 
 @media only screen and (min-width: 1200px) {}

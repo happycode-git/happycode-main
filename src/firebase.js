@@ -445,6 +445,24 @@ export const updateDropboxURL = async (userID, project, URL, dispatch) => {
       dispatch(setProjectState(newProj))
     })
 }
+export const addOutlinePage = async (userID, project, page, pages, dispatch) => {
+  console.log()
+  await setDoc(doc(db, "Members", userID, "Projects", project.id, "Outline", page.id), {
+    Details: page.Details,
+    Info: "",
+    Name: page.Name,
+    Price: page.Price
+  });
+
+  var tempPages = [...pages]
+  tempPages.push({
+    Details: page.Details,
+    Info: "",
+    Name: page.Name,
+    Price: page.Price
+  })
+  dispatch(setOutlineState(tempPages))
+}
 
 export const updateOutline = async (memberID, projID, outline) => {
   for (var idx in outline) {
@@ -559,3 +577,174 @@ export const editProspectDoc = async (pros) => {
     Details: pros.Details
   });
 }
+
+// AUTH
+/*
+
+// ----------------- NEW USER--------------------
+import { createUserWithEmailAndPassword } from "firebase/auth";
+
+createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+    });
+
+// ----------------- SIGN IN USER--------------------
+import { signInWithEmailAndPassword } from "firebase/auth";
+
+signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+    });
+
+    // -----------------SIGN OUT USER--------------------
+    import { signOut } from "firebase/auth";
+
+    signOut(auth).then(() => {
+        // Sign-out successful.
+    }).catch((error) => {
+        // An error happened.
+    });
+
+    // ----------------- CURRENT SIGNED IN USER--------------------
+    const user = auth.currentUser;
+
+    if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        // ...
+    } else {
+        // No user is signed in.
+    }
+
+    // ----------------- VERIFY EMAIL USER--------------------
+    import { sendEmailVerification } from "firebase/auth";
+
+    sendEmailVerification(auth.currentUser)
+        .then(() => {
+            // Email verification sent!
+            // ...
+        });
+
+    // -----------------SEND NEW PASSWORD EMAIL--------------------
+    import { sendPasswordResetEmail } from "firebase/auth";
+
+    sendPasswordResetEmail(auth, email)
+        .then(() => {
+            // Password reset email sent!
+            // ..
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // ..
+        });
+
+    // -----------------DELETE USER--------------------
+    import { deleteUser } from "firebase/auth";
+
+    const user = auth.currentUser;
+
+    deleteUser(user).then(() => {
+        // User deleted.
+    }).catch((error) => {
+        // An error ocurred
+        // ...
+    });
+
+*/
+
+// FIRESTORE
+/*
+// -----------------NEW DOC--------------------
+
+import { doc, setDoc } from "firebase/firestore";
+
+// Add a new document in collection "cities"
+await setDoc(doc(db, "cities", "LA"), {
+    name: "Los Angeles",
+    state: "CA",
+    country: "USA"
+});
+
+// -----------------GET DOCS LISTENER--------------------
+
+import { collection, query, where, onSnapshot } from "firebase/firestore";
+
+const q = query(collection(db, "cities"), where("state", "==", "CA"));
+const unsubscribe = onSnapshot(q, (querySnapshot) => {
+  const cities = [];
+  querySnapshot.forEach((doc) => {
+      cities.push(doc.data().name);
+  });
+  console.log("Current cities in CA: ", cities.join(", "));
+});
+
+// -----------------GET DOC--------------------
+
+import { doc, getDoc } from "firebase/firestore";
+
+const docRef = doc(db, "cities", "SF");
+const docSnap = await getDoc(docRef);
+
+if (docSnap.exists()) {
+    console.log("Document data:", docSnap.data());
+} else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+}
+
+// -----------------GET DOCS--------------------
+
+import { collection, getDocs } from "firebase/firestore";
+
+const querySnapshot = await getDocs(collection(db, "cities"));
+querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    console.log(doc.id, " => ", doc.data());
+});
+
+// -----------------ORDER BY / LIMIT--------------------
+
+import { query, orderBy, limit } from "firebase/firestore";
+
+const q = query(citiesRef, orderBy("name"), limit(3));
+
+// -----------------COMPOUND--------------------
+
+import { query, where, orderBy, limit } from "firebase/firestore";
+
+const q = query(citiesRef, where("population", ">", 100000), orderBy("population"), limit(2));
+
+// -----------------UPDATE DOC--------------------
+
+import { doc, updateDoc } from "firebase/firestore";
+
+const washingtonRef = doc(db, "cities", "DC");
+
+// Set the "capital" field of the city 'DC'
+await updateDoc(washingtonRef, {
+    capital: true
+});
+
+// -----------------DELETE DOC--------------------
+
+import { doc, deleteDoc } from "firebase/firestore";
+
+await deleteDoc(doc(db, "cities", "DC"));
+
+*/
+

@@ -563,7 +563,7 @@ export default function Shopper() {
                                     <div className='flex'>
                                         <div className='together'>
                                             <h2>Team</h2>
-                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/locations"><BsEye color="161D29" /></a>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/team"><BsEye color="161D29" /></a>
                                         </div>
                                         <h3>$100</h3>
                                     </div>
@@ -762,7 +762,7 @@ export default function Shopper() {
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Contact",
-                                        Details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a augue et tellus varius accumsan.",
+                                        Details: "Give your visitors an easy way to contact you or get in touch with you. All entries will be sent to your account.",
                                         Price: 200,
                                         URL: "https://happy-code-templates.web.app/contact"
                                     })
@@ -843,7 +843,7 @@ export default function Shopper() {
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Reviews",
-                                        Details: "",
+                                        Details: "Show what people are saying about your business. All reviews can be pulled from Yelp or other review sites.",
                                         Price: 200,
                                         URL: "https://happy-code-templates.web.app/reviews"
                                     })
@@ -1101,7 +1101,7 @@ export default function Shopper() {
                                     <div className='flex'>
                                         <div className='together'>
                                             <h2>Menu (Interactive)</h2>
-                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app"><BsEye color="161D29" /></a>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/menu-interactive"><BsEye color="161D29" /></a>
                                         </div>
                                         <h3>$300</h3>
                                     </div>
@@ -1155,7 +1155,7 @@ export default function Shopper() {
                                     <div className='flex'>
                                         <div className='together'>
                                             <h2>Careers (Interactive)</h2>
-                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/quote-interactive"><BsEye color="161D29" /></a>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/careers-interactive"><BsEye color="161D29" /></a>
                                         </div>
                                         <h3>$300</h3>
                                     </div>
@@ -1260,7 +1260,7 @@ export default function Shopper() {
                                             <h2>Login/Members</h2>
                                             <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/login"><BsEye color="161D29" /></a>
                                         </div>
-                                        <h3>$400</h3>
+                                        <h3>$0</h3>
                                     </div>
                                     <p>Allow members to log in and with full authentication and member storage capabilities. Works with Shop, and Dashboard components.</p>
                                 </div>
@@ -1270,8 +1270,35 @@ export default function Shopper() {
                                         id: randomString(5),
                                         Name: "Login/Members",
                                         Details: "Allow members to log in and with full authentication and member storage capabilities. Works with Shop, and Dashboard components.",
-                                        Price: 400,
+                                        Price: 0,
                                         URL: "https://happy-code-templates.web.app/login"
+                                    })
+                                    setPages(tempArr)
+                                    var tempTot = total
+                                    tempTot += 0
+                                    setTotal(tempTot)
+                                    setTogglePageList(false)
+                                }} className='shopper-newpage-block-icon' /></div>
+                            </div>
+                            <div className='shopper-newpage-block'>
+                                <div>
+                                    <div className='flex'>
+                                        <div className='together'>
+                                            <h2>Sign Up/Members</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/signup"><BsEye color="161D29" /></a>
+                                        </div>
+                                        <h3>$400</h3>
+                                    </div>
+                                    <p>Allow members to sign up and with full authentication and member storage capabilities. Works with Shop, and Member Dashboard components.</p>
+                                </div>
+                                <div><BsArrowRightCircle onClick={() => {
+                                    var tempArr = pages
+                                    tempArr.push({
+                                        id: randomString(5),
+                                        Name: "Sign Up/Members",
+                                        Details: "Allow members to sign up and with full authentication and member storage capabilities. Works with Shop, and Member Dashboard components.",
+                                        Price: 400,
+                                        URL: "https://happy-code-templates.web.app/signup"
                                     })
                                     setPages(tempArr)
                                     var tempTot = total
@@ -1428,7 +1455,7 @@ export default function Shopper() {
                                     tempArr.push({
                                         id: randomString(5),
                                         Name: "Misc (Innovative)",
-                                        Details: ">A page that has features that are considered innovative. Meant to give users a unique experience.",
+                                        Details: "A page that has features that are considered innovative. Meant to give users a unique experience.",
                                         Price: 800
                                     })
                                     setPages(tempArr)

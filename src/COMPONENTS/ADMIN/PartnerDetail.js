@@ -39,6 +39,7 @@ export default function PartnerDetail() {
                     New Project
                     </button>
             </div>
+            <div className="partner-project-split">
             <div className='partner-info'>
                 <div className='project'>
                     <h1>Partner Info</h1>
@@ -85,6 +86,7 @@ export default function PartnerDetail() {
                         )
                     })
                 }
+            </div>
             </div>
         </div>
     )
