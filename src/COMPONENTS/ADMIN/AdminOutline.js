@@ -165,7 +165,7 @@ export default function AdminOutline() {
                                     <p>Talk about the way the business came to be. This is for users who want to know exactly who they are doing business with.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "About",
@@ -193,7 +193,7 @@ export default function AdminOutline() {
                                     <p>Give the user a glimpse into the history of the business. This helps gain credibility and trust.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "History",
@@ -221,7 +221,7 @@ export default function AdminOutline() {
                                     <p>Show a list of services the business provides with interactive show and hide features.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Services",
@@ -249,7 +249,7 @@ export default function AdminOutline() {
                                     <p>Show all products and provide simple information individually. For reading purposes only.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: `Products ${"("}Simple${")"}`,
@@ -277,7 +277,7 @@ export default function AdminOutline() {
                                     <p>In the case that the business is hiring, this will provide essential information about the hiring process and open positions.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Careers (Simple)",
@@ -305,7 +305,7 @@ export default function AdminOutline() {
                                     <p>Show all vendors that are affiliated with the business. Their links will be provided to help with SEO.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Partners",
@@ -333,7 +333,7 @@ export default function AdminOutline() {
                                     <p>Allow users to meet the essential workers of the business in a simple yet structured biography page.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Bio",
@@ -361,7 +361,7 @@ export default function AdminOutline() {
                                     <p>If the business offers services, a set of pricing options can be displayed with information about what can be attained for each tier.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Pricing",
@@ -389,7 +389,7 @@ export default function AdminOutline() {
                                     <p>Display a set of pictures or videos in a neat and clean gallery. Responsive to avoid unwanted whitespace.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Gallery (Simple)",
@@ -400,7 +400,6 @@ export default function AdminOutline() {
                                     tempArr.push(page)
                                     setPages(tempArr)
                                     addOutlinePage(partner.id, project, page, pages, dispatch)
-
 
                                     setTogglePageList(false)
                                 }} className='shopper-newpage-block-icon' /></div>
@@ -417,7 +416,7 @@ export default function AdminOutline() {
                                     <p>If you offer products or services, show off your greatest features and how they will benefit the customer.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Features",
@@ -445,7 +444,7 @@ export default function AdminOutline() {
                                     <p>For professionals, this page will show links, images, and information of previous work.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Portfolio",
@@ -473,7 +472,7 @@ export default function AdminOutline() {
                                     <p>A list of awards displayed in a way to convey the importance of professional or business achievements.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Awards",
@@ -501,7 +500,7 @@ export default function AdminOutline() {
                                     <p>In-store coupons can be displayed along with any information and conditions. For reading purposes only.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Coupons (Simple)",
@@ -529,7 +528,7 @@ export default function AdminOutline() {
                                     <p>Get users to stay updated with the business by allowing them to enter their email and submit to join an email list.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Join Email List",
@@ -557,7 +556,7 @@ export default function AdminOutline() {
                                     <p>Display information about current rewards and their conditions. For reading purposes only.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Rewards (Simple)",
@@ -585,7 +584,7 @@ export default function AdminOutline() {
                                     <p>Get to know the team members of your business and what they do; maybe even where they come from.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Team",
@@ -613,7 +612,7 @@ export default function AdminOutline() {
                                     <p>Display all locations and their hours, along with an interactive map for each.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Locations",
@@ -641,7 +640,7 @@ export default function AdminOutline() {
                                     <p>Show the company's Privacy Policy and/or Terms and Conditions in a simple way that is easy to understand.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Privacy Policy",
@@ -669,7 +668,7 @@ export default function AdminOutline() {
                                     <p>Inform the user on different quotes for several scenarios. They can also leave their information in a simple quote form for future contact.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Quote (Simple)",
@@ -697,7 +696,7 @@ export default function AdminOutline() {
                                     <p>Similar to quotes, but provides a deep look into how estimates are determined and performed.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Estimates (Simple)",
@@ -722,7 +721,7 @@ export default function AdminOutline() {
                                     <p>Simple page can be constructed with any of the information components such as text, images, videos, or links.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Misc (Simple)",
@@ -749,7 +748,7 @@ export default function AdminOutline() {
                                     <p>A page made up of three or more panels. Home, Contact, and Misc panels.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Landing",
@@ -779,7 +778,7 @@ export default function AdminOutline() {
                                     <p>Give your visitors an easy way to contact you or get in touch with you. All entries will be sent to your account.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Contact",
@@ -807,7 +806,7 @@ export default function AdminOutline() {
                                     <p>Display upcoming events with pictures and full explanations. Sorted by most recent date.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Events",
@@ -835,7 +834,7 @@ export default function AdminOutline() {
                                     <p>Display videos, articles, and information that may help the visitor answer any unanswered question.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Support",
@@ -863,7 +862,7 @@ export default function AdminOutline() {
                                     <p>Show what people are saying about your business. All reviews can be pulled from Yelp or other review sites.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Reviews",
@@ -891,7 +890,7 @@ export default function AdminOutline() {
                                     <p>Answer your customer's most frequently asked questions. Page will come with a search for better experience.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "FAQ",
@@ -919,7 +918,7 @@ export default function AdminOutline() {
                                     <p>Show a simple menu with all menu items, descriptions, and prices. Perfect for restaurants, cafes, and other eateries.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Menu (Simple)",
@@ -944,7 +943,7 @@ export default function AdminOutline() {
                                     <p>Page with more interaction and customization. Comes with an extra customized page that it will redirect to.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Menu (Standard)",
@@ -974,7 +973,7 @@ export default function AdminOutline() {
                                     <p>Let your customers keep up with the latest information about the business, services, products, news, etc in blog form.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Blog",
@@ -1002,7 +1001,7 @@ export default function AdminOutline() {
                                     <p>In some cases, you will need to gather information from your visitors whether its by application, survey, or even for calculations.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Custom Form",
@@ -1030,7 +1029,7 @@ export default function AdminOutline() {
                                     <p>Allow your customers to schedule using a clean scheduler API which sends email confirmations and updates.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Schedule",
@@ -1058,7 +1057,7 @@ export default function AdminOutline() {
                                     <p>Display all products in a clean and organized way. Each product will have its own page displaying more pictures and more information.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Products (Interactive)",
@@ -1086,7 +1085,7 @@ export default function AdminOutline() {
                                     <p>Give deeper information about the services the business provides. Innclude an extra detailed page with dives into more pictures and details.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Services (Interactive)",
@@ -1114,7 +1113,7 @@ export default function AdminOutline() {
                                     <p>Show a category of picture types and provide the set of pictures that belongs to each. Provides textual information on each picture when clicking or hovering.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Gallery (Interactive)",
@@ -1142,7 +1141,7 @@ export default function AdminOutline() {
                                     <p>A full menu with all menu items, details, and prices. When clicking on an item, a new page with more pictures and full description will appear.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Menu (Interactive)",
@@ -1170,7 +1169,7 @@ export default function AdminOutline() {
                                     <p>Give an accurate quote based on given information entered by the user. Results will be calculated using custom algorithm.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Quote (Interactive)",
@@ -1198,7 +1197,7 @@ export default function AdminOutline() {
                                     <p>Take a closer look at the available positions in the business and even apply using a custom form.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Careers (Interactive)",
@@ -1223,7 +1222,7 @@ export default function AdminOutline() {
                                     <p>Any two connecting pages that comes with photos, videos, information, interactivity, and an algorithm.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Misc (Interactive)",
@@ -1253,7 +1252,7 @@ export default function AdminOutline() {
                                     <p>A rewards system that keeps track of purchases and rewards provided such as discounts. Works with Shop component.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Rewards (Interactive)",
@@ -1278,7 +1277,7 @@ export default function AdminOutline() {
                                     <p>Any two customized pages with full features and database integration.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Misc (Complex)",
@@ -1305,7 +1304,7 @@ export default function AdminOutline() {
                                     <p>Allow members to log in and with full authentication and member storage capabilities. Works with Shop, and Dashboard components.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Login/Members",
@@ -1331,7 +1330,7 @@ export default function AdminOutline() {
                                     <p>Allow members to sign up and with full authentication and member storage capabilities. Works with Shop, and Member Dashboard components.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Sign Up/Members",
@@ -1359,7 +1358,7 @@ export default function AdminOutline() {
                                     <p>Give members a way to view their data. Will come with many components that you can choose from. All data will be based on business type.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Dashboard",
@@ -1387,7 +1386,7 @@ export default function AdminOutline() {
                                     <p>Full store with payment capabilities. All products will be available for purchase. One time payments only. Saved payment methods not available.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Shop/Store",
@@ -1415,7 +1414,7 @@ export default function AdminOutline() {
                                     <p>Allow members to create a community around your business and discuss important matter, ask questions, etc.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Forum",
@@ -1443,7 +1442,7 @@ export default function AdminOutline() {
                                     <p>Keep track of your inventory using our custom and beautifully laid out system. Works with Shop, Dashboard, and Invoices components.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Inventory",
@@ -1471,7 +1470,7 @@ export default function AdminOutline() {
                                     <p>Create and keep track of invoices without a hastle. Comes with PDF maker, sharing, and exporting capabilities.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Invoices",
@@ -1496,7 +1495,7 @@ export default function AdminOutline() {
                                     <p>A page that has features that are considered innovative. Meant to give users a unique experience.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = pages
+                                    var tempArr = [...pages]
                                     const page = {
                                         id: randomString(5), Info: "",
                                         Name: "Misc (Innovative)",
