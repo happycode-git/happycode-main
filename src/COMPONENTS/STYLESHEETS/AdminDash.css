@@ -64,6 +64,7 @@ font-family: 'Rubik', sans-serif;
     }
     .partner-contact {
         font-size: 0.7em;
+        margin-left: 0.6em;
     }
     .partner-icon {
         font-size: 1.6em;
@@ -76,12 +77,21 @@ font-family: 'Rubik', sans-serif;
         margin-right: 1em;
         border-radius: 8px;
     }
+    .ticket-count {
+        padding: 0.2em 0.5em;
+        border-radius: 5px;
+    }
 }
 
 @media only screen and (min-width: 600px) {}
 
 @media only screen and (min-width: 800px) {}
 
-@media only screen and (min-width: 1000px) {}
+@media only screen and (min-width: 1000px) {
+    .admin-partners {
+        width: 95%;
+        margin: 0 auto;
+    }
+}
 
 @media only screen and (min-width: 1200px) {}

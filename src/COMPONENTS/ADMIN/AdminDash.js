@@ -52,16 +52,14 @@ export default function AdminDash() {
               return (
                 <div className={`${"partner-block"}${i == 0 ? "1" : ""}`} key={i}>
                   <div className='flex'>
-                    <div>
-                      <p className='partner-name'>{partner.BusinessName}</p>
-                      <p className='partner-contact'>{partner.FirstName} {partner.LastName}</p>
+                    <div className='together'>
+                      <h2 className="partner-name ticket-count bg-purple white" style={{ marginRight: "0.5em" }}>{partner.TicketCount}</h2>
+
+                      <p className='partner-name'>{partner.BusinessName} - {partner.FirstName} {partner.LastName}</p>
                     </div>
-                    <div className="together">
-                      <h2 className="partner-name purple" style={{ marginRight: "0.5em" }}>{partner.TicketCount} ticket{`${partner.TicketCount == 1 ? "" : "s"}`}</h2>
-                      <BsArrowRightCircle onClick={() => {
-                        dispatch(setPartnerState(partner)); navigate('/partnerdetail');
-                      }} className='partner-icon' />
-                    </div>
+                    <BsArrowRightCircle onClick={() => {
+                      dispatch(setPartnerState(partner)); navigate('/partnerdetail');
+                    }} className='partner-icon' />
                   </div>
                 </div>
               )
