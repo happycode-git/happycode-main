@@ -232,7 +232,7 @@ export const getAllTickets = async (userID, dispatch) => {
   });
   dispatch(setAllTicketsState(tickets))
 }
-export const getOutline = async (userID, projectID, dispatch) => {
+export const getOutline = async (userID, projectID, dispatch, setPages, setTotal) => {
   const q = query(collection(db, "Members", userID, "Projects", projectID, "Outline"));
   const querySnapshot = await getDocs(q);
   var outlineComps = []
@@ -250,6 +250,15 @@ export const getOutline = async (userID, projectID, dispatch) => {
     outlineComps.push(comp)
   });
   dispatch(setOutlineState(outlineComps))
+  setPages(outlineComps)
+  for (var i in outlineComps) {
+    var temp = 0
+    for (var i in outlineComps) {
+      const comp = outlineComps[i]
+      temp += parseInt(comp.Price)
+    }
+  }
+  setTotal(temp)
 }
 // 
 export const getPartners = async (dispatch) => {
@@ -294,6 +303,7 @@ export const getPartnerProjects = async (memberID, dispatch) => {
       URL: snap.URL,
       Status: snap.Status,
       ContractSigned: snap.ContractSigned,
+      CurrentSiteURL: snap.CurrentSiteURL,
       DropboxURL: snap.DropboxURL,
       InitialPayment: snap.InitialPayment
     }
@@ -464,7 +474,14 @@ export const addOutlinePage = async (userID, project, page, pages, dispatch) => 
   dispatch(setOutlineState(tempPages))
 }
 
-export const updateOutline = async (memberID, projID, outline) => {
+export const updateOutline = async (memberID, projID, outline, dispatch) => {
+  updatePaymentInfo(memberID, projID, outline)
+    .then(() => {
+      updateOutlineFunc(memberID, projID, outline)
+    })
+
+}
+const updateOutlineFunc = async (memberID, projID, outline) => {
   for (var idx in outline) {
     const comp = outline[idx]
     await updateDoc(doc(db, "Members", memberID, "Projects", projID, "Outline", comp.id), {
@@ -475,7 +492,26 @@ export const updateOutline = async (memberID, projID, outline) => {
     })
   }
 }
-export const createPartnerAccount = async (form, proj, outline) => {
+const updatePaymentInfo = async (memberID, projID, outline) => {
+  var total = 0
+  for (var i in outline) {
+    const comp = outline[i]
+    total += parseInt(comp.Price)
+  }
+
+  const projDoc = doc(db, "Members", memberID, "Projects", projID);
+
+  // Set the "capital" field of the city 'DC'
+  await updateDoc(projDoc, {
+    InitialPayment: total * 0.25,
+    Subscription: total * 0.25 * 0.15
+  });
+}
+export const removeOutlineComp = async (memberID, projID, comp) => {
+  await deleteDoc(doc(db, "Members", memberID, "Projects", projID, "Outline", comp.id));
+}
+
+export const createPartnerAccount = async (form, proj) => {
   // Add a new document in collection "cities"
   const docID = randomString(30)
   await setDoc(doc(db, "Members", docID), {
@@ -490,9 +526,6 @@ export const createPartnerAccount = async (form, proj, outline) => {
   }).then(() => {
     firebaseCreateUser(form.Email, "HappyCode123!")
     createPartnerProject(docID, proj)
-      .then(() => {
-        createOutline(docID, proj.id, outline)
-      })
   });
 }
 export const createPartnerProject = async (memberID, proj) => {
@@ -508,17 +541,6 @@ export const createPartnerProject = async (memberID, proj) => {
     Subscription: proj.Subscription,
     URL: proj.URL
   })
-}
-export const createOutline = async (memberID, projID, outline) => {
-  for (var idx in outline) {
-    const comp = outline[idx]
-    await setDoc(doc(db, "Members", memberID, "Projects", projID, "Outline", randomString(25)), {
-      Name: comp.Name,
-      Details: comp.Details,
-      Info: comp.Info.replaceAll("\n", "jjj"),
-      Price: comp.Price
-    })
-  }
 }
 export const completePartnerTicket = async (partnerID, ticketID, ticket) => {
   await deleteDoc(doc(db, "Members", partnerID, "Tickets", ticketID));

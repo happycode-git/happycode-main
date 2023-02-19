@@ -58,8 +58,8 @@ export default function PartnerDetail() {
                             <p>{partner.Email}</p>
                         </div>
                         <div className='project-details-block'>
-                            <h3>Email:</h3>
-                            <p>{partner.Email}</p>
+                            <h3>Business Email:</h3>
+                            <p>{partner.BusinessEmail}</p>
                         </div>
                         <div className='project-details-block'>
                             <h3>Phone:</h3>

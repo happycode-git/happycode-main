@@ -41,15 +41,17 @@ font-family: 'Rubik', sans-serif;
     .shopper-remove {
         -webkit-appearance: none;
         -moz-appearance: none;
-        padding: 0.8em;
+        padding: 1em;
         width: 100%;
         border: 0;
         background-color: red;
         color: #FEFEFF;
         text-align: center;
         align-items: center;
-        border-radius: 10px;
-        font-size: 0.8em;
+        border-radius: 6px;
+        font-size: 1em;
+        margin-top: 0.5em;
+        text-decoration: underline;
     }
 
     .shopper-view {

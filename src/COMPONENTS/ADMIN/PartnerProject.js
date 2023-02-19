@@ -158,6 +158,10 @@ export default function PartnerDetail() {
                             <p>{project.Name}</p>
                         </div>
                         <div className='project-details-block'>
+                            <h3>Current Site:</h3>
+                            <a href={project.CurrentSiteURL} target="_blank" className="purple">{project.CurrentSiteURL}</a>
+                        </div>
+                        <div className='project-details-block'>
                             <h3>Status:</h3>
                             <p>{project.Status}</p>
                         </div>

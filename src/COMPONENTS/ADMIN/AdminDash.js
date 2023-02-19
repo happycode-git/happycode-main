@@ -44,7 +44,7 @@ export default function AdminDash() {
           <div className='flex'>
             <h1 className='admin-partners-title'>Partners</h1>
             <div className='together'>
-              <Link to="/shopper" className='admin-plus'>New Partner</Link>
+              <Link to="/newpartner" className='admin-plus'>New Partner</Link>
             </div>
           </div>
           {

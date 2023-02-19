@@ -19,11 +19,11 @@ import { HiXMark } from 'react-icons/hi2'
 
 export default function NewPartner() {
     const admin = useSelector((state) => state.admin.value)
-    const outline = useSelector((state) => state.outline.value)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const createAccount = () => {
+
         dispatch(setLoadingState(true))
         const form = {
             FirstName: document.querySelector('#tbFirstName').value,
@@ -45,7 +45,7 @@ export default function NewPartner() {
             URL: "",
             DropboxURL: document.querySelector('#tbDropboxURL').value
         }
-        createPartnerAccount(form, project, outline)
+        createPartnerAccount(form, project)
             .then(() => {
                 dispatch(setLoadingState(false))
                 document.querySelector('#tbFirstName').value = ""
@@ -85,12 +85,6 @@ export default function NewPartner() {
             return
         }
         window.scrollTo(0, 0)
-        var tot = 0
-        for (var i in outline) {
-            tot += outline[i].Price
-        }
-        document.querySelector('#tbBudget').value = tot * 0.25
-        document.querySelector('#tbMonthly').value = tot * 0.25 * 0.15
     }, [])
 
     return (
