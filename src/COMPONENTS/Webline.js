@@ -65,18 +65,21 @@ export default function Webline() {
                     <h3 className='webline-promo-title'>Here is what we can do for you.</h3>
                     <p className='rotate webline-promo-caption'>Us vs. Them</p>
                     <p className='webline-promo-text'>
-                        Normally you would pay around <b>$3000 - $5000</b> for a functioning website. Probably will be mediocre work, and they will charge you for every fee they can think of. In addition, updates and changes will be extra; if they even offer maintenance.
+                        Normally you would pay around <b>$3000 - $5000</b> for a functioning website. Aside from providing mediocre work, others will charge for every little add-on and find any excuse to charge exponentially for maintenance. In addition, updates and changes will be extra; if they even offer maintenance.
                     </p>
                     <div className='webline-promo-prices'>
                         <div>
                             <h4>Us:</h4>
-                            <h1>$400-$800</h1>
+                            <div className='flex'><h1>$400-$800</h1><span className='light-red'>75% off!</span></div>
                         </div>
                         <div>
                             <h4>Them:</h4>
                             <h1>$3000+</h1>
                         </div>
                     </div>
+                    <p className='webline-promo-text'>
+                        When we say that we remove 75% off the original price, we mean that after all requested pages have been added to the shopping list, we immediately chop off 75% from the total; under the condition that you become a membership partner and subscribe to our afforable monthly maintenance.
+                    </p>
                     <p className='webline-promo-text'>
                         Our job is to think outside the box. What can we do to make your site be what your business needs? It all comes down to creativity and beauty. Both will do the trick.
                     </p>
@@ -86,6 +89,9 @@ export default function Webline() {
                     <p className='rotate webline-promo-caption'>Memberships</p>
                     <p className='webline-promo-text-important bg-darker pad'>
                         Here at <b>Happy Code Webline Services</b>, we provide monthly subscriptions for maintenance. You pay for us to change a photo, the menu, add a new page, update text, add a blog post, change color palette, etc. Remember, this maintenance is what keeps your site relevant and ranked high in search.
+                    </p>
+                    <p className='webline-promo-text'>
+                        In addition, we provide frequent SEO maintenance to keep your site relevant. You do not need to ask for this service. We will take care of it for you.
                     </p>
                     <br />
                     <div className='webline-promo-prices'>

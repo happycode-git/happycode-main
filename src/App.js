@@ -23,6 +23,7 @@ import Shopper from './COMPONENTS/ADMIN/Shopper';
 import PartnerTicketForm from './COMPONENTS/ADMIN/PartnerTicketForm';
 import AdminOutline from './COMPONENTS/ADMIN/AdminOutline';
 import ProjectOutline from './COMPONENTS/MEMBERS/ProjectOutline'
+import Products from './COMPONENTS/Products';
 
 function App() {
   const loadingState = useSelector((state) => state.loading.value)
@@ -45,6 +46,8 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/webline" element={<Webline />} />
+        <Route exact path="/products" element={<Products />} />
+        {/*  */}
         <Route exact path="/projects" element={<Projects />} />
         <Route exact path="/project" element={<Project />} />
         <Route exact path="/projectoutline" element={<ProjectOutline />} />

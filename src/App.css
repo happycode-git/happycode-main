@@ -87,6 +87,11 @@ body {
 .blue {
   color: #1511ed
 }
+.light-red {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.6em;
+  color: rgb(255, 16, 76);
+}
 
 .font {
   font-family: 'Rubik', sans-serif;
