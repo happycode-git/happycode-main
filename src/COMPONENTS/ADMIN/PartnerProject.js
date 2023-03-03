@@ -14,6 +14,7 @@ import { setLoadingState } from '../../REDUX/REDUCERS/LoadingSlice';
 import { setConfirmationState } from '../../REDUX/REDUCERS/ConfirmationSlice';
 import { setFailureState } from '../../REDUX/REDUCERS/FailureSlice';
 import { FaClipboardList } from 'react-icons/fa';
+import { MdOpenInBrowser } from 'react-icons/md'
 
 export default function PartnerDetail() {
     const admin = useSelector((state) => state.admin.value)
@@ -119,11 +120,13 @@ export default function PartnerDetail() {
                 <div className='project-URL'>
                     <input id="tbURL" type="text" placeholder='Website URL' className='webline-app-input' />
                     <button className='project-URL-btn' onClick={() => { setWebsiteURL(document.querySelector('#tbURL').value) }}><BsFillArrowRightCircleFill /></button>
+                    
                 </div>
                 <div className='project-previews-split'>
                     <div className='preview-btn-split'>
-                        <button className='preview-btn' onClick={() => { previewMode != "mobile" ? setPreviewMode("mobile") : setPreviewMode("") }}>View in Mobile</button>
-                        {window.innerWidth >= 800 ? <button className='preview-btn' onClick={() => { previewMode != "desktop" ? setPreviewMode("desktop") : setPreviewMode("") }}>View in Desktop</button> : <p></p>}
+                        <button className='preview-btn' onClick={() => { previewMode != "mobile" ? setPreviewMode("mobile") : setPreviewMode("") }}>Mobile</button>
+                        {window.innerWidth >= 800 ? <button className='preview-btn' onClick={() => { previewMode != "desktop" ? setPreviewMode("desktop") : setPreviewMode("") }}>Desktop</button> : null}
+                        <a target="_blank" href={project.URL} className='preview-btn'>Browser</a>
                     </div>
                     {
                         previewMode == "mobile" ?
@@ -145,6 +148,7 @@ export default function PartnerDetail() {
                                 }
                             </div> : <div></div>
                     }
+
                 </div>
             </div>
             <div className='project-split'>

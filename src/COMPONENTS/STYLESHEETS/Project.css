@@ -28,7 +28,12 @@ font-family: 'Rubik', sans-serif;
         border-top-right-radius: 20px;
 
     }
-
+    .preview-btn-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5em;
+        padding: 0 1em;
+    }
     .project-previews h2 {
         font-size: 1.7em;
         padding: 0 0.6em;
@@ -67,9 +72,9 @@ font-family: 'Rubik', sans-serif;
     .preview-btn {
         background-color: #C9FD3A;
         color: #121519;
-        padding: 0.8em;
-        min-width: 300px;
-        max-width: 300px;
+        padding: 0.7em;
+        /* min-width: 200px;
+        max-width: 200px; */
         border: 0;
         font-family: 'Rubik', sans-serif;
         font-weight: 500;
@@ -78,6 +83,9 @@ font-family: 'Rubik', sans-serif;
         border-radius: 10px;
         display: block;
         margin: 0 auto;
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
     }
 
     .back {
@@ -239,11 +247,12 @@ font-family: 'Rubik', sans-serif;
     }
     .preview-btn {
         margin: 0;
+        min-width: 150px;
     }
     .preview-btn-split {
         display: flex;
         padding: 0 1em;
-        gap: 1em;
+        width: fit-content;
     }
 }
 
