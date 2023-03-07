@@ -1,5 +1,5 @@
 /* FONTS
-font-family: 'Rubik', sans-serif;
+font-family: 'Roboto', sans-serif;
 */
 
 @media only screen and (min-width: 325px) {
@@ -36,7 +36,7 @@ font-family: 'Rubik', sans-serif;
         display: block;
         color: white;
         text-decoration: none;
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Roboto', sans-serif;
         font-size: 2em;
         text-align: center;
         padding: 0.3em 0.7em;
@@ -47,7 +47,7 @@ font-family: 'Rubik', sans-serif;
     }
     .nav-footer {
         color: #808080;
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Roboto', sans-serif;
         font-size: 0.8em;
         position: absolute;
         bottom: 1em;
@@ -59,7 +59,7 @@ font-family: 'Rubik', sans-serif;
         display: block;
         color: rgb(128, 170, 254);
         text-decoration: none;
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Roboto', sans-serif;
         font-size: 1.2em;
         text-align: center;
         padding: 0.3em 0.7em;

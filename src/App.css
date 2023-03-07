@@ -9,7 +9,7 @@ body {
 }
 
 /* FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800;900&display=swap');
 
 .main {
   background-color: #151d29;
@@ -88,13 +88,13 @@ body {
   color: #1511ed
 }
 .light-red {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.6em;
   color: rgb(255, 16, 76);
 }
 
 .font {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 .underline {
   border-bottom: 1px solid #1511ed;

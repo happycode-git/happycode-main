@@ -14,6 +14,7 @@ import partnerReducer from './REDUCERS/PartnerSlice'
 import allTicketsReducer from './REDUCERS/AllTicketsSlice'
 import prospectsReducer from './REDUCERS/ProspectsSlice'
 import outlineReducer from './REDUCERS/OutlineSlice'
+import buildsReducer from './REDUCERS/BuildsSlice'
 
 export default configureStore({
     reducer: {
@@ -31,6 +32,7 @@ export default configureStore({
         partner: partnerReducer,
         alltickets: allTicketsReducer,
         prospects: prospectsReducer,
-        outline: outlineReducer
+        outline: outlineReducer,
+        builds: buildsReducer
     },
 })

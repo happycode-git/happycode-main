@@ -1,5 +1,5 @@
 /* FONTS
-font-family: 'Rubik', sans-serif;
+font-family: 'Roboto', sans-serif;
 */
 /* COLORS
 #1E232B - Dark
@@ -12,14 +12,14 @@ font-family: 'Rubik', sans-serif;
 @media only screen and (min-width: 350px) {
     .project-title {
         font-size: 2em;
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Roboto', sans-serif;
         letter-spacing: -2px;
         font-weight: 500;
     }
 
     .project-previews {
         margin: 1em auto;
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Roboto', sans-serif;
         font-weight: 500;
         background-color: #FEFEFF;
         color: #1E232B;
@@ -28,12 +28,14 @@ font-family: 'Rubik', sans-serif;
         border-top-right-radius: 20px;
 
     }
+
     .preview-btn-split {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0.5em;
         padding: 0 1em;
     }
+
     .project-previews h2 {
         font-size: 1.7em;
         padding: 0 0.6em;
@@ -76,7 +78,7 @@ font-family: 'Rubik', sans-serif;
         /* min-width: 200px;
         max-width: 200px; */
         border: 0;
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Roboto', sans-serif;
         font-weight: 500;
         font-size: 1.2em;
         letter-spacing: -1px;
@@ -111,13 +113,13 @@ font-family: 'Rubik', sans-serif;
         padding: 0.8em 4em;
         font-size: 1em;
         border-radius: 30px;
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Roboto', sans-serif;
         font-weight: 500;
         /* Hello */
     }
 
     .project {
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Roboto', sans-serif;
     }
 
     .project h1 {
@@ -158,7 +160,7 @@ font-family: 'Rubik', sans-serif;
     .tickets {
         background-color: #FEFEFF;
         color: #121519;
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Roboto', sans-serif;
         border-radius: 20px;
     }
 
@@ -222,6 +224,95 @@ font-family: 'Rubik', sans-serif;
         font-weight: 500;
         padding: 0.8em;
     }
+
+    .builds-btn {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: rgba(0, 0, 0, 0);
+        color: #C9FD3A;
+        border: 0px solid rgba(0, 0, 0, 0);
+        font-size: 2.2em;
+        padding-right: 0.5em;
+    }
+
+    .builds {
+        padding: 1em;
+        font-family: 'Roboto', sans-serif;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: #121519;
+        overflow-y: scroll;
+    }
+
+    .build-icon {
+        font-size: 2em;
+    }
+
+    .build-form {
+        background-color: #FEFEFF;
+        padding: 1em;
+        color: #121519;
+        border-radius: 5px;
+    }
+
+    .build-form-pair label {
+        font-size: 0.9em;
+    }
+
+    .build-form-pair textarea {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        min-height: 100px;
+        font-family: 'Roboto', sans-serif;
+        padding: 1em;
+        font-size: 0.9em;
+        background-color: #e7e7fc;
+        border: 0px solid rgba(0, 0, 0, 0);
+        border-radius: 5px;
+    }
+
+    .build-form button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 100%;
+        padding: 0.8em;
+        margin-top: 1em;
+        border: 0px solid rgba(0, 0, 0, 0);
+        background-color: #2249f7;
+        color: #FEFEFF;
+        border-radius: 5px;
+    }
+
+    .build-form-pair {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5em;
+    }
+
+    .builds-wrap {
+        padding: 1em;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.8em;
+    }
+
+    .build-date {
+        font-size: 0.8em;
+        color: #C9FD3A;
+    }
+
+    .build-admin {
+        font-size: 0.8em;
+        color: #c1c1c2
+    }
+
+    .build-desc {
+        font-size: 0.8em;
+        padding: 0.3em 0;
+    }
 }
 
 @media only screen and (min-width: 600px) {
@@ -230,6 +321,9 @@ font-family: 'Rubik', sans-serif;
         grid-template-columns: 1fr 1fr;
         padding: 1em;
         gap: 1em;
+    }
+    .builds {
+        max-width: 350px;
     }
 }
 
@@ -245,10 +339,12 @@ font-family: 'Rubik', sans-serif;
         overflow-y: scroll;
         max-height: 600px;
     }
+
     .preview-btn {
         margin: 0;
         min-width: 150px;
     }
+
     .preview-btn-split {
         display: flex;
         padding: 0 1em;

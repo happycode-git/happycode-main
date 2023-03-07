@@ -17,6 +17,7 @@ import { setOutlineState } from './REDUX/REDUCERS/OutlineSlice'
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { randomString } from "./Global";
 import { setProjectState } from "./REDUX/REDUCERS/ProjectSlice";
+import { setBuildsState } from './REDUX/REDUCERS/BuildsSlice'
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -598,6 +599,27 @@ export const editProspectDoc = async (pros) => {
     BusinessType: pros.BusinessType,
     Details: pros.Details
   });
+}
+export const setBuildInfo = async (partnerID, projectID, args) => {
+  await setDoc(doc(db, "Members", partnerID, "Projects", projectID, "Builds", args.id), {
+    Date: args.Date,
+    Admin: args.Admin,
+    Desc: args.Desc,
+  });
+}
+export const getBuildInfo = async (partnerID, projectID, setTempBuilds) => {
+  var builds = []
+  const querySnapshot = await getDocs(collection(db, "Members", partnerID, "Projects", projectID, "Builds"), orderBy("Date", "desc"));
+  querySnapshot.forEach((doc) => {
+    const build = {
+      id: doc.id,
+      Date: doc.data().Date,
+      Admin: doc.data().Admin,
+      Desc: doc.data().Desc
+    }
+    builds.push(build)
+  });
+  setTempBuilds(builds)
 }
 
 // AUTH

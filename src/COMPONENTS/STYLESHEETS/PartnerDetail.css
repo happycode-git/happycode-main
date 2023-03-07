@@ -1,5 +1,5 @@
 /* FONTS
-font-family: 'Rubik', sans-serif;
+font-family: 'Roboto', sans-serif;
 */
 /* COLORS
 #1E232B - Dark
@@ -11,7 +11,7 @@ font-family: 'Rubik', sans-serif;
 
 @media only screen and (min-width: 350px) {
     .partner-name {
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Roboto', sans-serif;
         font-size: 1.1em;
         letter-spacing: -1px;
     }
@@ -22,7 +22,7 @@ font-family: 'Rubik', sans-serif;
         border-radius: 20px;
     }
     .add-project-btn {
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Roboto', sans-serif;
         border: 0;
         padding: 1em;
         background-color: #2249f7;

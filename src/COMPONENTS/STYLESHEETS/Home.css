@@ -1,11 +1,11 @@
 /* FONTS
-font-family: 'Rubik', sans-serif;
+font-family: 'Roboto', sans-serif;
 */
 
 @media only screen and (min-width: 325px) {
     .home-panel1 {
         padding: 1em;
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Roboto', sans-serif;
 
     }
 
@@ -40,7 +40,7 @@ font-family: 'Rubik', sans-serif;
     }
 
     .home-panel2 {
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Roboto', sans-serif;
         color: #1E232B;
         background-color: #FEFEFF;
         border-top-left-radius: 20px;
@@ -106,7 +106,7 @@ font-family: 'Rubik', sans-serif;
 
     .home-panel3 {
         padding-top: 4em;
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Roboto', sans-serif;
     }
 
     .home-panel3 h1 {

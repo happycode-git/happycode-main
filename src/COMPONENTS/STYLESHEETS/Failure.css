@@ -1,5 +1,5 @@
 /* FONTS
-font-family: 'Rubik', sans-serif;
+font-family: 'Roboto', sans-serif;
 */
 /* COLORS
 #1E232B - Dark
@@ -17,7 +17,7 @@ font-family: 'Rubik', sans-serif;
         width: 100vw;
         background-color: rgba(0,0,0,0.8);
         z-index: 1000;
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Roboto', sans-serif;
         
     }
     .failure-block {

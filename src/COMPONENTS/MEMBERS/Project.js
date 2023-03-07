@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useAsyncError, useNavigate } from 'react-router'
+import { useNavigate } from 'react-router'
+import { IoMdListBox } from 'react-icons/io'
+import { HiOutlineXMark } from 'react-icons/hi2'
 // 
 import '../STYLESHEETS/Project.css'
 // 
@@ -8,7 +10,7 @@ import { BsChevronLeft, BsFillArrowRightCircleFill } from 'react-icons/bs'
 import { RxDotFilled } from 'react-icons/rx'
 import { IoChevronUpCircleOutline, IoChevronDownCircleOutline } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
-import { getTickets } from '../../firebase'
+import { getBuildInfo, getTickets } from '../../firebase'
 import { FaClipboardList } from 'react-icons/fa'
 
 export default function Project() {
@@ -22,6 +24,8 @@ export default function Project() {
     const [chosenTicketID, setChosenTicketID] = useState("")
     const [websiteURL, setWebsiteURL] = useState("")
     const [previewMode, setPreviewMode] = useState("")
+    const [showBuilds, setShowBuilds] = useState(false)
+    const [tempBuilds, setTempBuilds] = useState([])
 
     useEffect(() => {
         console.log(user)
@@ -43,7 +47,7 @@ export default function Project() {
             </div>
 
             <div className='project-previews'>
-            <div className='flex'>
+                <div className='flex'>
                     <h2>Website Previews</h2>
                     <FaClipboardList className='outline-icon' onClick={() => { navigate('/projectoutline') }} />
                 </div>
@@ -54,8 +58,9 @@ export default function Project() {
                 </div>
                 <div className='project-previews-split'>
                     <div className='preview-btn-split'>
-                        <button className='preview-btn' onClick={() => { previewMode != "mobile" ? setPreviewMode("mobile") : setPreviewMode("") }}>View in Mobile</button>
-                        {window.innerWidth >= 800 ? <button className='preview-btn' onClick={() => { previewMode != "desktop" ? setPreviewMode("desktop") : setPreviewMode("") }}>View in Desktop</button> : <p></p>}
+                        <button className='preview-btn' onClick={() => { previewMode != "mobile" ? setPreviewMode("mobile") : setPreviewMode("") }}>Mobile</button>
+                        {window.innerWidth >= 800 ? <button className='preview-btn' onClick={() => { previewMode != "desktop" ? setPreviewMode("desktop") : setPreviewMode("") }}>Desktop</button> : null}
+                        <a target="_blank" href={project.URL} className='preview-btn'>Browser</a>
                     </div>
                     {
                         previewMode == "mobile" ?
@@ -81,9 +86,16 @@ export default function Project() {
             </div>
             <div className='project-split'>
                 <div className='project'>
-                    <h1>Project Info</h1>
-                    <p className='project-info-caption'>Review the details below to get more information on the current state of your project.</p>
-
+                    <div className='flex'>
+                        <div>
+                            <h1>Project Info</h1>
+                            <p className='project-info-caption'>Review the details below to get more information on the current state of your project.</p>
+                        </div>
+                        <button onClick={() => {
+                            getBuildInfo(user.id, project.id, setTempBuilds)
+                            setShowBuilds(true);
+                        }} className='builds-btn'><IoMdListBox /></button>
+                    </div>
                     <div className='project-details'>
                         <div className='project-details-block'>
                             <h3>Project Title:</h3>
@@ -142,6 +154,31 @@ export default function Project() {
                     <button className='tickets-more-btn' onClick={() => { navigate('/tickets') }}>View All Tickets</button>
                 </div>
             </div>
+            {showBuilds ?
+                <div className='builds'>
+                    <div className='flex'>
+                        <h1>Project Builds</h1>
+                        <HiOutlineXMark className="build-icon" onClick={() => { setShowBuilds(false) }} />
+                    </div>
+                    <br />
+                    <div className='builds-wrap'>
+                        {
+                            tempBuilds.map((build, i) => {
+                                return (
+                                    <div key={i} className=''>
+                                        <div className='flex'>
+                                            <p className='build-date'>{`${new Date(build.Date.seconds * 1000).toDateString()}`}</p>
+                                            <p className='build-admin'>{build.Admin}</p>
+                                        </div>
+                                        <p className='build-desc'>{build.Desc}</p>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                </div> : <div></div>
+            }
+
             <div className='home-panel3'>
                 <h1>Every thing Bagel</h1>
             </div>

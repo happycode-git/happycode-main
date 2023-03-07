@@ -1,5 +1,5 @@
 /* FONTS
-font-family: 'Rubik', sans-serif;
+font-family: 'Roboto', sans-serif;
 */
 /* COLORS
 #1E232B - Dark
@@ -11,7 +11,7 @@ font-family: 'Rubik', sans-serif;
 
 @media only screen and (min-width: 350px) {
     .prospects {
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Roboto', sans-serif;
         background-color: #FEFEFF;
         padding: 1em;
         border-top-left-radius: 20px;
@@ -81,7 +81,7 @@ font-family: 'Rubik', sans-serif;
     }
 
     .prospect-ta {
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Roboto', sans-serif;
         background-color: #ddddddcb;
         padding: 0.8em;
         border: 0;

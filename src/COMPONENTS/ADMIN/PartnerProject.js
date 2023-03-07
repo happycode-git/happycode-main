@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 // 
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom';
-import { completePartnerTicket, getTicketCount, getTickets, rejectPartnerTicket, updateFirebaseURL, updateDropboxURL } from '../../firebase';
+import { completePartnerTicket, getTicketCount, getTickets, rejectPartnerTicket, updateFirebaseURL, updateDropboxURL, setBuildInfo, getBuildInfo } from '../../firebase';
 // 
 import '../STYLESHEETS/PartnerProject.css'
 // 
@@ -15,6 +15,10 @@ import { setConfirmationState } from '../../REDUX/REDUCERS/ConfirmationSlice';
 import { setFailureState } from '../../REDUX/REDUCERS/FailureSlice';
 import { FaClipboardList } from 'react-icons/fa';
 import { MdOpenInBrowser } from 'react-icons/md'
+import { IoMdListBox } from 'react-icons/io'
+import { HiOutlineXMark } from 'react-icons/hi2'
+import { randomString } from '../../Global';
+import { Timestamp } from 'firebase/firestore';
 
 export default function PartnerDetail() {
     const admin = useSelector((state) => state.admin.value)
@@ -28,6 +32,8 @@ export default function PartnerDetail() {
     const [chosenTicketID, setChosenTicketID] = useState("")
     const [websiteURL, setWebsiteURL] = useState("")
     const [previewMode, setPreviewMode] = useState("")
+    const [showBuilds, setShowBuilds] = useState(false)
+    const [tempBuilds, setTempBuilds] = useState([])
 
     const completeTicket = (ticketID, ticket) => {
         dispatch(setLoadingState(true))
@@ -120,7 +126,7 @@ export default function PartnerDetail() {
                 <div className='project-URL'>
                     <input id="tbURL" type="text" placeholder='Website URL' className='webline-app-input' />
                     <button className='project-URL-btn' onClick={() => { setWebsiteURL(document.querySelector('#tbURL').value) }}><BsFillArrowRightCircleFill /></button>
-                    
+
                 </div>
                 <div className='project-previews-split'>
                     <div className='preview-btn-split'>
@@ -153,9 +159,16 @@ export default function PartnerDetail() {
             </div>
             <div className='project-split'>
                 <div className='project'>
-                    <h1>Project Info</h1>
-                    <p className='project-info-caption'>Review the details below to get more information on the current state of your project.</p>
-
+                    <div className='flex'>
+                        <div>
+                            <h1>Project Info</h1>
+                            <p className='project-info-caption'>Review the details below to get more information on the current state of your project.</p>
+                        </div>
+                        <button onClick={() => {
+                            getBuildInfo(partner.id, project.id, setTempBuilds)
+                            setShowBuilds(true);
+                        }} className='builds-btn'><IoMdListBox /></button>
+                    </div>
                     <div className='project-details'>
                         <div className='project-details-block'>
                             <h3>Project Title:</h3>
@@ -247,8 +260,64 @@ export default function PartnerDetail() {
                     }
                     <button className='tickets-more-btn' onClick={() => { navigate('/partnertickets') }}>View All Tickets</button>
                 </div>
+
+
             </div>
             <button className='create-ticket-btn' onClick={() => { navigate('/partnerticketform') }}>+ Ticket</button>
+
+            {showBuilds ?
+                <div className='builds'>
+                    <div className='flex'>
+                        <h1>Project Builds</h1>
+                        <HiOutlineXMark className="build-icon" onClick={() => { setShowBuilds(false) }} />
+                    </div>
+                    <br />
+                    <div className='build-form'>
+                        <div className='build-form-pair'>
+                            <label>Build Description</label>
+                            <textarea id="taBuildDesc" placeholder='Enter the build information so the partner knows what changes were made.'></textarea>
+                        </div>
+                        <button onClick={() => {
+                            const desc = document.querySelector('#taBuildDesc').value
+                            if (desc != "") {
+                                const id = randomString(25)
+                                setBuildInfo(partner.id, project.id, {
+                                    id: id,
+                                    Desc: desc,
+                                    Admin: `${admin.FirstName} ${admin.LastName}`,
+                                    Date: Timestamp.fromDate(new Date())
+                                })
+                                    .then(() => {
+                                        desc = ""
+                                    })
+                                const builds = [{
+                                    id: id,
+                                    Desc: desc,
+                                    Admin: `${admin.FirstName} ${admin.LastName}`,
+                                    Date: Timestamp.fromDate(new Date())
+                                }, ...tempBuilds]
+                                setTempBuilds(builds)
+                            }
+
+                        }}>Submit Build Info</button>
+                    </div>
+                    <div className='builds-wrap'>
+                        {
+                            tempBuilds.map((build, i) => {
+                                return (
+                                    <div key={i} className=''>
+                                        <div className='flex'>
+                                            <p className='build-date'>{`${new Date(build.Date.seconds * 1000).toDateString()}`}</p>
+                                            <p className='build-admin'>{build.Admin}</p>
+                                        </div>
+                                        <p className='build-desc'>{build.Desc}</p>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                </div> : <div></div>
+            }
         </div>
     )
 }

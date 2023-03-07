@@ -1,5 +1,5 @@
 /* FONTS
-font-family: 'Rubik', sans-serif;
+font-family: 'Roboto', sans-serif;
 */
 /* COLORS
 #1E232B - Dark
@@ -47,7 +47,7 @@ font-family: 'Rubik', sans-serif;
     }
 
     .project-info-input {
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Roboto', sans-serif;
         background-color: #eaeaf2;
         padding: 0.5em;
         width: 345px;
