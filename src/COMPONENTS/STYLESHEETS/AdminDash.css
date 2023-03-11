@@ -52,14 +52,16 @@ font-family: 'Roboto', sans-serif;
         padding: 0.4em 0.8em;
         border-top: 1px solid #1E232B;
         border-bottom: 1px solid #1E232B;
+        font-size: 0.9em;
     }
 
     .partner-block {
         padding: 0.4em 0.8em;
         border-bottom: 1px solid #1E232B;
+        font-size: 0.9em;
     }
     .partner-name {
-        font-size: 0.8em;
+        font-size: 0.7em;
         font-weight: 400;
     }
     .partner-contact {

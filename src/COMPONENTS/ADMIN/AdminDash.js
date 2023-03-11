@@ -54,7 +54,6 @@ export default function AdminDash() {
                   <div className='flex'>
                     <div className='together'>
                       <h2 className="partner-name ticket-count bg-purple white" style={{ marginRight: "0.5em" }}>{partner.TicketCount}</h2>
-
                       <p className='partner-name'>{partner.BusinessName} - {partner.FirstName} {partner.LastName}</p>
                     </div>
                     <BsArrowRightCircle onClick={() => {

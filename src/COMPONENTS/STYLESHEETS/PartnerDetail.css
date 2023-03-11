@@ -17,9 +17,9 @@ font-family: 'Roboto', sans-serif;
     }
 
     .partner-info {
-        background-color: #131519;
         padding: 1em;
-        border-radius: 20px;
+        border-radius: 10px;
+        
     }
     .add-project-btn {
         font-family: 'Roboto', sans-serif;
@@ -31,6 +31,13 @@ font-family: 'Roboto', sans-serif;
         border-radius: 10px;
         font-weight:400;
         font-size: 1em;
+    }
+    .project-details {
+        padding: 1.5em;
+    }
+    .project-details-block p {
+        font-size: 0.9em;
+        font-weight: 400;
     }
     
 }

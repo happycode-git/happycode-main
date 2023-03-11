@@ -138,9 +138,9 @@ font-family: 'Roboto', sans-serif;
 
     .project-details {
         margin: 1em 0;
-        background-color: #121519;
+        background-color: #1a232d;
         padding: 1em;
-        border-radius: 20px;
+        border-radius: 10px;
         display: grid;
         grid-template-columns: 1fr;
         gap: 1em;
@@ -161,7 +161,7 @@ font-family: 'Roboto', sans-serif;
         background-color: #FEFEFF;
         color: #121519;
         font-family: 'Roboto', sans-serif;
-        border-radius: 20px;
+        border-radius: 5px;
     }
 
     .tickets h1 {

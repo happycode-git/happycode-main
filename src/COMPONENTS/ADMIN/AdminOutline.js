@@ -952,6 +952,34 @@ export default function AdminOutline() {
                                 <div>
                                     <div className='flex'>
                                         <div className='together'>
+                                            <h2>Tutorials</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/tutorials"><BsEye color="161D29" /></a>
+                                        </div>
+                                        <h3>$200</h3>
+                                    </div>
+                                    <p>For courses or classes, the tutorials page allows a series of videos as well as YouTube links to be displayed ina clean and clear layout.</p>
+                                </div>
+                                <div><BsArrowRightCircle onClick={() => {
+                                    var tempArr = [...pages]
+                                    const page = {
+                                        id: randomString(20), Info: "",
+                                        Name: "Tutorials",
+                                        Details: "For courses or classes, the tutorials page allows a series of videos as well as YouTube links to be displayed ina clean and clear layout.",
+                                        Price: 200,
+                                        URL: "https://happy-code-templates.web.app/tutorials"
+                                    }
+                                    tempArr.push(page)
+                                    setPages(tempArr)
+                                    addOutlinePage(partner.id, project, page, pages, dispatch)
+
+
+                                    setTogglePageList(false)
+                                }} className='shopper-newpage-block-icon' /></div>
+                            </div>
+                            <div className='shopper-newpage-block'>
+                                <div>
+                                    <div className='flex'>
+                                        <div className='together'>
                                             <h2>Menu (Simple)</h2>
                                             <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/menu"><BsEye color="161D29" /></a>
                                         </div>
