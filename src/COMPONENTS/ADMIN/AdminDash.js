@@ -47,6 +47,9 @@ export default function AdminDash() {
               <Link to="/newpartner" className='admin-plus'>New Partner</Link>
             </div>
           </div>
+          <div>
+            <input type="text" className='tb-search' id="tbSearch" placeholder='Search for a partner' />
+          </div>
           {
             partners.map((partner, i) => {
               return (

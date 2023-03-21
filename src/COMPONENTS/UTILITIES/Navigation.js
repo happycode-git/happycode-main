@@ -31,11 +31,13 @@ export default function Navigation() {
         <div className='nav-links'>
           <Link to="/" className='nav-link'>Home</Link>
           <Link to="/webline" className='nav-link rotate bg-purple white'>Webline</Link>
-          <Link to="/appline" className='nav-link'>Appline</Link>
+          {/* <Link to="/appline" className='nav-link'>Appline</Link> */}
           <Link to="/products" className='nav-link rotate bg-purple'>Products</Link>
           <Link to="/support" className='nav-link'>Support</Link>
-          <Link to="/blog" className='nav-link'>Blog</Link>
+          {/* <Link to="/blog" className='nav-link'>Blog</Link> */}
           <Link to="/contact" className='nav-link'>Contact</Link>
+
+          
           <Link to="/admin" className='small-nav-link'>Admin</Link>
         </div>
 
