@@ -51,6 +51,7 @@ export default function Newproject() {
                 dispatch(setConfirmationState(true))
                 setTimeout(() => {
                     dispatch(setConfirmationState(false))
+                    navigate("/admindash")
                 }, 3000);
             })
             .catch(() => {

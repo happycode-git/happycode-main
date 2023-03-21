@@ -28,7 +28,8 @@ export default function PartnerTicketForm() {
         dispatch(setLoadingState(true))
         const subject = document.querySelector('#tbSubject').value
         const page = document.querySelector('#tbPage').value
-        const desc = document.querySelector('#taDesc').value
+        var desc = document.querySelector('#taDesc').value
+        desc = desc.replaceAll("\n", "jjj")
 
         if (subject != "" && page != "" && desc != "") {
             const ticket = {

@@ -145,7 +145,7 @@ export default function Project() {
                                     </div>
                                     {
                                         chosenTicketID == tik.id ?
-                                            <p className='ticket-desc'>{tik.Description}</p> : <p></p>
+                                            <p className='ticket-desc'>{tik.Description.replaceAll("jjj", "\n")}</p> : <p></p>
                                     }
                                 </div>
                             )

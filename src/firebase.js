@@ -262,7 +262,7 @@ export const getOutline = async (userID, projectID, dispatch, setPages, setTotal
   setTotal(temp)
 }
 // 
-export const getPartners = async (dispatch) => {
+export const getPartners = async (dispatch, setTempPartners) => {
   const q = query(collection(db, "Members"), orderBy("TicketCount", "desc"));
   const querySnapshot = await getDocs(q);
   const partners = []
@@ -286,7 +286,7 @@ export const getPartners = async (dispatch) => {
   });
 
   dispatch(setPartnersState(partners))
-
+  setTempPartners(partners)
 }
 export const getPartnerProjects = async (memberID, dispatch) => {
   const q = query(collection(db, "Members", memberID, "Projects"), orderBy("Name"));

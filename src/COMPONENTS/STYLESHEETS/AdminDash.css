@@ -60,17 +60,21 @@ font-family: 'Roboto', sans-serif;
         border-bottom: 1px solid #1E232B;
         font-size: 0.9em;
     }
+
     .partner-name {
         font-size: 0.7em;
         font-weight: 400;
     }
+
     .partner-contact {
         font-size: 0.7em;
         margin-left: 0.6em;
     }
+
     .partner-icon {
         font-size: 1.6em;
     }
+
     .admin-plus {
         text-decoration: none;
         color: #FEFEFF;
@@ -79,18 +83,25 @@ font-family: 'Roboto', sans-serif;
         margin-right: 1em;
         border-radius: 8px;
     }
+
     .ticket-count {
         padding: 0.2em 0.5em;
         border-radius: 5px;
     }
+
     .tb-search {
         -webkit-appearance: none;
         -moz-appearance: none;
         width: 100%;
         padding: 0.8em;
         font-family: 'Roboto', sans-serif;
-        border: 0px solid rgba(0,0,0,0);
+        border: 0px solid rgba(0, 0, 0, 0);
         background-color: #e7ebff;
+        font-size: 1em;
+    }
+
+    .tb-search:focus {
+        outline: none;
     }
 }
 

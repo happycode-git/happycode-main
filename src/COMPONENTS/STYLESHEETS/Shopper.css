@@ -198,6 +198,7 @@ font-family: 'Roboto', sans-serif;
     .shopper-newpage-wrap {
         display: grid;
         grid-template-columns: 1fr;
+        padding: 0.8em;
     }
 
     .tier {
@@ -262,6 +263,7 @@ font-family: 'Roboto', sans-serif;
 @media only screen and (min-width: 600px) {
     .shopper-newpage-wrap {
         grid-template-columns: 1fr 1fr;
+        padding: 1em;
     }
 
     .shopper-newpage-block-icon {
@@ -322,5 +324,6 @@ font-family: 'Roboto', sans-serif;
 
     .shopper-newpage-wrap {
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding: 1.3em;
     }
 }

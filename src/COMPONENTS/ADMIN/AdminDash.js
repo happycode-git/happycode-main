@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom';
 // 
@@ -18,6 +18,21 @@ export default function AdminDash() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
+  const [tempPartners, setTempPartners] = useState([])
+
+  const searchPartner = () => {
+    const text = document.querySelector("#tbSearch").value
+    if (text == "") {
+      setTempPartners(partners)
+    } else {
+      var thing = partners.filter(function (el) {
+        return el.BusinessName.toLowerCase().includes(text.toLowerCase())
+      });
+      setTempPartners(thing)
+    }
+
+  }
+
   useEffect(() => {
     console.log(admin)
     if (admin.id == null) {
@@ -25,7 +40,7 @@ export default function AdminDash() {
       return
     }
     window.scrollTo(0, 0)
-    getPartners(dispatch)
+    getPartners(dispatch, setTempPartners)
   }, [])
 
   return (
@@ -48,10 +63,10 @@ export default function AdminDash() {
             </div>
           </div>
           <div>
-            <input type="text" className='tb-search' id="tbSearch" placeholder='Search for a partner' />
+            <input type="text" className='tb-search' id="tbSearch" placeholder='Search for a partner...' onChange={searchPartner} />
           </div>
           {
-            partners.map((partner, i) => {
+            tempPartners.map((partner, i) => {
               return (
                 <div className={`${"partner-block"}${i == 0 ? "1" : ""}`} key={i}>
                   <div className='flex'>

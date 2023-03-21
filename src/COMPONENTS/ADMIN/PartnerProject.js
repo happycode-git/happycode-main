@@ -237,7 +237,7 @@ export default function PartnerDetail() {
                                     {
                                         chosenTicketID == tik.id ?
                                             <div>
-                                                <p className='ticket-desc'>{tik.Description}</p>
+                                                <p className='ticket-desc'>{tik.Description.replaceAll("jjj",`\n`)}</p>
                                                 <div className='flex'>
                                                     <h2 className='ticket-id bg-purple light'>Ticket #{tik.id}</h2>
                                                     <div className='together'>

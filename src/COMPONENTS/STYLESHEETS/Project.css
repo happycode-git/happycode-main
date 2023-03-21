@@ -209,6 +209,9 @@ font-family: 'Roboto', sans-serif;
         padding: 0.3em 0em;
         font-size: 0.9em;
         font-weight: 200;
+        display: block;
+        white-space: pre-line;
+        margin: 1em 0;
     }
 
     .tickets-more-btn {
