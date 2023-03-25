@@ -9,6 +9,8 @@ import { firebaseSignIn } from '../firebase'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { setLoadingState } from '../REDUX/REDUCERS/LoadingSlice'
+// 
+import video1 from '../VIDEOS/Screen Recording 2023-03-25 at 4.08.50 PM.mov'
 
 export default function Webline() {
     const siteAlertState = useSelector((state) => state.siteAlert.value)
@@ -59,6 +61,10 @@ export default function Webline() {
                 <h2>
                     We partner with businesses who want a strong presence. To be top ranked in searches or advertising, a website must be in tip-top shape.
                 </h2>
+            </div>
+            <div className='webline-panel2-1'>
+                <video src={video1} controls="true" autoPlay="true" loop="true"></video>
+                <a href="https://happy-code-template-sample.web.app" target="_blank" className='sample-link'>View Sample</a>
             </div>
             <div className='split'>
                 <div className='webline-panel3'>

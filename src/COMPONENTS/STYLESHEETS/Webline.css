@@ -220,24 +220,29 @@ font-family: 'Roboto', sans-serif;
         color: #FEFEFF;
         border-radius: 5px;
     }
+
     .webline-app-top p {
         font-size: 1em;
         line-height: 98%;
         padding: 1em 0em;
         font-weight: 300;
     }
+
     .webline-app-xmark {
         font-size: 2.5em;
     }
+
     .webline-app-form {
         padding: 0.8em;
     }
+
     .webline-app-label {
         letter-spacing: -1px;
         font-size: 1.1em;
         padding: 0.2em 0em;
         font-weight: 400;
     }
+
     .webline-app-input {
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -249,11 +254,13 @@ font-family: 'Roboto', sans-serif;
         margin-bottom: 0.5em;
         font-family: 'Roboto', sans-serif;
     }
+
     .webline-app-select {
         padding: 0.5em;
         width: 40%;
         margin-bottom: 0.5em;
     }
+
     .webline-app-textarea {
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -266,10 +273,12 @@ font-family: 'Roboto', sans-serif;
         min-height: 150px;
         font-family: 'Roboto', sans-serif;
     }
+
     .webline-app-form p {
         font-size: 0.8em;
         color: rgb(52, 133, 220);
     }
+
     .webline-app-form h3 {
         font-size: 1.4em;
         color: rgb(242, 79, 79);
@@ -277,11 +286,12 @@ font-family: 'Roboto', sans-serif;
         margin: 1em 0em;
         letter-spacing: -1px;
     }
+
     .webline-app-btn {
         -webkit-appearance: none;
         -moz-appearance: none;
         background-color: #C9FD3A;
-        color:#1E232B;
+        color: #1E232B;
         font-family: 'Roboto', sans-serif;
         font-size: 1.2em;
         padding: 0.5em;
@@ -291,9 +301,27 @@ font-family: 'Roboto', sans-serif;
         border: 0;
         border-radius: 10px;
     }
+
     .webline-site-err {
         color: red;
         font-display: 1em;
+    }
+
+    .webline-panel2-1 {
+        padding: 1em;
+    }
+
+    .webline-panel2-1 video {
+        width: 100%;
+    }
+
+    .sample-link {
+        display: block;
+        font-family: 'Roboto', sans-serif;
+        color: #C9FD3A;
+        font-size: 1.2em;
+        text-align: center;
+        padding: 0.5em;
     }
 }
 
@@ -332,16 +360,20 @@ font-family: 'Roboto', sans-serif;
     .webline-promo-text-important {
         font-size: 1.2em;
     }
+
     .webline-app {
         padding: 1em;
     }
+
     .webline-app-form {
         width: 80%;
         margin: 0em auto;
     }
+
     .webline-app-input {
         width: 100%;
     }
+
     .webline-app-textarea {
         width: 100%;
     }
@@ -372,12 +404,18 @@ font-family: 'Roboto', sans-serif;
         padding: 3.5em;
         width: 85%;
         margin: 0em auto;
-        
+
     }
+
     .webline-app {
         width: 85%;
         margin: 2em auto 0em auto;
     }
+
+    .sample-link {
+        font-size: 1.5em;
+    }
+
     /* .webline-app-input {
         min-width: 350px;
     } */
@@ -408,14 +446,21 @@ font-family: 'Roboto', sans-serif;
     .webline-steps p {
         font-size: 1.2em;
     }
+
     .webline-app {
         width: 75%;
     }
+
     .webline-app-top p {
         width: 90%;
         font-size: 1.3em;
     }
-    
+
+    .webline-panel2-1 video {
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -435,6 +480,7 @@ font-family: 'Roboto', sans-serif;
         padding: 2em;
         width: 90%;
     }
+
     .webline-app {
         margin-top: 4em;
         width: 50%;
