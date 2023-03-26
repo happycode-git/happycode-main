@@ -13,11 +13,12 @@ export default function Footer() {
             <div className='footer-links'>
                 <Link to="/" className='footer-link light'>Home</Link>
                 <Link to="/webline" className='footer-link light'>Webline</Link>
+                <Link to="/referrals" className='footer-link light'>Referrals</Link>
                 {/* <Link to="/appline" className='footer-link light'>Appline</Link> */}
                 {/* <Link to="/products" className='footer-link light'>Products</Link>
                 <Link to="/support" className='footer-link light'>Support</Link> */}
                 {/* <Link to="/blog" className='footer-link light'>Blog</Link> */}
-                {/* <Link to="/contact" className='footer-link light'>Contact</Link> */}
+                <Link to="/contact" className='footer-link light'>Contact</Link>
             </div>
             <p className='footer-copyright yellow'>
                 &copy; Happy Code 2022. All Rights Reserved.

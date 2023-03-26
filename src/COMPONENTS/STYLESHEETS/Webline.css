@@ -419,6 +419,14 @@ font-family: 'Roboto', sans-serif;
     /* .webline-app-input {
         min-width: 350px;
     } */
+    .pdf-wrap {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .pdf {
+        width: 100%;
+    }
 }
 
 @media only screen and (min-width: 1000px) {

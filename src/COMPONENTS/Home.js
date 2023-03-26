@@ -40,14 +40,14 @@ export default function Home() {
                         </div>
                         <Link to="webline" className='home-panel2-option-icon'> <BsArrowRightCircle /></Link>
                     </div>
-                    <div className='home-panel2-option'>
-                        {/* <HiDesktopComputer className='home-panel2-option-icon' /> */}
+                    {/* <div className='home-panel2-option'>
+                        <HiDesktopComputer className='home-panel2-option-icon' />
                         <div className='home-panel2-option-block'>
                             <h1>Appline</h1>
                             <p>Apps made for business solutions. Subscribe for maintenance services to keep your business running efficiently.</p>
                         </div>
                         <Link to="appline" className='home-panel2-option-icon'> <BsArrowRightCircle /></Link>
-                    </div>
+                    </div> */}
                     <div className='home-panel2-option'>
                         {/* <HiDesktopComputer className='home-panel2-option-icon' /> */}
                         <div className='home-panel2-option-block'>
@@ -56,14 +56,13 @@ export default function Home() {
                         </div>
                         <Link to="products" className='home-panel2-option-icon'> <BsArrowRightCircle /></Link>
                     </div>
-                    <div className='home-panel2-option'>
-                        {/* <HiDesktopComputer className='home-panel2-option-icon' /> */}
+                    {/* <div className='home-panel2-option'>
                         <div className='home-panel2-option-block'>
                             <h1>Idea Generator</h1>
                             <p>Do you have an app idea that you want to see come to life? We build websites and apps even for the most creative and outrageous ideas.</p>
                         </div>
                         <Link to="ideas" className='home-panel2-option-icon'> <BsArrowRightCircle /></Link>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className='home-panel3'>

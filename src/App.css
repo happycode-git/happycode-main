@@ -28,10 +28,15 @@ body {
   justify-content: space-between;
   padding: 0.1em 0;
 }
+
 .flex-around {
   align-items: center;
   display: flex;
   justify-content: space-around;
+}
+
+.padding {
+  padding: 1em;
 }
 
 /*  */
@@ -50,6 +55,9 @@ body {
 
 .bg-darker {
   background-color: #091018;
+}
+.bg-white {
+  background-color: white;
 }
 
 .light {
@@ -87,6 +95,7 @@ body {
 .blue {
   color: #1511ed
 }
+
 .light-red {
   font-family: 'Roboto', sans-serif;
   font-size: 1.6em;
@@ -96,6 +105,7 @@ body {
 .font {
   font-family: 'Roboto', sans-serif;
 }
+
 .underline {
   border-bottom: 1px solid #1511ed;
 }

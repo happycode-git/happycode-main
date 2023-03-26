@@ -3,6 +3,8 @@ import './App.css';
 import Home from './COMPONENTS/Home';
 import Projects from './COMPONENTS/MEMBERS/Projects';
 import Webline from './COMPONENTS/Webline';
+import Referrals from './COMPONENTS/Referrals'
+import Contact from './COMPONENTS/Contact'
 import Loading from './COMPONENTS/UTILITIES/Loading'
 // 
 import { useSelector } from 'react-redux'
@@ -47,6 +49,8 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/webline" element={<Webline />} />
         <Route exact path="/products" element={<Products />} />
+        <Route exact path="/referrals" element={<Referrals />} />
+        <Route exact path="/contact" element={<Contact />} />
         {/*  */}
         <Route exact path="/projects" element={<Projects />} />
         <Route exact path="/project" element={<Project />} />
