@@ -109,3 +109,34 @@ body {
 .underline {
   border-bottom: 1px solid #1511ed;
 }
+
+@media only screen and (min-width: 350px) {
+  .one-div {
+    width: 100vw;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .one-div {
+    width: 90vw !important;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .one-div {
+    width: 85vw !important;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .one-div {
+    width: 75vw !important;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .one-div {
+    width: 65vw !important;
+  }
+}
