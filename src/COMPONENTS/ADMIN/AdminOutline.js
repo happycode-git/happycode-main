@@ -805,6 +805,60 @@ export default function AdminOutline() {
                                     setTogglePageList(false)
                                 }} className='shopper-newpage-block-icon' /></div>
                             </div>
+                            <div className='shopper-newpage-block'>
+                                <div>
+                                    <div className='flex'>
+                                        <div className='together'>
+                                            <h2>Login/Members</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/login"><BsEye color="161D29" /></a>
+                                        </div>
+                                        <h3>$0</h3>
+                                    </div>
+                                    <p>Allow members to log in and with full authentication and member storage capabilities. Works with Shop, and Dashboard components.</p>
+                                </div>
+                                <div><BsArrowRightCircle onClick={() => {
+                                    var tempArr = [...pages]
+                                    const page = {
+                                        id: randomString(20), Info: "",
+                                        Name: "Login/Members",
+                                        Details: "Allow members to log in and with full authentication and member storage capabilities. Works with Shop, and Dashboard components.",
+                                        Price: 0,
+                                        URL: "https://happy-code-templates.web.app/login"
+                                    }
+                                    tempArr.push(page)
+                                    setPages(tempArr)
+                                    addOutlinePage(partner.id, project, page, pages, dispatch)
+                                    setTogglePageList(false)
+                                }} className='shopper-newpage-block-icon' /></div>
+                            </div>
+                            <div className='shopper-newpage-block'>
+                                <div>
+                                    <div className='flex'>
+                                        <div className='together'>
+                                            <h2>Dashboard</h2>
+                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/dashboard"><BsEye color="161D29" /></a>
+                                        </div>
+                                        <h3>$100</h3>
+                                    </div>
+                                    <p>Give members a way to view their data. Will come with many components that you can choose from. All data will be based on business type.</p>
+                                </div>
+                                <div><BsArrowRightCircle onClick={() => {
+                                    var tempArr = [...pages]
+                                    const page = {
+                                        id: randomString(20), Info: "",
+                                        Name: "Dashboard",
+                                        Details: "Give members a way to view their data. Will come with many components that you can choose from. All data will be based on business type.",
+                                        Price: 100,
+                                        URL: "https://happy-code-templates.web.app/dashboard"
+                                    }
+                                    tempArr.push(page)
+                                    setPages(tempArr)
+                                    addOutlinePage(partner.id, project, page, pages, dispatch)
+
+
+                                    setTogglePageList(false)
+                                }} className='shopper-newpage-block-icon' /></div>
+                            </div>
                         </div>
                         <h2 className='tier'>$$</h2>
                         <div className='shopper-newpage-wrap'>
@@ -1388,32 +1442,7 @@ export default function AdminOutline() {
                                     setTogglePageList(false)
                                 }} className='shopper-newpage-block-icon' /></div>
                             </div>
-                            <div className='shopper-newpage-block'>
-                                <div>
-                                    <div className='flex'>
-                                        <div className='together'>
-                                            <h2>Login/Members</h2>
-                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/login"><BsEye color="161D29" /></a>
-                                        </div>
-                                        <h3>$0</h3>
-                                    </div>
-                                    <p>Allow members to log in and with full authentication and member storage capabilities. Works with Shop, and Dashboard components.</p>
-                                </div>
-                                <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = [...pages]
-                                    const page = {
-                                        id: randomString(20), Info: "",
-                                        Name: "Login/Members",
-                                        Details: "Allow members to log in and with full authentication and member storage capabilities. Works with Shop, and Dashboard components.",
-                                        Price: 0,
-                                        URL: "https://happy-code-templates.web.app/login"
-                                    }
-                                    tempArr.push(page)
-                                    setPages(tempArr)
-                                    addOutlinePage(partner.id, project, page, pages, dispatch)
-                                    setTogglePageList(false)
-                                }} className='shopper-newpage-block-icon' /></div>
-                            </div>
+                            
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
@@ -1433,34 +1462,6 @@ export default function AdminOutline() {
                                         Details: "Allow members to sign up and with full authentication and member storage capabilities. Works with Shop, and Member Dashboard components.",
                                         Price: 400,
                                         URL: "https://happy-code-templates.web.app/signup"
-                                    }
-                                    tempArr.push(page)
-                                    setPages(tempArr)
-                                    addOutlinePage(partner.id, project, page, pages, dispatch)
-
-
-                                    setTogglePageList(false)
-                                }} className='shopper-newpage-block-icon' /></div>
-                            </div>
-                            <div className='shopper-newpage-block'>
-                                <div>
-                                    <div className='flex'>
-                                        <div className='together'>
-                                            <h2>Dashboard</h2>
-                                            <a className='template-icon' target="_blank" href="https://happy-code-templates.web.app/dashboard"><BsEye color="161D29" /></a>
-                                        </div>
-                                        <h3>$500</h3>
-                                    </div>
-                                    <p>Give members a way to view their data. Will come with many components that you can choose from. All data will be based on business type.</p>
-                                </div>
-                                <div><BsArrowRightCircle onClick={() => {
-                                    var tempArr = [...pages]
-                                    const page = {
-                                        id: randomString(20), Info: "",
-                                        Name: "Dashboard",
-                                        Details: "Give members a way to view their data. Will come with many components that you can choose from. All data will be based on business type.",
-                                        Price: 500,
-                                        URL: "https://happy-code-templates.web.app/dashboard"
                                     }
                                     tempArr.push(page)
                                     setPages(tempArr)
