@@ -33,7 +33,7 @@ export default function Webline() {
                 <h1>Become a referral today!</h1>
                 <p className='rotate apply-now'>Join Us!</p>
                 <h2>
-                    Get <b>50% commission</b> for every new partner you send our way. Once the website construction has begun, you will get your cut and be on your way. Easiest way to make money!
+                    Get <b>50% commission</b> for every new business you send our way. Once the website construction has begun, you will get your cut and be on your way. Easiest way to make money!
                 </h2>
             </div>
 
@@ -44,7 +44,7 @@ export default function Webline() {
                 <br />
                 <h3 className='webline-promo-title yellow'>1. Business Referral</h3>
                 <p className='webline-promo-text'>
-                    Refer the business to Happy Code Webline Services to construct and maintain their website. Business cards and contact information will be provided.
+                    Refer the business to Happy Code Webline Services to construct and maintain their website. Business cards and a spreadsheet will be provided to to keep track of all referrals. This way we know which businesses came from which referral specialist.
                 </p>
                 <p className='webline-promo-text'>
                     Businesses can apply online: <a className='webline-link' href="https://wearehappycode.com/webline">Happy Code Webline Services</a>
@@ -56,7 +56,7 @@ export default function Webline() {
                         <br />
                         <h1>Ex. $2000</h1>
                         <p className='webline-promo-text'>
-                            Once the website is made, mo maintenance will follow. The full price of the website will be charged.
+                            Once the website is made, no maintenance will follow. The full price of the website will be charged.
                         </p>
                     </div>
                     <div className='bg-purple padding'>
