@@ -62,6 +62,10 @@ export default function Webline() {
                     We partner with businesses who want a strong presence. To be top ranked in searches or advertising, a website must be in tip-top shape.
                 </h2>
             </div>
+            <div className='banner'>
+            <a href="/template" className=''>Check out the pages we offer!</a>
+            <p>We've provided a shopping list granting view of all pages that your business may need. More available pages will be added over time.</p>
+            </div>
             <div className='webline-panel2-1'>
                 <video src={video1} controls="true" autoPlay="true" loop="true"></video>
                 <a href="https://happy-code-template-sample.web.app" target="_blank" className='sample-link'>View Sample</a>

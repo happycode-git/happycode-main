@@ -26,6 +26,7 @@ import PartnerTicketForm from './COMPONENTS/ADMIN/PartnerTicketForm';
 import AdminOutline from './COMPONENTS/ADMIN/AdminOutline';
 import ProjectOutline from './COMPONENTS/MEMBERS/ProjectOutline'
 import Products from './COMPONENTS/Products';
+import Template from './COMPONENTS/Template'
 
 function App() {
   const loadingState = useSelector((state) => state.loading.value)
@@ -50,6 +51,7 @@ function App() {
         <Route exact path="/webline" element={<Webline />} />
         <Route exact path="/products" element={<Products />} />
         <Route exact path="/referrals" element={<Referrals />} />
+        <Route exact path="/template" element={<Template />} />
         <Route exact path="/contact" element={<Contact />} />
         {/*  */}
         <Route exact path="/projects" element={<Projects />} />

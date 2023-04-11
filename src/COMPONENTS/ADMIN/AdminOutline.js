@@ -1345,14 +1345,14 @@ export default function AdminOutline() {
                                         </div>
                                         <h3>$400</h3>
                                     </div>
-                                    <p>Allow your customers to schedule using a clean scheduler API which sends email confirmations and updates.</p>
+                                    <p>Allow your customers to schedule using a clean scheduler UI which sends email confirmations and updates.</p>
                                 </div>
                                 <div><BsArrowRightCircle onClick={() => {
                                     var tempArr = [...pages]
                                     const page = {
                                         id: randomString(20), Info: "",
                                         Name: "Schedule",
-                                        Details: "Allow your customers to schedule using a clean scheduler API which sends email confirmations and updates.",
+                                        Details: "Allow your customers to schedule using a clean scheduler UI which sends email confirmations and updates.",
                                         Price: 400,
                                         URL: "https://happy-code-templates.web.app/schedule"
                                     }

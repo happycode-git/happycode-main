@@ -327,6 +327,31 @@ font-family: 'Roboto', sans-serif;
     .webline-link {
         color: #C9FD3A;
     }
+
+    .banner {
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+        color: #1E232B;
+        background-color: #000000;
+        padding: 5em 0.8em;
+    }
+
+    .banner a {
+        display: block;
+        font-size: 1.4em;
+        font-weight: 800;
+        background-color: #ffffff;
+        padding: 0.3em;
+        color: #091018;
+        line-height: 1.6em;
+        border-radius: 6px;
+        text-decoration: none;
+        margin-bottom: 0.5em;
+    }
+
+    .banner p {
+        color: #C9FD3A
+    }
 }
 
 @media only screen and (min-width: 600px) {
@@ -381,6 +406,11 @@ font-family: 'Roboto', sans-serif;
     .webline-app-textarea {
         width: 100%;
     }
+
+    .banner {
+        padding-left: 5em;
+        padding-right: 5em;
+    }
 }
 
 @media only screen and (min-width: 800px) {
@@ -431,6 +461,11 @@ font-family: 'Roboto', sans-serif;
     .pdf {
         width: 100%;
     }
+
+    .banner {
+        padding-left: 10em;
+        padding-right: 10em;
+    }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -473,6 +508,11 @@ font-family: 'Roboto', sans-serif;
         width: 90%;
         margin: 0 auto;
     }
+
+    .banner {
+        padding-left: 18em;
+        padding-right: 18em;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -501,5 +541,10 @@ font-family: 'Roboto', sans-serif;
     .split {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .banner {
+        padding-left: 27em;
+        padding-right: 27em;
     }
 }
