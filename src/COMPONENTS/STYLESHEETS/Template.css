@@ -99,6 +99,7 @@ font-family: 'Roboto', sans-serif;
         width: 400px;
         margin: 0 auto;
     }
+    
 }
 
 @media only screen and (min-width: 1000px) {
@@ -108,10 +109,11 @@ font-family: 'Roboto', sans-serif;
     .other-list {
         grid-template-columns: 1fr 1fr 1fr;
     }
+    .frame {
+        height: 75vh;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
-    .pages {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+    
 }
