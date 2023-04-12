@@ -23,6 +23,7 @@ export default function Webline() {
     }
 
     const [weblineAppState, setWeblineAppState] = useState(false);
+    const [weblineMemState, setWeblineMemState] = useState(false)
 
     function signIn() {
         dispatch(setLoadingState(true))
@@ -39,21 +40,27 @@ export default function Webline() {
         <div className='main'>
             <Navigation />
             <h1 className='webline-title'>Webline</h1>
-            <div className='webline-panel1'>
-                <div className='webline-login'>
-                    <h1>Member Login</h1>
-                    <div className='webline-login-inputs'>
-                        <input id="tbEmail" type="email" placeholder='Email' className='webline-login-input' />
-                        <input id="tbPass" type="password" placeholder='Password' className='webline-login-input' />
-                        <button className='webline-login-btn' onClick={signIn}>Let's Go!</button>
-                        {
-                            toggleSiteAlertState ?
-                                <p className='webline-site-err'>{siteAlertState}</p> : <p></p>
-                        }
-                    </div>
 
-                </div>
-            </div>
+            {
+                weblineMemState ?
+                    <div className='webline-panel1'>
+                        <div className='webline-login'>
+                            <h1>Member Login</h1>
+                            <div className='webline-login-inputs'>
+                                <input id="tbEmail" type="email" placeholder='Email' className='webline-login-input' />
+                                <input id="tbPass" type="password" placeholder='Password' className='webline-login-input' />
+                                <button className='webline-login-btn' onClick={signIn}>Let's Go!</button>
+                                {
+                                    toggleSiteAlertState ?
+                                        <p className='webline-site-err'>{siteAlertState}</p> : <p></p>
+                                }
+                            </div>
+
+                        </div>
+                    </div> : <div className="webline-top">
+                        <h1 className='webline-mem-head'>Alreaady a member? <button onClick={()=>{setWeblineMemState(true)}} className="webline-mem-btn">Log In</button></h1>
+                    </div>
+            }
             <br />
             <div className='webline-panel2'>
                 <h1>Partnerships <br />Everywhere!</h1>
@@ -63,8 +70,8 @@ export default function Webline() {
                 </h2>
             </div>
             <div className='banner'>
-            <a href="/template" className=''>Check out the pages we offer!</a>
-            <p>We've provided a shopping list granting view of all pages that your business may need. More available pages will be added over time.</p>
+                <a href="/template" className=''>Check out the pages we offer!</a>
+                <p>We've provided a shopping list granting view of all pages that your business may need. More available pages will be added over time.</p>
             </div>
             <div className='webline-panel2-1'>
                 <video src={video1} controls="true" autoPlay="true" loop="true"></video>
@@ -75,16 +82,16 @@ export default function Webline() {
                     <h3 className='webline-promo-title'>Here is what we can do for you.</h3>
                     <p className='rotate webline-promo-caption'>Us vs. Them</p>
                     <p className='webline-promo-text'>
-                        Normally you would pay around <b>$3000 - $5000</b> for a functioning website. Aside from providing mediocre work, others will charge for every little add-on and find any excuse to charge exponentially for maintenance. In addition, updates and changes will be extra; if they even offer maintenance.
+                        Normally you would pay around <b>$2000 - $5000</b> for a functioning website. Aside from providing mediocre work, others will charge for every little add-on and find any excuse to charge exponentially for maintenance. In addition, updates and changes will be extra; if they even offer maintenance.
                     </p>
                     <div className='webline-promo-prices'>
                         <div>
                             <h4>Us:</h4>
-                            <div className='flex'><h1>$400-$800</h1><span className='light-red'>75% off!</span></div>
+                            <div className='flex'><h1>$250-$800</h1><span className='light-red'>75% off!</span></div>
                         </div>
                         <div>
                             <h4>Them:</h4>
-                            <h1>$3000+</h1>
+                            <h1>$2000+</h1>
                         </div>
                     </div>
                     <p className='webline-promo-text'>
@@ -107,7 +114,8 @@ export default function Webline() {
                     <div className='webline-promo-prices'>
                         <div>
                             <h4>Average Subscriptions:</h4>
-                            <div className='flex'><h1>$40-$60</h1><p style={{ color: "#FEFEFF" }}>/mo</p></div>
+                            <div className='flex'><h1>$40-$80</h1><p style={{ color: "#FEFEFF" }}>/mo</p></div>
+                            <p>Prices depend on website size</p>
                         </div>
                     </div>
                     <p className='webline-promo-text'>
