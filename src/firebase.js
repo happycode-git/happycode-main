@@ -609,7 +609,7 @@ export const setBuildInfo = async (partnerID, projectID, args) => {
 }
 export const getBuildInfo = async (partnerID, projectID, setTempBuilds) => {
   var builds = []
-  const querySnapshot = await getDocs(collection(db, "Members", partnerID, "Projects", projectID, "Builds"), orderBy("Date", "desc"));
+  const querySnapshot = await getDocs(collection(db, "Members", partnerID, "Projects", projectID, "Builds"), orderBy("Date", "asc"));
   querySnapshot.forEach((doc) => {
     const build = {
       id: doc.id,
