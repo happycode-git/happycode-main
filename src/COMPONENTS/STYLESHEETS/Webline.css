@@ -159,7 +159,7 @@ font-family: 'Roboto', sans-serif;
         font-family: 'Roboto', sans-serif;
         background-color: #FEFEFF;
         border-radius: 20px;
-
+        height: fit-content;
     }
 
     .webline-panel4 h1 {
@@ -352,19 +352,27 @@ font-family: 'Roboto', sans-serif;
     .banner p {
         color: #C9FD3A
     }
+
     .webline-mem-head {
         font-family: 'Roboto', sans-serif;
         font-size: 2em;
         text-align: center;
     }
+
     .webline-mem-btn {
         -webkit-appearance: none;
         -moz-appearance: none;
-        background-color: rgba(0,0,0,0);
+        background-color: rgba(0, 0, 0, 0);
         border: 0;
-        color:#C9FD3A;
+        color: #C9FD3A;
         font-weight: 700;
         font-size: 1em;
+    }
+
+    .divider {
+        width: 100%;
+        border-top: 1px solid #c9fd3a59;
+        margin: 2em 0;
     }
 }
 

@@ -8,7 +8,7 @@ export default function Footer() {
         <footer className='bg-darker light font'>
             <div>
                 <h1 className='yellow'>Happy coding is what we do.</h1>
-                <p>Happy Code is a web development company that creates beautiful and fully functional websites using the latest technologies and tools. Their experienced team focuses on user experience design and works closely with clients to deliver websites that are fast, reliable, and scalable. From simple brochure websites to complex e-commerce platforms, Happy Code has the expertise to exceed expectations.</p>
+                <p>Happy Code is a web development company that creates beautiful and fully functional websites using the latest technologies and tools. Our experienced team focuses on user experience design and works closely with clients to deliver fast, reliable, and scalable websites. From simple brochure websites to complex e-commerce platforms, Happy Code has the expertise to exceed expectations.</p>
             </div>
             <div className='footer-links'>
                 <Link to="/" className='footer-link light'>Home</Link>

@@ -33,7 +33,7 @@ export default function Webline() {
                 <h1>Become a referral today!</h1>
                 <p className='rotate apply-now'>Join Us!</p>
                 <h2>
-                    Get <b>50% commission</b> for every new business you send our way. Once the website construction has begun, you will get your cut and be on your way. Easiest way to make money!
+                    Get a <b>50% commission</b> for every new business you send our way. Once the website construction has begun, you will get your commission and be on your way. The easiest way to make money!
                 </h2>
             </div>
 
@@ -44,7 +44,7 @@ export default function Webline() {
                 <br />
                 <h3 className='webline-promo-title yellow'>1. Business Referral</h3>
                 <p className='webline-promo-text'>
-                    Refer the business to Happy Code Webline Services to construct and maintain their website. Business cards and a spreadsheet will be provided to to keep track of all referrals. This way we know which businesses came from which referral specialist.
+                    Refer the business to Happy Code Webline Services to construct and maintain their website. Business cards and a spreadsheet will be provided to keep track of all referrals. This way we know which businesses came from which referral specialist.
                 </p>
                 <p className='webline-promo-text'>
                     Businesses can apply online: <a className='webline-link' href="https://wearehappycode.com/webline">Happy Code Webline Services</a>
@@ -64,7 +64,7 @@ export default function Webline() {
                         <br />
                         <h1>Ex. $500 <span className='yellow'>75% off!</span></h1>
                         <p className='webline-promo-text'>
-                            As a perk for subscribing to monthly maintenance services, an automatic 75% discount will be applied. After the website has been created, an affordable maintenance fee will be charged each month.
+                            As a perk for subscribing to monthly maintenance services, an automatic 75% discount will be applied. After creating the website, an affordable maintenance fee will be charged each month.
                         </p>
                         <h4>~ $50 / mo</h4>
                     </div>
@@ -76,20 +76,20 @@ export default function Webline() {
                 <ul>
                     <li>
                         <p className='webline-promo-text'>
-                            Complete tickets every day for changes, updates, additions, and removal of any text, photos, videos, layout, color, forms, posts, bugs, an so much more. This ensures a healthy and fully functioning website.
+                            We will complete daily tickets for changes, updates, additions, and removal of any text, photos, videos, layout, color, forms, posts, bugs, and much more. That ensures a healthy and fully functioning website.
                         </p>
                     </li>
                     <li>
                         <p className='webline-promo-text'>
-                            SEO (Search Engine Optimization) updates: High Google ranking must be kept by consistent upkeep of the site. That is why every week, there will be SEO maintenance to keep ranking higher in Google Index for higher customer reach.
+                            SEO (Search Engine Optimization) updates: High Google ranking must be kept by consistent site upkeep. That is why there will be SEO maintenance every week to keep ranking higher in Google Index for greater customer reach.
                         </p>
                     </li>
                     <li>
                         <p className='webline-promo-text'>
-                            Covers database and hosting charges.
+                            It covers database and hosting charges. 
                         </p>
                     </li>
-                </ul>
+                </ul>   
                 <br />
                 <br />
                 <br />

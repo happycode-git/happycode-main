@@ -58,7 +58,7 @@ export default function Webline() {
 
                         </div>
                     </div> : <div className="webline-top">
-                        <h1 className='webline-mem-head'>Alreaady a member? <button onClick={()=>{setWeblineMemState(true)}} className="webline-mem-btn">Log In</button></h1>
+                        <h1 className='webline-mem-head'>Already a member? <button onClick={() => { setWeblineMemState(true) }} className="webline-mem-btn">Log In</button></h1>
                     </div>
             }
             <br />
@@ -77,12 +77,18 @@ export default function Webline() {
                 <video src={video1} controls="true" autoPlay="true" loop="true"></video>
                 <a href="https://happy-code-template-sample.web.app" target="_blank" className='sample-link'>View Sample</a>
             </div>
+            <div className='webline-panel3'>
+                <h3 className='webline-promo-title center'><span className='yellow'>$350</span> initial fee - <span className='yellow'>$52.50/mo</span> for site above.</h3>
+            </div>
+            <div className='divider'></div>
+            <br/>
+            <br/>
             <div className='split'>
                 <div className='webline-panel3'>
                     <h3 className='webline-promo-title'>Here is what we can do for you.</h3>
                     <p className='rotate webline-promo-caption'>Us vs. Them</p>
                     <p className='webline-promo-text'>
-                        Normally you would pay around <b>$2000 - $5000</b> for a functioning website. Aside from providing mediocre work, others will charge for every little add-on and find any excuse to charge exponentially for maintenance. In addition, updates and changes will be extra; if they even offer maintenance.
+                        You would pay around <b>$2000 - $5000</b> for a functional website. Aside from providing mediocre work, others will charge for every little add-on and find any excuse to charge exponentially for maintenance. In addition, updates and changes will be extra; if they even offer care.
                     </p>
                     <div className='webline-promo-prices'>
                         <div>
@@ -95,20 +101,20 @@ export default function Webline() {
                         </div>
                     </div>
                     <p className='webline-promo-text'>
-                        When we say that we remove 75% off the original price, we mean that after all requested pages have been added to the shopping list, we immediately chop off 75% from the total; under the condition that you become a membership partner and subscribe to our afforable monthly maintenance.
+                        When we say that we give a 75% discount off the original price, we mean that after all requested pages have been added to the shopping list, we immediately chop off 75% from the total; under the condition that you become a membership partner and subscribe to our afforable monthly maintenance.
                     </p>
                     <p className='webline-promo-text'>
-                        Our job is to think outside the box. What can we do to make your site be what your business needs? It all comes down to creativity and beauty. Both will do the trick.
+                        Our job is to think outside the box. What can we do to make your website be what your business needs? It all comes down to creativity and beauty. Both will do the trick.   
                     </p>
                     <br />
                     <br />
                     <h3 className='webline-promo-title'>Taking your website to the doctor</h3>
                     <p className='rotate webline-promo-caption'>Memberships</p>
                     <p className='webline-promo-text-important bg-darker pad'>
-                        Here at <b>Happy Code Webline Services</b>, we provide monthly subscriptions for maintenance. You pay for us to change a photo, the menu, add a new page, update text, add a blog post, change color palette, etc. Remember, this maintenance is what keeps your site relevant and ranked high in search.
+                        Here at <b>Happy Code Webline Services</b>, we provide monthly subscriptions for maintenance. You pay us to change a photo, the menu, add a new page, update text, add a blog post, change the color palette, etc. Remember, this maintenance keeps your site relevant and ranked high in search.
                     </p>
                     <p className='webline-promo-text'>
-                        In addition, we provide frequent SEO maintenance to keep your site relevant. You do not need to ask for this service. We will take care of it for you.
+                        In addition, we provide frequent SEO maintenance to keep your site relevant. You don't need to ask for this service. We will take care of it for you.
                     </p>
                     <br />
                     <div className='webline-promo-prices'>
@@ -119,7 +125,7 @@ export default function Webline() {
                         </div>
                     </div>
                     <p className='webline-promo-text'>
-                        Subscriptions are determined by the amount of work that is needed to keep it maintained. We don't expect you to do any work besides tell us what you want changed. Otherwise, we will make sure that your site is healthy and running at full capacity.
+                        Subscriptions are determined by the amount of work needed to keep it maintain them. We only expect you to to work if you tell us what you want changed. Otherwise, we will ensure that your site is healthy and fully operational.
                     </p>
                 </div>
                 <div id="panel4" className='webline-panel4'>
@@ -134,13 +140,13 @@ export default function Webline() {
                         <h2>2. Schedule Consultation</h2>
                         <p>Every partner is given a consultation to map out the contents of the entire website. here, it will be decided what pages will be made, components, external services such as photographers, domain set up, etc.</p>
                         <h2>3. $$$</h2>
-                        <p>Here is when we determine the overall price of the website. Fear not, we give you an automatic <b>75% OFF</b> if you want to subscribe to monthly maintenance services. Keep in mind that take your budget into consideration. Once the initial fee is paid, the construction process can begin.</p>
-                        <h2>3. Under Development</h2>
-                        <p>The building process will be the most crucial step. We can make the website without a problem, but we need to make sure it meets the standards of both the partner and SEO ranking. Thus, we work hard to make sure you are happy with the progress by giving you weekly updates, and do our best to ensure the site is set up for success with proper SEO.</p>
-                        <h2>4. Testing 1, 2, 3..</h2>
+                        <p>Here is when we determine the overall price of the website. Fear not, we give you an automatic <b>75% OFF</b> if you want to subscribe to monthly maintenance services. Keep in mind that we take your budget into consideration. Once the initial fee is paid, the construction process will begin.</p>
+                        <h2>4. Under Development</h2>
+                        <p>The building process will be the most crucial step. We can make the website without a problem, but we need to ensure it meets the standards of both the partner and SEO ranking. Thus, we work hard to ensure you are happy with the progress by giving you weekly updates, and doing our best to ensure the site is set up for success with proper SEO.</p>
+                        <h2>5. Testing 1, 2, 3..</h2>
                         <p>Before the site is made live, a developer will provide one last consultation to ensure the site is ready for launch. Once approved, the site will be made public for the world to enjoy! At this moment, the subscription will begin.</p>
-                        <h2>4. Maintenance</h2>
-                        <p>Like mentioned before, maintenance is the best thing you can do for your website. Not only will it keep it fresh with updated content, but it will help maintaing high ranking in search and advertisements.</p>
+                        <h2>6. Maintenance</h2>
+                        <p>As mentioned before, maintenance is the best thing you can do for your website. Not only will it keep it fresh with updated content, but it will help maintain a high ranking in search and advertisements.</p>
                     </div>
                 </div>
             </div>
