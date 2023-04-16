@@ -248,6 +248,7 @@ export const getOutline = async (userID, projectID, dispatch, setPages, setTotal
       Info: snap.Info,
       Price: snap.Price
     }
+    console.log(comp)
     outlineComps.push(comp)
   });
   dispatch(setOutlineState(outlineComps))

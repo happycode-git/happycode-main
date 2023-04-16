@@ -119,6 +119,10 @@ body {
     width: 100vw;
     margin: 0 auto;
   }
+  .stack {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
 
 @media only screen and (min-width: 600px) {
@@ -131,11 +135,15 @@ body {
   .one-div {
     width: 85vw !important;
   }
+  
 }
 
 @media only screen and (min-width: 1000px) {
   .one-div {
     width: 75vw !important;
+  }
+  .stack {
+    grid-template-columns: 1fr 1fr;
   }
 }
 

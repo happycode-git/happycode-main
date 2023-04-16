@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { setLoadingState } from '../REDUX/REDUCERS/LoadingSlice'
 // 
-import pdf1 from '../PHOTOS/Referral-Program-Flow.png'
 
 export default function Webline() {
     const dispatch = useDispatch();
@@ -50,7 +49,7 @@ export default function Webline() {
                     Businesses can apply online: <a className='webline-link' href="https://wearehappycode.com/webline">Happy Code Webline Services</a>
                 </p>
                 <br />
-                <div className='flex-around'>
+                <div className='stack'>
                     <div className='padding'>
                         <h4>No Subscription</h4>
                         <br />
@@ -114,6 +113,13 @@ export default function Webline() {
                 <h3 className='webline-promo-title yellow'>3. REPEAT</h3>
             </div>
             <br />
+
+            <div className='webline-panel2'>
+                <h2>
+                    If you are interested in joining our team, <a className='yellow' href="/contact">reach out to us at any time!</a>
+                </h2>
+            </div>
+
 
             <Footer />
         </div>

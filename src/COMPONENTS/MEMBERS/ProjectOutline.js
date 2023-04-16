@@ -16,11 +16,13 @@ import { setOutlineState } from '../../REDUX/REDUCERS/OutlineSlice'
 export default function AdminOutline() {
     const user = useSelector((state) => state.user.value)
     const project = useSelector((state) => state.project.value)
-    const pages = useSelector((state) => state.outline.value)
+    const outline = useSelector((state) => state.outline.value)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const [chosenPageID, setChosenPageID] = useState("")
+    const [pages, setPages] = useState([])
+    const [total, setTotal] = useState(0)
 
     const updateOutlineHere = () => {
         dispatch(setLoadingState(true))
@@ -38,6 +40,18 @@ export default function AdminOutline() {
         }
         updateOutline(user.id, project.id, newArr)
             .then(() => {
+                getOutline(user.id, project.id, dispatch)
+                    .then(() => {
+                        for (var i in outline) {
+                            var temp = 0
+                            for (var i in outline) {
+                                const comp = outline[i]
+                                temp += parseInt(comp.Price)
+                            }
+                        }
+                        setTotal(temp)
+                        setPages(outline)
+                    })
                 dispatch(setOutlineState(newArr))
                 dispatch(setLoadingState(false))
                 dispatch(setConfirmationState(true))
@@ -62,12 +76,13 @@ export default function AdminOutline() {
             return
         }
         window.scrollTo(0, 0)
-        getOutline(user.id, project.id, dispatch)
-            .then(() => {
-                for (var i in pages) {
-                    document.querySelector(`#taInfo${i}`).value = pages[i].Info.replaceAll("jjj", "\n")
-                }
-            })
+        getOutline(user.id, project.id, dispatch, setPages, setTotal)
+        // getOutline(user.id, project.id, dispatch)
+        //     .then(() => {
+        //         for (var i in pages) {
+        //             document.querySelector(`#taInfo${i}`).value = pages[i].Info.replaceAll("jjj", "\n")
+        //         }
+        //     })
     }, [])
 
     return (
@@ -94,11 +109,13 @@ export default function AdminOutline() {
                                     <p>{page.Details}</p>
                                     <div>
                                         <h4>Details</h4>
-                                        <textarea id={`taInfo${i}`} className='shopper-ta' placeholder='Enter all information describing the structure and content of this page. Everything here will determine the construction of the page.'></textarea>
+                                        <textarea id={`taInfo${i}`} className='shopper-ta' placeholder='Enter all information describing the structure and content of this page. Everything here will determine the construction of the page.'>
+                                            {page.Info.replaceAll("jjj", "\n")}
+                                        </textarea>
                                         {/* <textarea id={`taRequests${i}`} className='shopper-ta' placeholder='Enter any extra requests for ideas aside from the details given above.'></textarea> */}
                                         {
                                             page.id == chosenPageID ?
-                                            <a href={project.DropboxURL} target="_blank" className='shopper-dropbox'>Dropbox</a> : <p></p>
+                                                <a href={project.DropboxURL} target="_blank" className='shopper-dropbox'>Dropbox</a> : <p></p>
                                         }
                                     </div>
                                 </div>
