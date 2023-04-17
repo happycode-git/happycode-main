@@ -39,6 +39,10 @@ body {
   padding: 1em;
 }
 
+.margin {
+  margin: 1em;
+}
+
 .center {
   text-align: center;
 }
@@ -60,6 +64,7 @@ body {
 .bg-darker {
   background-color: #091018;
 }
+
 .bg-white {
   background-color: white;
 }
@@ -119,6 +124,7 @@ body {
     width: 100vw;
     margin: 0 auto;
   }
+
   .stack {
     display: grid;
     grid-template-columns: 1fr;
@@ -135,13 +141,14 @@ body {
   .one-div {
     width: 85vw !important;
   }
-  
+
 }
 
 @media only screen and (min-width: 1000px) {
   .one-div {
     width: 75vw !important;
   }
+
   .stack {
     grid-template-columns: 1fr 1fr;
   }

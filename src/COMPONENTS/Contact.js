@@ -39,7 +39,7 @@ export default function Webline() {
                 <br/>
                 <h1>+1 619 875 6441</h1>
                 <br/>
-                <h1>happycode.inbox@gmail.com</h1>
+                <h1>happycode.inbox<br/>@gmail.com</h1>
             </div>
           
 
