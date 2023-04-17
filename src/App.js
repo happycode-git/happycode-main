@@ -27,6 +27,7 @@ import AdminOutline from './COMPONENTS/ADMIN/AdminOutline';
 import ProjectOutline from './COMPONENTS/MEMBERS/ProjectOutline'
 import Products from './COMPONENTS/Products';
 import Template from './COMPONENTS/Template'
+import ReferralEmail from './COMPONENTS/UTILITIES/ReferralEmail'
 
 function App() {
   const loadingState = useSelector((state) => state.loading.value)
@@ -70,6 +71,7 @@ function App() {
         <Route exact path="/prospectlist" element={<ProspectList />} />
         <Route exact path="/partnerticketform" element={<PartnerTicketForm />} />
         <Route exact path="/partneroutline" element={<AdminOutline />} />
+        <Route exact path="/referralemail" element={<ReferralEmail />} />
       </Routes>
     </BrowserRouter>
   );

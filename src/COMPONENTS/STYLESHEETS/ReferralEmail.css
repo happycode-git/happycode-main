@@ -1,0 +1,85 @@
+/* FONTS
+font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+#1E232B - Dark
+#C9FD3A - Yellow
+#FEFEFF - Light
+#494c51 - Gray
+#2249f7 - Purple
+*/
+
+@media only screen and (min-width: 350px) {
+    .email-inputs {
+        background-color: #FEFEFF;
+        padding: 1em;
+        display: block;
+    }
+
+    .email-inputs-pair {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.6em;
+    }
+
+    .email-inputs-pair input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        font-family: 'Roboto', sans-serif;
+        padding: 0.8em;
+        border-radius: 4px;
+        border: 0;
+        background-color: #e6e6f6;
+        font-size: 1em;
+    }
+
+    .ta-email {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        font-family: 'Roboto', sans-serif;
+        background-color: #e6e6f6;
+        font-size: 1em;
+        width: 100%;
+        margin-top: 1em;
+        padding: 0.8em;
+        border: 0;
+        min-height: 200px;
+    }
+
+    .email-btn {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        display: block;
+        background-color: #C9FD3A;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1em;
+        padding: 0.6em;
+        font-weight: 600;
+        border-radius: 6px;
+        border: 0;
+        width: 90%;
+        margin: 1em auto;
+
+    }
+
+    .email-template {
+        border: 1px solid #C9FD3A;
+        background-color: #FEFEFF;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .email-inputs {
+        max-width: 500px;
+        margin: 1em auto;
+    }
+    .email-btn {
+        max-width: 500px;
+    }
+}
+
+@media only screen and (min-width: 800px) {}
+
+@media only screen and (min-width: 1000px) {}
+
+@media only screen and (min-width: 1200px) {}
