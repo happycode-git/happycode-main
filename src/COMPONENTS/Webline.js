@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { setLoadingState } from '../REDUX/REDUCERS/LoadingSlice'
 // 
-import video1 from '../VIDEOS/Screen Recording 2023-03-25 at 4.08.50 PM.MP4'
+import video1 from '../VIDEOS/Screen Recording 2023-03-25 at 4.08.50 PM.mp4'
 
 export default function Webline() {
     const siteAlertState = useSelector((state) => state.siteAlert.value)
