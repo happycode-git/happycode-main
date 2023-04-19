@@ -20,6 +20,8 @@ import { setProjectState } from "./REDUX/REDUCERS/ProjectSlice";
 import { setBuildsState } from './REDUX/REDUCERS/BuildsSlice'
 
 import emailjs from "emailjs-com";
+import { setConfirmationState } from "./REDUX/REDUCERS/ConfirmationSlice";
+import { setFailureState } from "./REDUX/REDUCERS/FailureSlice";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -624,7 +626,7 @@ export const getBuildInfo = async (partnerID, projectID, setTempBuilds) => {
   });
   setTempBuilds(builds)
 }
-export const sendReferralEmail = (email, html) => {
+export const sendReferralEmail = (email, html, dispatch) => {
 
   var templateParams = {
     to_email: email,
@@ -632,14 +634,22 @@ export const sendReferralEmail = (email, html) => {
     reply_to: "happycode.inbox@gmail.com",
     html: html
   };
-  console.log(templateParams)
 
   emailjs.send('service_xq1rj6f', 'template_2bgxdcm', templateParams, 'eaOYb8X6nqSrLTHBS')
     .then(function (response) {
       console.log('SUCCESS!', response.status, response.text);
+      dispatch(setConfirmationState(true))
+      setTimeout(() => {
+        dispatch(setConfirmationState(false))
+        window.scrollTo(0, 0)
+      }, 2000);
     }, function (error) {
       console.log('FAILED...', error);
-      console.log("HELLO")
+      dispatch(setFailureState(true))
+      setTimeout(() => {
+        dispatch(setFailureState(false))
+        window.scrollTo(0, 0)
+      }, 2000);
     });
 
 }

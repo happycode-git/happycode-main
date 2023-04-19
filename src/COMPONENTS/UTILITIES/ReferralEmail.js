@@ -6,11 +6,12 @@ import Footer from './Footer'
 import Navigation from './Navigation'
 import { sendReferralEmail } from '../../firebase'
 import ReactDOMServer from 'react-dom/server';
+import { useDispatch } from 'react-redux'
 // 
 // 
 
 export default function Webline() {
-
+    const dispatch = useDispatch()
     function closeNav() {
         document.querySelector(".navbody").style.width = "0";
     }
@@ -48,13 +49,18 @@ export default function Webline() {
     }
 
     const sendEmail = () => {
-        const email = document.querySelector('#tbEmail').value
+        var email = document.querySelector('#tbEmail').value
 
-        sendReferralEmail(email, text)
+        sendReferralEmail(email, text, dispatch)
+        document.querySelector('#tbEmail').value = ""
+        document.querySelector('#tbName').value = ""
+        document.querySelector('#tbScore').value = ""
+        document.querySelector('#tbDetails').value = ""
+
     }
 
     const emailTemplate = {
-        HTML: <div>
+        HTML: <div style={{ color: 'white !important' }}>
             <div style={{ fontFamily: 'sans-serif', padding: '2em', backgroundColor: '#091018' }}>
                 <h1 style={{ color: '#C9FD3A', fontSize: '2.8em', textAlign: 'center', letterSpacing: '-1px', transform: 'rotate(-2deg)', lineHeight: '90%' }}>HAPPY CODE<br />DEV.</h1>
             </div>
@@ -64,14 +70,18 @@ export default function Webline() {
                 <br />
                 <h2 style={{ color: '#1E232B', fontSize: '1.6em', lineHeight: '95%', backgroundColor: '#C9FD3A', padding: '0.4em', borderRadius: '6px', transform: 'rotate(-2deg)', width: 'fit-content' }}>We make websites and apps!</h2>
                 <p style={{ padding: '1em 0' }}>
-                    We noticed that your website needs a bit of help. No stress! We are here to help you.<br />
-                    Getting a professional website made can be expensive and time consuming. Here is what we can do for you:<br />
+                    We have observed that your website could benefit from some improvements, but there's no need to worry. We are here to offer our assistance.<br /><br />
+                    Creating a professional website can be a daunting and expensive task. However, if you're interested in expanding your business, we can help take your website to the next level. We guarantee results!<br /><br />
+                    We're excited about the prospect of working with you to make your business grow even more efficiently. Your success is our priority!<br /><br />
+
+                    <b>Here is what we can do for you:</b>
                 </p>
                 <div style={{ padding: '2em', backgroundColor: '#1E232B', color: '#C9FD3A', fontWeight: 'bold', fontSize: '1.2em' }}>
                     <ul>
-                        <li>Create a beautiful, fully functioning website with strong SEO ranking and proper UX design.</li>
-                        <li>Provide maintenance to ensure your site is relevant and working properly on the daily basis.</li>
-                        <li>Work with you to help evolve the website over time to be better and reach a larger audience.</li>
+                        <li>Craft a stunning and fully-functional website with robust search engine optimization (SEO) ranking and impeccable user experience (UX) design.</li><br />
+                        <li>Offer ongoing maintenance to ensure your site remains up-to-date, relevant, and functions smoothly on a daily basis.</li>
+                        <br />
+                        <li>Collaborate with you to refine and evolve your website over time, ensuring it continues to captivate your audience and reach an even wider audience.</li>
                     </ul>
                 </div>
                 <br />
@@ -90,10 +100,11 @@ export default function Webline() {
                 <br />
                 <h2 style={{ color: '#1E232B', fontSize: '1.6em', lineHeight: '95%', backgroundColor: '#C9FD3A', padding: '0.4em', borderRadius: '6px', transform: 'rotate(-2deg)', width: 'fit-content' }}>We are here to help.</h2>
                 <p style={{ padding: '1em 0' }}>
-                    Our main goal has always been to help a business reach more people and create an experience that each visitor can enjoy. They should want to stay longer and check everything out. This is only possible with the right team.
+                    From the very beginning, our top priority has been to assist businesses in connecting with a broader audience and delivering an enjoyable experience to each visitor. Our aim is to create a website that is so engaging that visitors will want to linger and explore every aspect of it. We firmly believe that only a competent and dedicated team can achieve this goal.
                 </p>
                 <h2 style={{}}>If you want more information or are eager to partner with us, visit this link on our website.</h2>
-                <a href="https://wearehappycode.com/webline">www.wearehappycode.com/webline</a>
+                <br/>
+                <a style={{color: '#C9FD3A', padding: '0.6em', backgroundColor: '#1E232B'}} href="https://wearehappycode.com/webline">www.wearehappycode.com/webline</a>
                 <br />
                 <br />
                 <br />
