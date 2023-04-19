@@ -1,0 +1,67 @@
+/* FONTS
+font-family: 'Roboto', sans-serif;
+*/
+/* COLORS
+#1E232B - Dark
+#C9FD3A - Yellow
+#FEFEFF - Light
+#494c51 - Gray
+#2249f7 - Purple
+*/
+
+@media only screen and (min-width: 350px) {
+    .calc-components {
+        font-family: 'Roboto', sans-serif;
+        padding: 1em;
+    }
+
+    .comp-head {
+        font-size: 2.4em;
+    }
+
+    .comps {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+
+    .calc-comp {
+        border: 1px solid #C9FD3A;
+        border-radius: 10px;
+        padding: 1em;
+        height: fit-content;
+    }
+
+    .comp-name {
+        font-size: 1.6em;
+        color: #C9FD3A;
+    }
+
+    .comp-desc {
+        font-size: 0.9em;
+    }
+
+    .comp-points {
+        padding: 1em;
+    }
+
+    .comp-point {
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (min-width: 600px) {}
+
+@media only screen and (min-width: 800px) {
+    .comps {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 1000px) {}
+
+@media only screen and (min-width: 1200px) {
+    .comps {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

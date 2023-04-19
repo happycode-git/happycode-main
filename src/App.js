@@ -28,6 +28,7 @@ import ProjectOutline from './COMPONENTS/MEMBERS/ProjectOutline'
 import Products from './COMPONENTS/Products';
 import Template from './COMPONENTS/Template'
 import ReferralEmail from './COMPONENTS/UTILITIES/ReferralEmail'
+import HealthCalculator from './COMPONENTS/UTILITIES/HealthCalculator'
 
 function App() {
   const loadingState = useSelector((state) => state.loading.value)
@@ -72,6 +73,7 @@ function App() {
         <Route exact path="/partnerticketform" element={<PartnerTicketForm />} />
         <Route exact path="/partneroutline" element={<AdminOutline />} />
         <Route exact path="/referralemail" element={<ReferralEmail />} />
+        <Route exact path="/calculator" element={<HealthCalculator />} />
       </Routes>
     </BrowserRouter>
   );

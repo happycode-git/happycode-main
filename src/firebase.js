@@ -19,6 +19,8 @@ import { randomString } from "./Global";
 import { setProjectState } from "./REDUX/REDUCERS/ProjectSlice";
 import { setBuildsState } from './REDUX/REDUCERS/BuildsSlice'
 
+import emailjs from "emailjs-com";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -622,6 +624,25 @@ export const getBuildInfo = async (partnerID, projectID, setTempBuilds) => {
   });
   setTempBuilds(builds)
 }
+export const sendReferralEmail = (email, html) => {
+
+  var templateParams = {
+    to_email: email,
+    from_email: "happycode.inbox@gmail.com",
+    reply_to: "happycode.inbox@gmail.com",
+    html: html
+  };
+  console.log(templateParams)
+
+  emailjs.send('service_xq1rj6f', 'template_2bgxdcm', templateParams, 'eaOYb8X6nqSrLTHBS')
+    .then(function (response) {
+      console.log('SUCCESS!', response.status, response.text);
+    }, function (error) {
+      console.log('FAILED...', error);
+      console.log("HELLO")
+    });
+
+}
 
 // AUTH
 /*
@@ -792,4 +813,5 @@ import { doc, deleteDoc } from "firebase/firestore";
 await deleteDoc(doc(db, "cities", "DC"));
 
 */
+
 
