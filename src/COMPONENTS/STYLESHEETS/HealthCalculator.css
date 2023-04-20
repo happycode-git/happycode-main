@@ -48,20 +48,120 @@ font-family: 'Roboto', sans-serif;
     .comp-point {
         font-size: 0.9em;
     }
+
+    .quiz {
+        font-family: 'Roboto', sans-serif;
+        padding: 1em;
+    }
+
+    .quiz-large-head {
+        font-family: 'Roboto', sans-serif;
+        padding: 1em;
+    }
+
+    .quiz-head {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.4em;
+        font-weight: 400;
+    }
+
+    .quiz-wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+
+    .quiz-block {
+        padding: 1em;
+        background-color: #0e1628;
+        border-radius: 5px;
+    }
+
+    .quiz-block h4 {
+        font-size: 1.3em;
+        font-weight: 200;
+    }
+
+    .quiz-block p {
+        font-size: 0.8em;
+        font-weight: 200;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .ddQuizScore {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 100%;
+        background-color: #0e1628;
+        color: #FEFEFF;
+        padding: 0.5em;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .quiz-btn {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 100%;
+        background-color: #C9FD3A;
+        color: #0e1628;
+        font-family: 'Roboto', sans-serif;
+        border: 0;
+        font-size: 1em;
+        font-weight: 600;
+        padding: 0.8em;
+        border-radius: 5px;
+    }
+
+    .score {
+        padding: 2em 0.6em;
+    }
+
+    .score h1 {
+        font-size: 1.8em;
+        padding: 0.6em 0;
+    }
+
+    .score p {
+        font-size: 0.9em;
+        background-color: #141926;
+        padding: 0.8em;
+    }
 }
 
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+    .quiz-large-head {
+        text-align: center;
+        font-size: 2.5em;
+    }
+
+    .quiz {
+        display: block;
+        width: 88%;
+        margin: 0 auto;
+    }
+}
 
 @media only screen and (min-width: 800px) {
     .comps {
         grid-template-columns: 1fr 1fr;
     }
+
+    .quiz {
+        width: 68%;
+    }
 }
 
-@media only screen and (min-width: 1000px) {}
+@media only screen and (min-width: 1000px) {
+    .quiz {
+        width: 54%;
+    }
+}
 
 @media only screen and (min-width: 1200px) {
     .comps {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+    .quiz {
+        width: 42%;
     }
 }

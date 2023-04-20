@@ -47,6 +47,11 @@ body {
   text-align: center;
 }
 
+.divider {
+  width: 100%;
+  border-top: 1px solid #C9FD3A;
+}
+
 /*  */
 
 .bg-purple {
