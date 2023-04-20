@@ -83,7 +83,7 @@ body {
 }
 
 .dark {
-  color: #151d29;
+  color: #151d29 !important;
 }
 
 .yellow {

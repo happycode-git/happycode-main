@@ -375,6 +375,25 @@ font-family: 'Roboto', sans-serif;
         border-top: 1px solid #c9fd3a59;
         margin: 2em 0;
     }
+
+    .large-link {
+        display: block;
+        font-size: 2em;
+        color: #C9FD3A;
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+        padding: 0.6em;
+    }
+
+    .webline-services {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.2em;
+    }
+
+    .webline-service {
+        font-size: 1.1em;
+    }
 }
 
 @media only screen and (min-width: 600px) {
@@ -488,8 +507,8 @@ font-family: 'Roboto', sans-serif;
     }
 
     .banner {
-       width: 65%;
-       
+        width: 65%;
+
     }
 }
 
@@ -535,7 +554,10 @@ font-family: 'Roboto', sans-serif;
     }
 
     .banner {
-       width: 50%;
+        width: 50%;
+    }
+    .webline-service {
+        font-size: 1.2em;
     }
 }
 
@@ -568,6 +590,6 @@ font-family: 'Roboto', sans-serif;
     }
 
     .banner {
-       width: 40%;
+        width: 40%;
     }
 }

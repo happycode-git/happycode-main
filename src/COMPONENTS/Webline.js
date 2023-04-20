@@ -80,9 +80,10 @@ export default function Webline() {
             <div className='webline-panel3'>
                 <h3 className='webline-promo-title center'><span className='yellow'>$350</span> initial fee - <span className='yellow'>$52.50/mo</span> for site above.</h3>
             </div>
+            <a className='large-link' href="/calculator">Want to know how your site is doing?</a>
             <div className='divider'></div>
-            <br/>
-            <br/>
+            <br />
+            <br />
             <div className='split'>
                 <div className='webline-panel3'>
                     <h3 className='webline-promo-title'>Here is what we can do for you.</h3>
@@ -104,7 +105,7 @@ export default function Webline() {
                         When we say that we give a 75% discount off the original price, we mean that after all requested pages have been added to the shopping list, we immediately chop off 75% from the total; under the condition that you become a membership partner and subscribe to our afforable monthly maintenance.
                     </p>
                     <p className='webline-promo-text'>
-                        Our job is to think outside the box. What can we do to make your website be what your business needs? It all comes down to creativity and beauty. Both will do the trick.   
+                        Our job is to think outside the box. What can we do to make your website be what your business needs? It all comes down to creativity and beauty. Both will do the trick.
                     </p>
                     <br />
                     <br />
@@ -127,6 +128,27 @@ export default function Webline() {
                     <p className='webline-promo-text'>
                         Subscriptions are determined by the amount of work needed to keep it maintain them. We only expect you to to work if you tell us what you want changed. Otherwise, we will ensure that your site is healthy and fully operational.
                     </p>
+                    <br /><br />
+                    <h3 className='webline-promo-title'>Daily Checkups</h3>
+                    <p className='rotate webline-promo-caption'>Maintenance Services</p>
+                    <p className='webline-promo-text'>
+                        These are the following maintenance services that we provide each day. These will vary depending on tickets that you submit using our state of the art ticketing system through your Webline account.
+                    </p>
+                    <div className='webline-services'>
+                        <p className='webline-service'>- Change color palette</p>
+                        <p className='webline-service'>- Change text (wording, color, size, etc)</p>
+                        <p className='webline-service'>- Add/Update/Remove photo</p>
+                        <p className='webline-service'>- Add/Update/Remove blog post</p>
+                        <p className='webline-service'>- Add/Update/Remove event post</p>
+                        <p className='webline-service'>- Change format of page</p>
+                        <p className='webline-service'>- Add/Update/Remove component from page</p>
+                        <p className='webline-service'>- SEO enhancements</p>
+                        <p className='webline-service'>- Add/Update/Remove functionality</p>
+                        <p className='webline-service'>- Bug fixes/troubleshooting</p>
+                        <p className='webline-service'>- Misc. Additions/Updates/Removals</p>
+                    </div>
+
+                    <br /><br />
                 </div>
                 <div id="panel4" className='webline-panel4'>
                     <h1>Become a partner today</h1>
