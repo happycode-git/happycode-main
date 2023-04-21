@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { IoMdListBox } from 'react-icons/io'
 import { HiOutlineXMark } from 'react-icons/hi2'
+import { AiFillMessage } from 'react-icons/ai'
+import { HiXMark } from 'react-icons/hi2'
 // 
 import '../STYLESHEETS/Project.css'
 // 
@@ -10,8 +12,9 @@ import { BsChevronLeft, BsFillArrowRightCircleFill } from 'react-icons/bs'
 import { RxDotFilled } from 'react-icons/rx'
 import { IoChevronUpCircleOutline, IoChevronDownCircleOutline } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
-import { getBuildInfo, getTickets } from '../../firebase'
+import { getBuildInfo, getProjectMessages, getTickets, setProjectMessage } from '../../firebase'
 import { FaClipboardList } from 'react-icons/fa'
+import { setLoadingState } from '../../REDUX/REDUCERS/LoadingSlice'
 
 export default function Project() {
     const user = useSelector((state) => state.user.value)
@@ -26,6 +29,24 @@ export default function Project() {
     const [previewMode, setPreviewMode] = useState("")
     const [showBuilds, setShowBuilds] = useState(false)
     const [tempBuilds, setTempBuilds] = useState([])
+    const [showMessages, setShowMessages] = useState(false)
+    const [messages, setMessages] = useState([])
+
+    const getMessages = () => {
+        getProjectMessages(user.id, project.id, setMessages)
+            .then(() => {
+                dispatch(setLoadingState(false))
+            })
+            .catch(() => {
+                dispatch(setLoadingState(false))
+            })
+    }
+    const sendMessage = () => {
+        const mess = document.querySelector('#tbText').value
+        setProjectMessage(user.id, project.id, mess, user.id)
+
+        document.querySelector('#tbText').value = ""
+    }
 
     useEffect(() => {
         console.log(user)
@@ -178,11 +199,40 @@ export default function Project() {
                     </div>
                 </div> : <div></div>
             }
+            {
+                showMessages ?
+                    <div className='messages'>
+                        <div className='flex'>
+                            <h1>Messages</h1>
+                            <HiXMark className='close' onClick={() => { setShowMessages(false) }} />
+                        </div>
+                        <div className='messages-wrap'>
+                            {
+                                messages.map((mess, i) => {
+                                    return (
+                                        <div key={i} className={`message ${mess.SenderID != user.id ? "bg-yellow" : "bg-darker"}`}>
+                                            <p className={`message-message ${mess.SenderID != user.id ? "dark" : "white"}`}>{mess.Message}</p>
+                                            <p className={`message-date ${mess.SenderID != user.id ? "dark" : "white"}`}>{mess.Date}</p>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                        <div className='message-input'>
+                            <input id="tbText" className='message-tb' placeholder='Type message here...' />
+                            <button
+                                onClick={sendMessage} className='message-send'><BsFillArrowRightCircleFill className='message-send-icon' /></button>
+                        </div>
+                    </div> : <div></div>
+            }
 
             <div className='home-panel3'>
                 <h1>Every thing Bagel</h1>
             </div>
-            <button className='create-ticket-btn' onClick={() => { navigate('/ticketform') }}>+ Ticket</button>
+            <button className='create-ticket-btn' onClick={() => { navigate('/ticketform') }}>New Ticket</button>
+            {
+                !showMessages ? <button className='message-btn' onClick={() => { setShowMessages(true); getMessages(); }}><AiFillMessage /></button> : <div></div>
+            }
         </div>
     )
 }

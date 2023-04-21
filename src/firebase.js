@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, orderBy } from "firebase/firestore";
+import { Timestamp, getFirestore, onSnapshot, orderBy } from "firebase/firestore";
 import { getAuth, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword } from "firebase/auth";
 import { setSiteAlertState } from "./REDUX/REDUCERS/SiteAlertsSlice";
 import { setUserState } from './REDUX/REDUCERS/UserSlice'
@@ -652,6 +652,30 @@ export const sendReferralEmail = (email, html, dispatch) => {
       }, 2000);
     });
 
+}
+export const getProjectMessages = async (userID, projectID, setMessages) => {
+  const q = await query(collection(db, "Members", userID, "Projects", projectID, 'Messages'), orderBy("Date", "desc"));
+  const _ = onSnapshot(q, (querySnapshot) => {
+    const messages = [];
+    querySnapshot.forEach((doc) => {
+      const d = {
+        ...doc.data(),
+        Date: new Date(doc.data().Date.seconds * 1000).toLocaleString()
+      }
+
+      messages.push(d)
+    });
+    setMessages(messages)
+    console.log(messages)
+  });
+}
+export const setProjectMessage = async (userID, projectID, message, myID) => {
+  await setDoc(doc(db, "Members", userID, "Projects", projectID, "Messages", randomString(25)), {
+    Message: message,
+    Date: Timestamp.fromDate(new Date()),
+    SenderID: myID,
+    ReceiverID: userID
+  });
 }
 
 // AUTH

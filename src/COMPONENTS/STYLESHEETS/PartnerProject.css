@@ -60,9 +60,105 @@ font-family: 'Roboto', sans-serif;
         color: #C9FD3A;
         margin-left: 0.8em;
     }
+
+    .message-btn {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: #2249f7;
+        color: #eaeaf2;
+        position: fixed;
+        left: 0.5em;
+        bottom: 0.5em;
+        border: 0;
+        font-size: 24px;
+        height: 45px;
+        width: 80px;
+        border-radius: 20px;
+    }
+
+    .messages {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: #121519;
+        font-family: 'Roboto', sans-serif;
+        padding: 1em;
+    }
+
+    .messages h1 {
+        color: #C9FD3A;
+    }
+
+    .messages-wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.4em;
+    }
+
+    .message {
+        padding: 0.8em;
+        border-radius: 4px;
+        overflow-y: scroll;
+    }
+
+    .message-message {
+        font-size: 0.9em;
+    }
+
+    .message-date {
+        font-size: 0.8em;
+        padding: 0.5em 0;
+        text-align: right;
+    }
+
+    .message-input {
+        background-color: #121519;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1em;
+        display: flex;
+        background-color: #0e1012;
+    }
+
+    .message-tb {
+        display: block;
+        padding: 0.6em;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        border: 0;
+        color: #eaeaf2;
+    }
+
+    .message-tb:focus {
+        outline: none;
+    }
+
+    .message-send {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: rgba(0, 0, 0, 0);
+        color: #2249f7;
+        border: 0;
+    }
+
+    .message-send-icon {
+        font-size: 2em;
+    }
+
+    .close {
+        font-size: 2em;
+    }
 }
 
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+    .messages {
+        width: 350px;
+    }
+}
 
 @media only screen and (min-width: 800px) {}
 

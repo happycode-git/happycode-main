@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 // 
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom';
-import { completePartnerTicket, getTicketCount, getTickets, rejectPartnerTicket, updateFirebaseURL, updateDropboxURL, setBuildInfo, getBuildInfo } from '../../firebase';
+import { completePartnerTicket, getTicketCount, getTickets, rejectPartnerTicket, updateFirebaseURL, updateDropboxURL, setBuildInfo, getBuildInfo, getProjectMessages, setProjectMessage } from '../../firebase';
 // 
 import '../STYLESHEETS/PartnerProject.css'
 // 
@@ -17,6 +17,8 @@ import { FaClipboardList } from 'react-icons/fa';
 import { MdOpenInBrowser } from 'react-icons/md'
 import { IoMdListBox } from 'react-icons/io'
 import { HiOutlineXMark } from 'react-icons/hi2'
+import { AiFillMessage } from 'react-icons/ai'
+import { HiXMark } from 'react-icons/hi2'
 import { randomString } from '../../Global';
 import { Timestamp } from 'firebase/firestore';
 
@@ -34,6 +36,8 @@ export default function PartnerDetail() {
     const [previewMode, setPreviewMode] = useState("")
     const [showBuilds, setShowBuilds] = useState(false)
     const [tempBuilds, setTempBuilds] = useState([])
+    const [showMessages, setShowMessages] = useState(false)
+    const [messages, setMessages] = useState([])
 
     const completeTicket = (ticketID, ticket) => {
         dispatch(setLoadingState(true))
@@ -95,6 +99,21 @@ export default function PartnerDetail() {
         }, 2000);
     }
 
+    const getMessages = () => {
+        getProjectMessages(partner.id, project.id, setMessages)
+            .then(() => {
+                dispatch(setLoadingState(false))
+            })
+            .catch(() => {
+                dispatch(setLoadingState(false))
+            })
+    }
+    const sendMessage = () => {
+        const mess = document.querySelector('#tbText').value
+        setProjectMessage(partner.id, project.id, mess, admin.id)
+
+        document.querySelector('#tbText').value = ""
+    }
 
     useEffect(() => {
         console.log(admin)
@@ -237,7 +256,7 @@ export default function PartnerDetail() {
                                     {
                                         chosenTicketID == tik.id ?
                                             <div>
-                                                <p className='ticket-desc'>{tik.Description.replaceAll("jjj",`\n`)}</p>
+                                                <p className='ticket-desc'>{tik.Description.replaceAll("jjj", `\n`)}</p>
                                                 <div className='flex'>
                                                     <h2 className='ticket-id bg-purple light'>Ticket #{tik.id}</h2>
                                                     <div className='together'>
@@ -247,7 +266,6 @@ export default function PartnerDetail() {
                                                         <AiFillCheckCircle onClick={() => {
                                                             getTicketCount(partner.id, dispatch)
                                                             completeTicket(chosenTicketID, tik);
-                                                            console.log(`USER: ${partner.TicketCount}`)
                                                         }} className='ticket-complete green' />
                                                     </div>
                                                 </div>
@@ -263,7 +281,11 @@ export default function PartnerDetail() {
 
 
             </div>
-            <button className='create-ticket-btn' onClick={() => { navigate('/partnerticketform') }}>+ Ticket</button>
+
+            <button className='create-ticket-btn' onClick={() => { navigate('/partnerticketform') }}>New Ticket</button>
+            {
+                !showMessages ? <button className='message-btn' onClick={() => { setShowMessages(true); getMessages(); }}><AiFillMessage /></button> : <div></div>
+            }
 
             {showBuilds ?
                 <div className='builds'>
@@ -317,6 +339,32 @@ export default function PartnerDetail() {
                         }
                     </div>
                 </div> : <div></div>
+            }
+            {
+                showMessages ?
+                    <div className='messages'>
+                        <div className='flex'>
+                            <h1>Messages</h1>
+                            <HiXMark className='close' onClick={() => { setShowMessages(false) }} />
+                        </div>
+                        <div className='messages-wrap'>
+                            {
+                                messages.map((mess, i) => {
+                                    return (
+                                        <div key={i} className={`message ${mess.SenderID == partner.id ? "bg-yellow" : "bg-darker"}`}>
+                                            <p className={`message-message ${mess.SenderID == partner.id ? "dark" : "white"}`}>{mess.Message}</p>
+                                            <p className={`message-date ${mess.SenderID == partner.id ? "dark" : "white"}`}>{mess.Date}</p>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                        <div className='message-input'>
+                            <input id="tbText" className='message-tb' placeholder='Type message here...' />
+                            <button
+                                onClick={sendMessage} className='message-send'><BsFillArrowRightCircleFill className='message-send-icon' /></button>
+                        </div>
+                    </div> : <div></div>
             }
         </div>
     )
