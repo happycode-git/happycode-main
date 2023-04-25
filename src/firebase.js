@@ -190,7 +190,8 @@ export const getProjects = async (userID, dispatch) => {
       Status: snap.Status,
       ContractSigned: snap.ContractSigned,
       DropboxURL: snap.DropboxURL,
-      InitialPayment: snap.InitialPayment
+      InitialPayment: snap.InitialPayment,
+      HasMessage: snap.HasMessage
     }
     projectArr.push(project)
   });
@@ -311,7 +312,8 @@ export const getPartnerProjects = async (memberID, dispatch) => {
       ContractSigned: snap.ContractSigned,
       CurrentSiteURL: snap.CurrentSiteURL,
       DropboxURL: snap.DropboxURL,
-      InitialPayment: snap.InitialPayment
+      InitialPayment: snap.InitialPayment,
+      HasMessage: snap.HasMessage
     }
     projectArr.push(project)
   });
@@ -545,8 +547,11 @@ export const createPartnerProject = async (memberID, proj) => {
     SiteExists: proj.SiteExists,
     Status: "In Progress",
     Subscription: proj.Subscription,
-    URL: proj.URL
+    URL: proj.URL,
+    HasMessage: true
   })
+  setProjectMessage(memberID, proj.id, "Hello, welcome to our brand new messaging system provided by Happy Code Dev. Use this window to view and send any comments, concerns, or questions you may have for our developers. We will be sure to get back to you as soon as we can. Thanks!", "pQ4xq1K9UXfmhYIMzKmS")
+  setMessageFlag(memberID, proj.id)
 }
 export const completePartnerTicket = async (partnerID, ticketID, ticket) => {
   await deleteDoc(doc(db, "Members", partnerID, "Tickets", ticketID));
@@ -675,6 +680,22 @@ export const setProjectMessage = async (userID, projectID, message, myID) => {
     Date: Timestamp.fromDate(new Date()),
     SenderID: myID,
     ReceiverID: userID
+  });
+}
+export const setMessageFlag = async (userID, projectID) => {
+  const washingtonRef = doc(db, "Members", userID, "Projects", projectID);
+
+  // Set the "capital" field of the city 'DC'
+  await updateDoc(washingtonRef, {
+    HasMessage: true
+  });
+}
+export const removeMessageFlag = async (userID, projectID) => {
+  const washingtonRef = doc(db, "Members", userID, "Projects", projectID);
+
+  // Set the "capital" field of the city 'DC'
+  await updateDoc(washingtonRef, {
+    HasMessage: false
   });
 }
 

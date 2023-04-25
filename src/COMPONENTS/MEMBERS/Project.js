@@ -12,7 +12,7 @@ import { BsChevronLeft, BsFillArrowRightCircleFill } from 'react-icons/bs'
 import { RxDotFilled } from 'react-icons/rx'
 import { IoChevronUpCircleOutline, IoChevronDownCircleOutline } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
-import { getBuildInfo, getProjectMessages, getTickets, setProjectMessage } from '../../firebase'
+import { getBuildInfo, getProjectMessages, getTickets, removeMessageFlag, setProjectMessage } from '../../firebase'
 import { FaClipboardList } from 'react-icons/fa'
 import { setLoadingState } from '../../REDUX/REDUCERS/LoadingSlice'
 
@@ -40,6 +40,7 @@ export default function Project() {
             .catch(() => {
                 dispatch(setLoadingState(false))
             })
+            removeMessageFlag(user.id, project.id)
     }
     const sendMessage = () => {
         const mess = document.querySelector('#tbText').value

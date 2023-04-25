@@ -19,8 +19,9 @@ font-family: 'Roboto', sans-serif;
     .partner-info {
         padding: 1em;
         border-radius: 10px;
-        
+
     }
+
     .add-project-btn {
         font-family: 'Roboto', sans-serif;
         border: 0;
@@ -29,17 +30,34 @@ font-family: 'Roboto', sans-serif;
         color: #FEFEFF;
         margin-right: 1em;
         border-radius: 10px;
-        font-weight:400;
+        font-weight: 400;
         font-size: 1em;
     }
+
     .project-details {
         padding: 1.5em;
     }
+
     .project-details-block p {
         font-size: 0.9em;
         font-weight: 400;
     }
-    
+
+    .has-message {
+        display: flex;
+        gap: 1em;
+        align-items: center;
+    }
+
+    .has-message p {
+        font-size: 1.2em;
+    }
+
+    .has-message-icon {
+        font-size: 1.5em;
+        color: #2249f7;
+    }
+
 }
 
 @media only screen and (min-width: 600px) {}

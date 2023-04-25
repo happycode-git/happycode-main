@@ -11,6 +11,7 @@ import { getProjects } from '../../firebase'
 // 
 import { BsArrowRightCircle, BsFillGearFill } from 'react-icons/bs'
 import { FaSignOutAlt } from 'react-icons/fa'
+import { AiFillMessage } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 // 
 import { firebaseSignOut } from '../../firebase'
@@ -52,6 +53,13 @@ export default function Projects() {
                   <h1 className='projects-title'>{proj.Name}</h1>
                   <p className='projects-status'>Status: <span className={`${proj.Status == "Active" ? "green" : proj.Status == "Suspended" ? "orange" : proj.Status == "In Progress" ? "blue" : "red"}`}>{proj.Status}</span></p>
                 </div>
+                {
+                  proj.HasMessage ?
+                    <div className='has-message'>
+                      <p>You have a message</p>
+                      <AiFillMessage className='has-message-icon' />
+                    </div> : <div></div>
+                }
                 <Link to='/project' onClick={() => { dispatch(setProjectState(proj)) }}><BsArrowRightCircle className='projects-icon' /></Link>
               </div>
             )

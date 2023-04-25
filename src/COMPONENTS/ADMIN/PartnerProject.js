@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 // 
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom';
-import { completePartnerTicket, getTicketCount, getTickets, rejectPartnerTicket, updateFirebaseURL, updateDropboxURL, setBuildInfo, getBuildInfo, getProjectMessages, setProjectMessage } from '../../firebase';
+import { completePartnerTicket, getTicketCount, getTickets, rejectPartnerTicket, updateFirebaseURL, updateDropboxURL, setBuildInfo, getBuildInfo, getProjectMessages, setProjectMessage, setMessageFlag } from '../../firebase';
 // 
 import '../STYLESHEETS/PartnerProject.css'
 // 
@@ -113,6 +113,7 @@ export default function PartnerDetail() {
         setProjectMessage(partner.id, project.id, mess, admin.id)
 
         document.querySelector('#tbText').value = ""
+        setMessageFlag(partner.id, project.id)
     }
 
     useEffect(() => {

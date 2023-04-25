@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Helmet } from 'react-helmet'
 // 
 import './STYLESHEETS/Home.css'
 // 
@@ -17,6 +18,17 @@ export default function Home() {
 
     return (
         <div className='main home'>
+            <Helmet>
+                <title>Happy Code Dev. | Home</title>
+                <meta name="description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
+                <meta name="keywords" content="web development, small business, low cost, maintenance benefits, Happy Code" />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href={`https://wearehappycode.com`} />
+                <meta property="og:title" content="Happy Code Template | Home" />
+                <meta property="og:description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
+                <meta property="og:url" content={`https://wearehappycode.com`} />
+                <meta property="og:image" content={`https://wearehappycode.com/src/PHOTOS/stock.png`} />
+            </Helmet>
             <Navigation />
             <div className='home-panel1'>
                 <div className='we-are-happy-code'>
