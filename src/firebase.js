@@ -631,7 +631,7 @@ export const getBuildInfo = async (partnerID, projectID, setTempBuilds) => {
   });
   setTempBuilds(builds)
 }
-export const sendReferralEmail = (email, html, dispatch) => {
+export const sendReferralEmail = async (email, html, dispatch) => {
 
   var templateParams = {
     to_email: email,
@@ -640,7 +640,7 @@ export const sendReferralEmail = (email, html, dispatch) => {
     html: html
   };
 
-  emailjs.send('service_xq1rj6f', 'template_2bgxdcm', templateParams, 'eaOYb8X6nqSrLTHBS')
+  await emailjs.send('service_xq1rj6f', 'template_2bgxdcm', templateParams, 'eaOYb8X6nqSrLTHBS')
     .then(function (response) {
       console.log('SUCCESS!', response.status, response.text);
       dispatch(setConfirmationState(true))

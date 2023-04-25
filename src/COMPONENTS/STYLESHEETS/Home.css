@@ -115,6 +115,7 @@ font-family: 'Roboto', sans-serif;
         text-transform: uppercase;
         font-size: 6em;
         line-height: 70%;
+        letter-spacing: -3px;
     }
 
 }
@@ -158,6 +159,9 @@ font-family: 'Roboto', sans-serif;
 
     .home-panel1 {
         padding: 3.5em;
+    }
+    .home-panel3 h1 {
+        font-size: 7em;
     }
 }
 

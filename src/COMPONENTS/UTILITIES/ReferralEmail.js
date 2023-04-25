@@ -7,6 +7,8 @@ import Navigation from './Navigation'
 import { sendReferralEmail } from '../../firebase'
 import ReactDOMServer from 'react-dom/server';
 import { useDispatch } from 'react-redux'
+import { setConfirmationState } from '../../REDUX/REDUCERS/ConfirmationSlice'
+import { setLoadingState } from '../../REDUX/REDUCERS/LoadingSlice'
 // 
 // 
 
@@ -49,18 +51,26 @@ export default function Webline() {
     }
 
     const sendEmail = () => {
+        dispatch(setLoadingState(true))
         var email = document.querySelector('#tbEmail').value
 
         sendReferralEmail(email, text, dispatch)
-        document.querySelector('#tbEmail').value = ""
-        document.querySelector('#tbName').value = ""
-        document.querySelector('#tbScore').value = ""
-        document.querySelector('#tbDetails').value = ""
+            .then(() => {
+                dispatch(setLoadingState(false))
+                document.querySelector('#tbEmail').value = ""
+                document.querySelector('#tbName').value = ""
+                document.querySelector('#tbScore').value = ""
+                document.querySelector('#tbDetails').value = ""
+            })
+            .catch(() => {
+                dispatch(setLoadingState(false))
+            })
+
 
     }
 
     const emailTemplate = {
-        HTML: <div style={{ color: 'white !important' }}>
+        HTML: <div style={{ backgroundColor: 'white !important' }}>
             <div style={{ fontFamily: 'sans-serif', padding: '2em', backgroundColor: '#091018' }}>
                 <h1 style={{ color: '#C9FD3A', fontSize: '2.8em', textAlign: 'center', letterSpacing: '-1px', transform: 'rotate(-2deg)', lineHeight: '90%' }}>HAPPY CODE<br />DEV.</h1>
             </div>
@@ -88,8 +98,8 @@ export default function Webline() {
                 <img style={{ display: 'block', width: '100%' }} src="https://firebasestorage.googleapis.com/v0/b/happycode-5403.appspot.com/o/mohammad-rahmani-_Fx34KeqIEw-unsplash.jpg?alt=media&token=dae699e9-ba7b-42de-9800-3d29f60179a7" />
 
                 <br />
-                <h1 style={{ color: "#1E232B", letterSpacing: '-1px', fontSize: '1.8em', padding: '0.2em 0', fontWeight: '800', textAlign: 'center' }}>Them: $2000</h1>
-                <h1 style={{ color: "#1E232B", letterSpacing: '-1px', fontSize: '2.8em', padding: '0.2em 0', fontWeight: '800', textAlign: 'center' }}>Us: $400</h1>
+                <h1 style={{ color: "#1E232B", letterSpacing: '-1px', fontSize: '1.8em', padding: '0.2em 0', fontWeight: '800', textAlign: 'center' }}>Them: ~ $2000</h1>
+                <h1 style={{ color: "#1E232B", letterSpacing: '-1px', fontSize: '2.8em', padding: '0.2em 0', fontWeight: '800', textAlign: 'center' }}>Us: ~ $400</h1>
                 <br />
                 <h2 style={{ color: '#1E232B', fontSize: '1.6em', lineHeight: '95%', backgroundColor: '#C9FD3A', padding: '0.4em', borderRadius: '6px', transform: 'rotate(-2deg)', width: 'fit-content' }}>Website Health Score</h2>
                 <div style={{ padding: '1em', backgroundColor: '#1E232B' }}>
@@ -103,8 +113,8 @@ export default function Webline() {
                     From the very beginning, our top priority has been to assist businesses in connecting with a broader audience and delivering an enjoyable experience to each visitor. Our aim is to create a website that is so engaging that visitors will want to linger and explore every aspect of it. We firmly believe that only a competent and dedicated team can achieve this goal.
                 </p>
                 <h2 style={{}}>If you want more information or are eager to partner with us, visit this link on our website.</h2>
-                <br/>
-                <a style={{color: '#C9FD3A', padding: '0.6em', backgroundColor: '#1E232B'}} href="https://wearehappycode.com/webline">www.wearehappycode.com/webline</a>
+                <br />
+                <a style={{ color: '#C9FD3A', padding: '0.6em', backgroundColor: '#1E232B' }} href="https://wearehappycode.com/webline">www.wearehappycode.com/webline</a>
                 <br />
                 <br />
                 <br />

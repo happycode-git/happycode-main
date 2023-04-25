@@ -162,6 +162,9 @@ font-family: 'Roboto', sans-serif;
         color: #121519;
         font-family: 'Roboto', sans-serif;
         border-radius: 5px;
+        height: max-content;
+        overflow-y: scroll;
+        max-height: 90vh;
     }
 
     .tickets h1 {
@@ -340,7 +343,7 @@ font-family: 'Roboto', sans-serif;
 
     .tickets {
         overflow-y: scroll;
-        max-height: 600px;
+        max-height: 100vh;
     }
 
     .preview-btn {
@@ -395,4 +398,8 @@ font-family: 'Roboto', sans-serif;
     }
 }
 
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+    .tickets {
+        max-height: 90vh;
+    }
+}

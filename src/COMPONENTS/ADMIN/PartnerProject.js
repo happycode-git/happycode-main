@@ -367,6 +367,9 @@ export default function PartnerDetail() {
                         </div>
                     </div> : <div></div>
             }
+            <div className='home-panel3'>
+                <h1>Every thing Bagel</h1>
+            </div>
         </div>
     )
 }

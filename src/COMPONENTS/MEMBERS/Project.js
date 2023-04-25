@@ -227,13 +227,14 @@ export default function Project() {
                     </div> : <div></div>
             }
 
-            <div className='home-panel3'>
-                <h1>Every thing Bagel</h1>
-            </div>
+            
             <button className='create-ticket-btn' onClick={() => { navigate('/ticketform') }}>New Ticket</button>
             {
                 !showMessages ? <button className='message-btn' onClick={() => { setShowMessages(true); getMessages(); }}><AiFillMessage /></button> : <div></div>
             }
+            <div className='home-panel3'>
+                <h1>Every thing Bagel</h1>
+            </div>
         </div>
     )
 }
