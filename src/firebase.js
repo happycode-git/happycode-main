@@ -213,13 +213,11 @@ export const getTickets = async (userID, projectID, dispatch) => {
       Status: snap.Status,
       ProjectID: snap.ProjectID
     }
-    console.log(ticket)
     tickets.push(ticket)
   });
   dispatch(setMemberTicketsState(tickets))
 }
 export const getAllTickets = async (userID, dispatch) => {
-  console.log(userID)
   const q = query(collection(db, "Members", userID, "CompletedTickets"));
   const querySnapshot = await getDocs(q);
   const tickets = []
@@ -678,7 +676,7 @@ export const setBuildInfo = async (partnerID, projectID, args) => {
 }
 export const getBuildInfo = async (partnerID, projectID, setTempBuilds) => {
   var builds = []
-  const querySnapshot = await getDocs(collection(db, "Members", partnerID, "Projects", projectID, "Builds"), orderBy("Date", "asc"));
+  const querySnapshot = await getDocs(collection(db, "Members", partnerID, "Projects", projectID, "Builds"), orderBy("Date","asc"));
   querySnapshot.forEach((doc) => {
     const build = {
       id: doc.id,
@@ -688,7 +686,8 @@ export const getBuildInfo = async (partnerID, projectID, setTempBuilds) => {
     }
     builds.push(build)
   });
-  setTempBuilds(builds)
+  const temp = builds.sort((a, b) => a.Date.seconds - b.Date.seconds).reverse();
+  setTempBuilds(temp)
 }
 export const sendReferralEmail = async (email, html, dispatch) => {
 
