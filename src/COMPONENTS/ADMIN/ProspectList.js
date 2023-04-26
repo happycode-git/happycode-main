@@ -6,13 +6,13 @@ import '../STYLESHEETS/ProspectList.css'
 // 
 import { BsChevronLeft } from 'react-icons/bs'
 import { BiWorld } from 'react-icons/bi'
-import { getProspects, setProspectDoc, editProspectDoc } from '../../firebase';
+import { getProspects, setProspectDoc, editProspectDoc, getAllProspects } from '../../firebase';
 import { AiFillCheckCircle, AiFillPlusCircle } from 'react-icons/ai';
 import { IoChevronDownCircleSharp, IoChevronUpCircleSharp } from 'react-icons/io5';
 import { setLoadingState } from '../../REDUX/REDUCERS/LoadingSlice';
 import { setConfirmationState } from '../../REDUX/REDUCERS/ConfirmationSlice';
 import { setFailureState } from '../../REDUX/REDUCERS/FailureSlice';
-import { randomString } from '../../Global';
+import { randomString, superAdminID } from '../../Global';
 import { MdBuildCircle } from 'react-icons/md';
 // 
 
@@ -25,7 +25,7 @@ export default function AdminDash() {
     const [toggleForm, setToggleForm] = useState(false)
     const [toggleEditForm, setToggleEditForm] = useState(false)
     const [prospect, setProspect] = useState({})
-    const [prosID, setProsID] = useState("") 
+    const [prosID, setProsID] = useState("")
 
     const openEdit = (pros) => {
         setToggleEditForm(true)
@@ -117,35 +117,35 @@ export default function AdminDash() {
         }
 
         editProspectDoc(p)
-        .then(() => {
-            dispatch(setLoadingState(false))
-            document.querySelector('#tbEditBusinessName').value = ""
-            document.querySelector('#tbEditFullName').value = ""
-            document.querySelector('#tbEditPhone').value = ""
-            document.querySelector('#tbEditEmail').value = ""
-            document.querySelector('#tbEditAddress').value = ""
-            document.querySelector('#tbEditCity').value = ""
-            document.querySelector('#tbEditState').value = ""
-            document.querySelector('#tbEditZip').value = ""
-            document.querySelector('#cbEditHasSite').checked = false
-            document.querySelector('#tbEditURL').value = ""
-            document.querySelector('#tbEditSampleURL').value = ""
-            document.querySelector('#tbEditType').value = ""
-            document.querySelector('#taEditDetails').value = ""
-            dispatch(setConfirmationState(true))
-            setTimeout(() => {
-                setToggleEditForm(false)
-                dispatch(setConfirmationState(false))
-                getProspects(dispatch)
-            }, 3000);
-        })
-        .catch(() => {
-            dispatch(setLoadingState(false))
-            dispatch(setFailureState(true))
-            setTimeout(() => {
-                dispatch(setFailureState(false))
-            }, 3000);
-        })
+            .then(() => {
+                dispatch(setLoadingState(false))
+                document.querySelector('#tbEditBusinessName').value = ""
+                document.querySelector('#tbEditFullName').value = ""
+                document.querySelector('#tbEditPhone').value = ""
+                document.querySelector('#tbEditEmail').value = ""
+                document.querySelector('#tbEditAddress').value = ""
+                document.querySelector('#tbEditCity').value = ""
+                document.querySelector('#tbEditState').value = ""
+                document.querySelector('#tbEditZip').value = ""
+                document.querySelector('#cbEditHasSite').checked = false
+                document.querySelector('#tbEditURL').value = ""
+                document.querySelector('#tbEditSampleURL').value = ""
+                document.querySelector('#tbEditType').value = ""
+                document.querySelector('#taEditDetails').value = ""
+                dispatch(setConfirmationState(true))
+                setTimeout(() => {
+                    setToggleEditForm(false)
+                    dispatch(setConfirmationState(false))
+                    getProspects(dispatch)
+                }, 3000);
+            })
+            .catch(() => {
+                dispatch(setLoadingState(false))
+                dispatch(setFailureState(true))
+                setTimeout(() => {
+                    dispatch(setFailureState(false))
+                }, 3000);
+            })
 
     }
 
@@ -156,7 +156,12 @@ export default function AdminDash() {
             return
         }
         window.scrollTo(0, 0)
-        getProspects(dispatch)
+        if (admin.id == superAdminID) {
+            getAllProspects(dispatch)
+        } else {
+            getProspects(dispatch, admin.id)
+        }
+
     }, [])
 
     return (
@@ -349,10 +354,10 @@ export default function AdminDash() {
                                                 <p><b>Sample URL:</b> <br /> <a target="_blank" href={pros.SampleURL}>{pros.SampleURL}</a></p>
                                                 <p><b>Details:</b><br />  {pros.Details}</p>
                                                 <div className='prospect-btns'>
-                                                    <button className="prospect-button purple" onClick={() => { 
+                                                    <button className="prospect-button purple" onClick={() => {
                                                         openEdit(pros)
                                                         console.log(pros)
-                                                     }}><MdBuildCircle /></button>
+                                                    }}><MdBuildCircle /></button>
                                                     <button className="prospect-button green"><AiFillCheckCircle /></button>
                                                 </div>
                                             </div> : <div></div>

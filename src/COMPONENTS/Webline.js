@@ -94,7 +94,7 @@ export default function Webline() {
                     <div className='webline-promo-prices'>
                         <div>
                             <h4>Us:</h4>
-                            <div className='flex'><h1>$250-$800</h1><span className='light-red'>75% off!</span></div>
+                            <div className='flex'><h1>$250-$800</h1><b><span className='light-red'>75% off!</span></b></div>
                         </div>
                         <div>
                             <h4>Them:</h4>

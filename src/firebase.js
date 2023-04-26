@@ -15,7 +15,7 @@ import { setAllTicketsState } from './REDUX/REDUCERS/AllTicketsSlice'
 import { setProspectsState } from './REDUX/REDUCERS/ProspectsSlice'
 import { setOutlineState } from './REDUX/REDUCERS/OutlineSlice'
 import { doc, setDoc, getDoc } from "firebase/firestore";
-import { randomString } from "./Global";
+import { randomString, superAdminID } from "./Global";
 import { setProjectState } from "./REDUX/REDUCERS/ProjectSlice";
 import { setBuildsState } from './REDUX/REDUCERS/BuildsSlice'
 
@@ -268,8 +268,8 @@ export const getOutline = async (userID, projectID, dispatch, setPages, setTotal
   setTotal(temp)
 }
 // 
-export const getPartners = async (dispatch, setTempPartners) => {
-  const q = query(collection(db, "Members"), orderBy("TicketCount", "desc"));
+export const getPartners = async (dispatch, setTempPartners, myID) => {
+  const q = query(collection(db, "Members"), where("Admin", "==", myID), orderBy("TicketCount", "desc"));
   const querySnapshot = await getDocs(q);
   const partners = []
   querySnapshot.forEach((doc) => {
@@ -287,7 +287,32 @@ export const getPartners = async (dispatch, setTempPartners) => {
       Phone: snap.Phone,
       TicketCount: snap.TicketCount,
     }
-    console.log(partner)
+    partners.push(partner)
+  });
+
+  dispatch(setPartnersState(partners))
+  setTempPartners(partners)
+}
+export const getAllPartners = async (dispatch, setTempPartners) => {
+  const q = query(collection(db, "Members"), orderBy("TicketCount", "desc"));
+  const querySnapshot = await getDocs(q);
+  const partners = []
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    //console.log(doc.id, " => ", doc.data());
+    const snap = doc.data()
+    const partner = {
+      id: doc.id,
+      Address: snap.Address,
+      BusinessEmail: snap.BusinessEmail,
+      BusinessName: snap.BusinessName,
+      Email: snap.Email,
+      FirstName: snap.FirstName,
+      LastName: snap.LastName,
+      Phone: snap.Phone,
+      TicketCount: snap.TicketCount,
+      Admin: snap.Admin
+    }
     partners.push(partner)
   });
 
@@ -319,7 +344,39 @@ export const getPartnerProjects = async (memberID, dispatch) => {
   });
   dispatch(setProjectsListState(projectArr))
 }
-export const getProspects = async (dispatch) => {
+export const getProspects = async (dispatch, myID) => {
+  const q = query(collection(db, "Prospects"), where("Admin", "==", myID), orderBy("BusinessType"));
+  const querySnapshot = await getDocs(q);
+  const prospects = []
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    //console.log(doc.id, " => ", doc.data());
+    const snap = doc.data()
+    const prospect = {
+      id: doc.id,
+      BusinessName: snap.BusinessName,
+      ContactFullName: snap.ContactFullName,
+      ContactPhone: snap.ContactPhone,
+      Email: snap.Email,
+      BusinessAddress: snap.BusinessAddress,
+      City: snap.City,
+      State: snap.State,
+      Zip: snap.Zip,
+      HasWebsite: snap.HasWebsite,
+      WebsiteURL: snap.WebsiteURL,
+      SampleURL: snap.SampleURL,
+      BusinessType: snap.BusinessType,
+      Details: snap.Details,
+      Admin: snap.Admin
+    }
+
+    prospects.push(prospect)
+  });
+
+  dispatch(setProspectsState(prospects))
+
+}
+export const getAllProspects = async (dispatch) => {
   const q = query(collection(db, "Prospects"), orderBy("BusinessType"));
   const querySnapshot = await getDocs(q);
   const prospects = []
@@ -341,9 +398,9 @@ export const getProspects = async (dispatch) => {
       WebsiteURL: snap.WebsiteURL,
       SampleURL: snap.SampleURL,
       BusinessType: snap.BusinessType,
-      Details: snap.Details
+      Details: snap.Details,
+      Admin: snap.Admin
     }
-
     prospects.push(prospect)
   });
 
@@ -530,7 +587,8 @@ export const createPartnerAccount = async (form, proj) => {
     FirstName: form.FirstName,
     LastName: form.LastName,
     Phone: form.Phone,
-    TicketCount: 0
+    TicketCount: 0,
+    Admin: superAdminID
   }).then(() => {
     firebaseCreateUser(form.Email, "HappyCode123!")
     createPartnerProject(docID, proj)
@@ -571,7 +629,7 @@ export const rejectPartnerTicket = async (partnerID, ticketID, ticket) => {
     Status: "Rejected"
   });
 }
-export const setProspectDoc = async (pros) => {
+export const setProspectDoc = async (pros, myID) => {
   await setDoc(doc(db, "Prospects", pros.id), {
     id: pros.id,
     BusinessName: pros.BusinessName,
@@ -586,7 +644,8 @@ export const setProspectDoc = async (pros) => {
     WebsiteURL: pros.WebsiteURL,
     SampleURL: pros.SampleURL,
     BusinessType: pros.BusinessType,
-    Details: pros.Details
+    Details: pros.Details,
+    Admin: myID
   });
 }
 export const editProspectDoc = async (pros) => {
@@ -698,6 +757,8 @@ export const removeMessageFlag = async (userID, projectID) => {
     HasMessage: false
   });
 }
+
+
 
 // AUTH
 /*

@@ -1,6 +1,6 @@
 export function randomString(length) {
     var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
-    
+
     var randomstring = '';
     for (var i = 0; i < length; i++) {
         var rnum = Math.floor(Math.random() * chars.length);
@@ -8,3 +8,5 @@ export function randomString(length) {
     }
     return randomstring;
 }
+
+export const superAdminID = "pQ4xq1K9UXfmhYIMzKmS"

@@ -8,9 +8,10 @@ import { FaSignOutAlt } from 'react-icons/fa'
 import { BsArrowRightCircle } from 'react-icons/bs'
 import { AiFillPlusCircle } from 'react-icons/ai'
 // 
-import { firebaseAdminSignOut, getPartners } from '../../firebase'
+import { firebaseAdminSignOut, getAllPartners, getAllProspects, getPartners } from '../../firebase'
 import { setPartnerState } from '../../REDUX/REDUCERS/PartnerSlice'
 import { MdChecklist } from 'react-icons/md';
+import { superAdminID } from '../../Global';
 
 export default function AdminDash() {
   const admin = useSelector((state) => state.admin.value)
@@ -40,7 +41,12 @@ export default function AdminDash() {
       return
     }
     window.scrollTo(0, 0)
-    getPartners(dispatch, setTempPartners)
+    if (admin.id == superAdminID || admin.id == "v8xcJYXcGRyQ5ywflZxG") {
+      getAllPartners(dispatch, setTempPartners)
+    } else {
+      getPartners(dispatch, setTempPartners, admin.id)
+    }
+
   }, [])
 
   return (
