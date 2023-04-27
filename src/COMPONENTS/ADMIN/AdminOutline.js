@@ -1442,7 +1442,7 @@ export default function AdminOutline() {
                                     setTogglePageList(false)
                                 }} className='shopper-newpage-block-icon' /></div>
                             </div>
-                            
+
                             <div className='shopper-newpage-block'>
                                 <div>
                                     <div className='flex'>
@@ -1608,6 +1608,106 @@ export default function AdminOutline() {
                                 }} className='shopper-newpage-block-icon' /></div>
                             </div>
                         </div>
+                        <h2 className='tier'>Social Media</h2>
+                        <div className='shopper-newpage-wrap'>
+                            <div className='shopper-newpage-block instagram'>
+                                <div>
+                                    <div className='flex'>
+                                        <h2 className='white'>Instagram/Facebook (Tier 1)</h2>
+                                        <h3 className='white'>$600</h3>
+                                    </div>
+                                    <p className='white'>Up to 2 posts a week. Will make exceptions for special prioritized events (max 1). Photographer fees will be charged separately.</p>
+                                </div>
+                                <div><BsArrowRightCircle onClick={() => {
+                                    var tempArr = [...pages]
+                                    const page = {
+                                        id: randomString(20), Info: "",
+                                        Name: "Instagram/Facebook",
+                                        Details: "Up to 2 posts a week. Will make exceptions for special prioritized events (max 1). Photographer fees will be charged separately.",
+                                        Price: 600
+                                    }
+                                    tempArr.push(page)
+                                    setPages(tempArr)
+                                    addOutlinePage(partner.id, project, page, pages, dispatch)
+
+
+                                    setTogglePageList(false)
+                                }} className='shopper-newpage-block-icon white' /></div>
+                            </div>
+                            <div className='shopper-newpage-block instagram'>
+                                <div>
+                                    <div className='flex'>
+                                        <h2 className='white'>Instagram/Facebook (Tier 2)</h2>
+                                        <h3 className='white'>$800</h3>
+                                    </div>
+                                    <p className='white'>Up to 3 posts a week. Will make exceptions for special prioritized events (max 2). Photographer fees will be charged separately.</p>
+                                </div>
+                                <div><BsArrowRightCircle onClick={() => {
+                                    var tempArr = [...pages]
+                                    const page = {
+                                        id: randomString(20), Info: "",
+                                        Name: "Instagram/Facebook",
+                                        Details: "Up to 3 posts a week. Will make exceptions for special prioritized events (max 1). Photographer fees will be charged separately.",
+                                        Price: 800
+                                    }
+                                    tempArr.push(page)
+                                    setPages(tempArr)
+                                    addOutlinePage(partner.id, project, page, pages, dispatch)
+
+
+                                    setTogglePageList(false)
+                                }} className='shopper-newpage-block-icon white' /></div>
+                            </div>
+                            <div className='shopper-newpage-block twitter'>
+                                <div>
+                                    <div className='flex'>
+                                        <h2 className='white'>Twitter</h2>
+                                        <h3 className='white'>$400</h3>
+                                    </div>
+                                    <p className='white'>Up to 2 posts a week. Will make exceptions for special prioritized events (max 1).</p>
+                                </div>
+                                <div><BsArrowRightCircle onClick={() => {
+                                    var tempArr = [...pages]
+                                    const page = {
+                                        id: randomString(20), Info: "",
+                                        Name: "Twitter",
+                                        Details: "Up to 2 posts a week. Will make exceptions for special prioritized events (max 1).",
+                                        Price: 400
+                                    }
+                                    tempArr.push(page)
+                                    setPages(tempArr)
+                                    addOutlinePage(partner.id, project, page, pages, dispatch)
+
+
+                                    setTogglePageList(false)
+                                }} className='shopper-newpage-block-icon white' /></div>
+                            </div>
+                            <div className='shopper-newpage-block yelp'>
+                                <div>
+                                    <div className='flex'>
+                                        <h2 className='white'>Yelp</h2>
+                                        <h3 className='white'>$300</h3>
+                                    </div>
+                                    <p className='white'>Will manage information and respond to prioritized reviews.</p>
+                                </div>
+                                <div><BsArrowRightCircle onClick={() => {
+                                    var tempArr = [...pages]
+                                    const page = {
+                                        id: randomString(20), Info: "",
+                                        Name: "Yelp",
+                                        Details: "Will manage information and respond to prioritized reviews.",
+                                        Price: 300
+                                    }
+                                    tempArr.push(page)
+                                    setPages(tempArr)
+                                    addOutlinePage(partner.id, project, page, pages, dispatch)
+
+
+                                    setTogglePageList(false)
+                                }} className='shopper-newpage-block-icon white' /></div>
+                            </div>
+                        </div>
+
                         <br />
                     </div> : <div></div>
             }

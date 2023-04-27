@@ -79,7 +79,7 @@ body {
 }
 
 .white {
-  color: white
+  color: white !important;
 }
 
 .dark {
@@ -114,6 +114,17 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 1.6em;
   color: rgb(255, 16, 76);
+}
+
+.instagram {
+  background-color: #DA2E78 !important;
+  color: white !important;
+}
+.twitter {
+  background-color: #1C96E8 !important;
+}
+.yelp {
+  background-color: #F74164 !important;
 }
 
 .font {

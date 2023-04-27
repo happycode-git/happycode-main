@@ -8,7 +8,7 @@ import '../STYLESHEETS/TicketForm.css'
 // 
 import { BsChevronLeft } from 'react-icons/bs'
 import { SiFirebase } from 'react-icons/si'
-import { ImDropbox } from 'react-icons/im'
+import { FcGoogle } from 'react-icons/fc'
 import { randomString } from '../../Global'
 import { createPartnerAccount } from '../../firebase'
 import { setConfirmationState } from '../../REDUX/REDUCERS/ConfirmationSlice'
@@ -24,7 +24,7 @@ export default function NewPartner() {
 
     const createAccount = () => {
 
-        dispatch(setLoadingState(true))
+
         const form = {
             FirstName: document.querySelector('#tbFirstName').value,
             LastName: document.querySelector('#tbLastName').value,
@@ -34,48 +34,55 @@ export default function NewPartner() {
             BusinessEmail: document.querySelector('#tbBusinessEmail').value,
             Address: document.querySelector('#tbBusinessAddress').value,
         }
-        const project = {
-            id: randomString(30),
-            SiteExists: document.querySelector('#cbSiteExists').checked,
-            CurrentSiteURL: document.querySelector('#tbCurrentSiteURL').value,
-            Name: document.querySelector('#tbProjectName').value,
-            Description: document.querySelector('#taProjectDesc').value,
-            InitialPayment: document.querySelector('#tbBudget').value,
-            Subscription: parseInt(document.querySelector('#tbMonthly').value),
-            URL: "",
-            DropboxURL: document.querySelector('#tbDropboxURL').value
-        }
-        createPartnerAccount(form, project)
-            .then(() => {
-                dispatch(setLoadingState(false))
-                document.querySelector('#tbFirstName').value = ""
-                document.querySelector('#tbLastName').value = ""
-                document.querySelector('#tbEmail').value = ""
-                document.querySelector('#tbPhone').value = ""
-                document.querySelector('#tbBusinessName').value = ""
-                document.querySelector('#tbBusinessEmail').value = ""
-                document.querySelector('#tbBusinessAddress').value = ""
-                document.querySelector('#cbSiteExists').checked = false
-                document.querySelector('#tbCurrentSiteURL').value = ""
-                document.querySelector('#tbProjectName').value = ""
-                document.querySelector('#taProjectDesc').value = ""
-                document.querySelector('#tbBudget').value = ""
-                document.querySelector('#tbMonthly').value = ""
-                document.querySelector('#tbDropboxURL').value = ""
 
-                dispatch(setConfirmationState(true))
-                setTimeout(() => {
-                    dispatch(setConfirmationState(false))
-                }, 3000);
-                navigate('/admindash')
-            })
-            .catch(() => {
-                dispatch(setLoadingState(false))
-                dispatch(setFailureState(true))
-                setTimeout(() => {
-                    dispatch(setFailureState(false))
-                }, 3000);
-            })
+        if (form.Email != "" && form.BusinessName != "") {
+            dispatch(setLoadingState(true))
+            const project = {
+                id: randomString(30),
+                SiteExists: document.querySelector('#cbSiteExists').checked,
+                CurrentSiteURL: document.querySelector('#tbCurrentSiteURL').value,
+                Name: document.querySelector('#tbProjectName').value,
+                Description: document.querySelector('#taProjectDesc').value,
+                InitialPayment: document.querySelector('#tbBudget').value,
+                Subscription: parseInt(document.querySelector('#tbMonthly').value),
+                URL: "",
+                DropboxURL: document.querySelector('#tbDropboxURL').value
+            }
+            createPartnerAccount(form, project)
+                .then(() => {
+                    dispatch(setLoadingState(false))
+                    document.querySelector('#tbFirstName').value = ""
+                    document.querySelector('#tbLastName').value = ""
+                    document.querySelector('#tbEmail').value = ""
+                    document.querySelector('#tbPhone').value = ""
+                    document.querySelector('#tbBusinessName').value = ""
+                    document.querySelector('#tbBusinessEmail').value = ""
+                    document.querySelector('#tbBusinessAddress').value = ""
+                    document.querySelector('#cbSiteExists').checked = false
+                    document.querySelector('#tbCurrentSiteURL').value = ""
+                    document.querySelector('#tbProjectName').value = ""
+                    document.querySelector('#taProjectDesc').value = ""
+                    document.querySelector('#tbBudget').value = ""
+                    document.querySelector('#tbMonthly').value = ""
+                    document.querySelector('#tbDropboxURL').value = ""
+
+                    dispatch(setConfirmationState(true))
+                    setTimeout(() => {
+                        dispatch(setConfirmationState(false))
+                    }, 3000);
+                    navigate('/admindash')
+                })
+                .catch(() => {
+                    dispatch(setLoadingState(false))
+                    dispatch(setFailureState(true))
+                    setTimeout(() => {
+                        dispatch(setFailureState(false))
+                    }, 3000);
+                })
+        }
+        else {
+            alert("You have some missing information. (Business Name, Email)")
+        }
     }
 
     useEffect(() => {
@@ -167,12 +174,12 @@ export default function NewPartner() {
                         <input id="tbURL" type="text" placeholder='https://weblineproject.web.app' className='webline-app-input' />
                     </div> */}
                     <div className='ticketform-form-block'>
-                        <h3>Dropbox URL:</h3>
-                        <p>Create a new project Dropbox folder and share with the contact email provided. Enter the URL of this folder below.</p>
+                        <h3>Google Drive URL:</h3>
+                        <p>Create a new project Google Drive folder and share with the contact email provided. Enter the URL of this folder below.</p>
                         <div className='flex-around link-pair'>
-                            <ImDropbox color="015EF6" className='firebase-icon' /> <a target="_blank" className='form-link' href="https://www.dropbox.com/home">Dropbox Folder Link</a>
+                            <FcGoogle color="015EF6" className='firebase-icon' /> <a target="_blank" className='form-link' href="https://drive.google.com/drive/folders/1NSas4RIHaWohoFR9np7C1mAczjfI1xhf">Google Drive Folder Link</a>
                         </div>
-                        <input id="tbDropboxURL" type="text" placeholder='https://www.dropbox.com/home/WeblineProject' className='webline-app-input' />
+                        <input id="tbDropboxURL" type="text" placeholder='https://drive.google.com/drive/folders/1NSas4RIHaWohoFR9np7C1mAczjfI1xhf' className='webline-app-input' />
                     </div>
 
                     <div className='ticketform-form-block'>

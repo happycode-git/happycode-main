@@ -196,7 +196,7 @@ export default function PartnerDetail() {
                         </div>
                         <div className='project-details-block'>
                             <h3>Current Site:</h3>
-                            <a href={project.CurrentSiteURL} target="_blank" className="purple">{project.CurrentSiteURL}</a>
+                            <a href={project.CurrentSiteURL} target="_blank" className="yellow">{project.CurrentSiteURL}</a>
                         </div>
                         <div className='project-details-block'>
                             <h3>Status:</h3>
@@ -226,9 +226,9 @@ export default function PartnerDetail() {
                             </div>
                         </div>
                         <div className='project-details-block'>
-                            <h3>Dropbox URL:</h3>
+                            <h3>Google Drive URL:</h3>
                             <div className='together'>
-                                <input type="text" id="tbDropboxURL" placeholder='Dropbox URL' className='project-info-input' />
+                                <input type="text" id="tbDropboxURL" placeholder='Google Drive URL' className='project-info-input' />
                                 <BsArrowCounterclockwise onClick={update_DropboxURL} className='update-icon' />
                             </div>
                         </div>
