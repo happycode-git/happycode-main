@@ -156,7 +156,7 @@ export default function AdminDash() {
             return
         }
         window.scrollTo(0, 0)
-        if (admin.id == superAdminID) {
+        if (superAdminID.includes(admin.id)) {
             getAllProspects(dispatch)
         } else {
             getProspects(dispatch, admin.id)

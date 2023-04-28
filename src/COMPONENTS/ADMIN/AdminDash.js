@@ -41,7 +41,7 @@ export default function AdminDash() {
       return
     }
     window.scrollTo(0, 0)
-    if (admin.id == superAdminID || admin.id == "v8xcJYXcGRyQ5ywflZxG") {
+    if (superAdminID.includes(admin.id) || admin.id == "v8xcJYXcGRyQ5ywflZxG") {
       getAllPartners(dispatch, setTempPartners)
     } else {
       getPartners(dispatch, setTempPartners, admin.id)

@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { Timestamp, getFirestore, onSnapshot, orderBy } from "firebase/firestore";
-import { getAuth, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 import { setSiteAlertState } from "./REDUX/REDUCERS/SiteAlertsSlice";
 import { setUserState } from './REDUX/REDUCERS/UserSlice'
 import { collection, query, where, getDocs, deleteDoc, updateDoc } from "firebase/firestore";
@@ -42,6 +42,16 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+
+const actionCodeSettings = {
+  // URL you want to redirect back to. The domain (www.example.com) for
+  // this URL must be whitelisted in the Firebase Console.
+  url: 'https://wearehappycode.com',
+  // This must be true for email link sign-in.
+  handleCodeInApp: true,
+  
+  // FDL custom domain.
+};
 
 export const firebaseSignIn = async (dispatch, navigate, email, password) => {
   const auth = getAuth();
@@ -676,7 +686,7 @@ export const setBuildInfo = async (partnerID, projectID, args) => {
 }
 export const getBuildInfo = async (partnerID, projectID, setTempBuilds) => {
   var builds = []
-  const querySnapshot = await getDocs(collection(db, "Members", partnerID, "Projects", projectID, "Builds"), orderBy("Date","asc"));
+  const querySnapshot = await getDocs(collection(db, "Members", partnerID, "Projects", projectID, "Builds"), orderBy("Date", "asc"));
   querySnapshot.forEach((doc) => {
     const build = {
       id: doc.id,
@@ -755,6 +765,9 @@ export const removeMessageFlag = async (userID, projectID) => {
   await updateDoc(washingtonRef, {
     HasMessage: false
   });
+}
+export const firebaseReset = async (email) => {
+  sendPasswordResetEmail(auth, email, actionCodeSettings)
 }
 
 

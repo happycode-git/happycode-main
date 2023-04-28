@@ -5,12 +5,15 @@ import Footer from './UTILITIES/Footer'
 import Navigation from './UTILITIES/Navigation'
 // 
 import { HiXMark } from 'react-icons/hi2'
-import { firebaseSignIn } from '../firebase'
+import { firebaseReset, firebaseSignIn } from '../firebase'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { setLoadingState } from '../REDUX/REDUCERS/LoadingSlice'
 // 
 import video1 from '../VIDEOS/Screen Recording 2023-03-25 at 4.08.50 PM.mp4'
+import { setFailureState } from '../REDUX/REDUCERS/FailureSlice'
+import { setConfirmationState } from '../REDUX/REDUCERS/ConfirmationSlice'
+import { Helmet } from 'react-helmet'
 
 export default function Webline() {
     const siteAlertState = useSelector((state) => state.siteAlert.value)
@@ -32,12 +35,48 @@ export default function Webline() {
         firebaseSignIn(dispatch, navigate, email, password);
     }
 
+    const resetPassword = () => {
+        const email = document.querySelector('#tbEmail').value
+        if (email == "") {
+            alert("Please provide an email, please.")
+        } else {
+            dispatch(setLoadingState(true))
+            firebaseReset(email)
+                .then(() => {
+                    dispatch(setLoadingState(false))
+                    dispatch(setConfirmationState(true))
+                    setTimeout(() => {
+                        dispatch(setConfirmationState(false))
+                        alert("Email was sent.")
+                    }, 3000);
+                })
+                .catch((error) => {
+                    console.log(error)
+                    dispatch(setLoadingState(false))
+                    dispatch(setFailureState(true))
+                    setTimeout(() => {
+                        dispatch(setFailureState(false))
+                    }, 3000);
+                })
+        }
+    }
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
     }, [])
     return (
         <div className='main'>
+             <Helmet>
+                <title>Webline | Happy Code Dev.</title>
+                <meta name="description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
+                <meta name="keywords" content="web development, small business, low cost, maintenance benefits, Happy Code" />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href={`https://wearehappycode.com`} />
+                <meta property="og:title" content="Happy Code Template | Webline" />
+                <meta property="og:description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
+                <meta property="og:url" content={`https://wearehappycode.com`} />
+                <meta property="og:image" content={`https://wearehappycode.com/src/PHOTOS/stock.png`} />
+            </Helmet>
             <Navigation />
             <h1 className='webline-title'>Webline</h1>
 
@@ -54,6 +93,7 @@ export default function Webline() {
                                     toggleSiteAlertState ?
                                         <p className='webline-site-err'>{siteAlertState}</p> : <p></p>
                                 }
+                                <button className='reset' onClick={resetPassword}>Forgot your password?</button>
                             </div>
 
                         </div>
@@ -63,10 +103,11 @@ export default function Webline() {
             }
             <br />
             <div className='webline-panel2'>
-                <h1>Partnerships <br />Everywhere!</h1>
+                <h1>We build websites <br/>for small businesses!</h1>
                 <p className='rotate apply-now'>Apply now*</p>
                 <h2>
-                    We partner with businesses who want a strong presence. To be top ranked in searches or advertising, a website must be in tip-top shape.
+                    We partner with businesses who want a strong presence. <br/>To be top ranked in searches or advertising, a website must be in tip-top shape. <br/><br/>
+                    <b>Sick of waiting forever for your developers to make even small changes? We've got you covered! Our ticketing system lets you submit requests whenever you want, and we'll check them daily. No more frustrating wait times - just fast and efficient updates.</b>
                 </h2>
             </div>
             <div className='banner'>

@@ -33,7 +33,7 @@ export default function Navigation() {
           <Link to="/webline" className='nav-link rotate bg-purple white'>Webline</Link>
           <Link to="/template" className='nav-link'>Template</Link>
           <Link to="/referrals" className='nav-link'>Referrals</Link>
-          <Link to="/calculator" className='nav-link rotate bg-yellow dark'>Health Calculator</Link>
+          <Link to="/calculator" className='nav-link rotate bg-yellow dark'>Website Assessment</Link>
           {/* <Link to="/blog" className='nav-link'>Blog</Link> */}
           <Link to="/products" className='nav-link rotate bg-purple'>Products</Link>
           <Link to="/contact" className='nav-link'>Contact</Link>

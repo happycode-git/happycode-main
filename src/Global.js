@@ -9,4 +9,4 @@ export function randomString(length) {
     return randomstring;
 }
 
-export const superAdminID = "pQ4xq1K9UXfmhYIMzKmS"
+export const superAdminID = ["pQ4xq1K9UXfmhYIMzKmS","XYDtOJ9aBCmDKi2FSLpr"]

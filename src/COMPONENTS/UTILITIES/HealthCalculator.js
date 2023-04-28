@@ -4,6 +4,7 @@ import '../STYLESHEETS/Webline.css'
 import '../STYLESHEETS/HealthCalculator.css'
 import Footer from './Footer'
 import Navigation from './Navigation'
+import { Helmet } from 'react-helmet'
 // 
 // 
 
@@ -237,8 +238,19 @@ export default function Webline() {
     }, [])
     return (
         <div className='main'>
+             <Helmet>
+                <title>Website Assessment Calculator | Happy Code Dev.</title>
+                <meta name="description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
+                <meta name="keywords" content="web development, small business, low cost, maintenance benefits, Happy Code" />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href={`https://wearehappycode.com`} />
+                <meta property="og:title" content="Happy Code Template | Website Health Calculator" />
+                <meta property="og:description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
+                <meta property="og:url" content={`https://wearehappycode.com`} />
+                <meta property="og:image" content={`https://wearehappycode.com/src/PHOTOS/stock.png`} />
+            </Helmet>
             <Navigation />
-            <h1 className='webline-title'>Website Health Calculator</h1>
+            <h1 className='webline-title'>Website Assessment Calculator</h1>
 
             <div className='webline-panel2'>
                 <h2>

@@ -14,6 +14,7 @@ import practicenowImg from '../PHOTOS/practicenow-logo.png'
 import easysellImg from '../PHOTOS/easysell-logo.png'
 import musicademyImg from '../PHOTOS/musicademy-logo.png'
 import savatheonImg from '../PHOTOS/savatheon-logo.png'
+import { Helmet } from 'react-helmet'
 
 export default function Products() {
     const dispatch = useDispatch();
@@ -36,6 +37,17 @@ export default function Products() {
     }, [])
     return (
         <div className='main'>
+             <Helmet>
+                <title>Products | Happy Code Dev.</title>
+                <meta name="description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
+                <meta name="keywords" content="web development, small business, low cost, maintenance benefits, Happy Code" />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href={`https://wearehappycode.com`} />
+                <meta property="og:title" content="Happy Code Template | Products" />
+                <meta property="og:description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
+                <meta property="og:url" content={`https://wearehappycode.com`} />
+                <meta property="og:image" content={`https://wearehappycode.com/src/PHOTOS/stock.png`} />
+            </Helmet>
             <Navigation />
             <h1 className='webline-title'>Products</h1>
             <div className='products-wrap'>
