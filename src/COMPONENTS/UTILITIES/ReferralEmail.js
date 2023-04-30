@@ -85,9 +85,8 @@ export default function Webline() {
                 <br />
                 {/* <h2 style={{ color: '#1E232B', fontSize: '1.6em', lineHeight: '95%', backgroundColor: '#C9FD3A', padding: '0.4em', borderRadius: '6px', transform: 'rotate(-2deg)', width: 'fit-content' }}>We make websites and apps!</h2> */}
                 <p style={{ padding: '1em 0' }}>
-                    We have observed that your website could benefit from some improvements, but there's no need to worry. We are here to offer our assistance.<br /><br />
-                    Creating a professional website can be a daunting and expensive task. However, if you're interested in expanding your business, we can help take your website to the next level. We guarantee results!<br /><br />
-                    We're excited about the prospect of working with you to make your business grow even more efficiently. Your success is our priority!<br /><br />
+                    We have observed that your website could benefit from some improvements, but there's no need to worry. Our team is ready to build you a stunning website.<br /><br />
+                    Creating a professional website can be a daunting and expensive task. However, if you're interested in expanding your business in an inexpensive way without sacrificing quality, we can help take your website to the next level.<br /><br />
 
                     <b>Here is what we can do for you:</b>
                 </p>

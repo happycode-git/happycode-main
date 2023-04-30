@@ -613,7 +613,7 @@ export const createPartnerProject = async (memberID, proj) => {
     SiteExists: proj.SiteExists,
     Status: "In Progress",
     Subscription: proj.Subscription,
-    URL: proj.URL,
+    URL: 'https://happy-code-templates.web.app',
     HasMessage: true
   })
   setProjectMessage(memberID, proj.id, "Hello, welcome to our brand new messaging system provided by Happy Code Dev. Use this window to view and send any comments, concerns, or questions you may have for our developers. We will be sure to get back to you as soon as we can. Thanks!", "pQ4xq1K9UXfmhYIMzKmS")

@@ -258,6 +258,44 @@ font-family: 'Roboto', sans-serif;
         font-size: 1.3em;
         margin-left: 1em;
     }
+
+    .pages-panel {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 350px;
+        height: 100vh;
+        background-color: #1E232B;
+        padding: 1.5em;
+        overflow-y: scroll;
+        z-index: 1000;
+    }
+
+    .page-panel {
+        display: flex;
+        gap: 1em;
+        justify-content: space-between;
+        
+    }
+    .page-panel h1 {
+        font-size: 1.4em;
+        font-weight: 400;
+    }
+    .page-panel h2 {
+        font-weight: 400;
+    }
+    .list-btn {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: fit-content;
+        background-color: rgba(0,0,0,0);
+        bordeR: 0;
+        text-decoration: underline;
+        color: #2249f7;
+        font-size: 1.2em;
+        padding-right: 2em;
+    }
 }
 
 @media only screen and (min-width: 600px) {

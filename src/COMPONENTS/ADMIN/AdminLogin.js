@@ -8,6 +8,7 @@ import Navigation from '../UTILITIES/Navigation';
 import Footer from '../UTILITIES/Footer';
 import { firebaseAdminSignIn } from '../../firebase';
 import { setLoadingState } from '../../REDUX/REDUCERS/LoadingSlice';
+import { setFailureState } from '../../REDUX/REDUCERS/FailureSlice';
 
 export default function AdminLogin() {
     const admin = useSelector((state) => state.admin.value)
@@ -22,6 +23,13 @@ export default function AdminLogin() {
         const email = document.querySelector('#tbEmail').value;
         const password = document.querySelector('#tbPass').value;
         firebaseAdminSignIn(dispatch, navigate, email, password)
+        .catch(() => {
+            dispatch(setLoadingState(false))
+            dispatch(setFailureState(true))
+            setTimeout(() => {
+                dispatch(setFailureState(false))
+            }, 1000);
+        })
     }
     function closeNav() {
         document.querySelector(".navbody").style.width = "0";
@@ -30,6 +38,13 @@ export default function AdminLogin() {
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
+        document.onkeyup = function (e) {
+            e = e || window.event;
+            const key = e.key;
+            if (key == 'Enter') {
+                signIn()
+            }
+        };
     }, [])
 
     return (

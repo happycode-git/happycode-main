@@ -13,6 +13,7 @@ import { setFailureState } from '../../REDUX/REDUCERS/FailureSlice'
 import { setOutlineState } from '../../REDUX/REDUCERS/OutlineSlice'
 import { randomString } from '../../Global'
 import { AiFillPlusCircle } from 'react-icons/ai'
+import { HiXMark } from 'react-icons/hi2'
 
 
 export default function AdminOutline() {
@@ -27,6 +28,7 @@ export default function AdminOutline() {
     const [togglePageList, setTogglePageList] = useState(false)
     const [pages, setPages] = useState([])
     const [total, setTotal] = useState(0)
+    const [showList, setShowList] = useState(false)
 
     const updateOutlineHere = () => {
         for (var i in outline) {
@@ -101,14 +103,18 @@ export default function AdminOutline() {
             <p className='shopper-info'>Make sure to click on the Update button every time you add and edit an outline page.</p>
 
             <div className='shopper'>
-                <h1 className='shopper-head'>In construction...</h1>
+                <div className='flex'>
+                    <h1 className='shopper-head'>In construction...</h1>
+                    <button onClick={() => { setShowList(true) }} className='list-btn'>View List</button>
+                </div>
                 <div className='shopper-pages'>
                     {
                         pages.map((page, i) => {
                             return (
                                 <div key={i} className={`shopper-page ${i == 0 ? "block1" : ""}`}>
                                     <div className='flex'>
-                                        <h1>{page.Name}</h1>
+                                        <div className='flex'> <h1>{page.Name}</h1>
+                                            <h1>${page.Price}</h1></div>
                                         <BsThreeDotsVertical onClick={() => {
                                             page.id != chosenPageID ?
                                                 setChosenPageID(page.id) : setChosenPageID("");
@@ -124,7 +130,7 @@ export default function AdminOutline() {
                                         {
                                             page.id == chosenPageID ?
                                                 <div>
-                                                    <a href={project.DropboxURL} target="_blank" className='shopper-dropbox'>Dropbox</a>
+                                                    <a href={project.DropboxURL} target="_blank" className='shopper-dropbox'>Google Drive</a>
                                                     <button onClick={() => {
                                                         removeOutlineComp(partner.id, project.id, page)
                                                             .then(() => {
@@ -144,6 +150,26 @@ export default function AdminOutline() {
                                 </div>
                             )
                         })
+                    }
+                    {
+                        showList ?
+                            <div className='pages-panel'>
+                                <div className='flex'>
+                                    <div></div>
+                                    <HiXMark onClick={() => { setShowList(false) }} color="white" className='close' />
+                                </div>
+                                <br />
+                                {
+                                    pages.map((page, i) => {
+                                        return (
+                                            <div key={i} className='page-panel'>
+                                                <h1 className='white'>{page.Name}</h1>
+                                                <h2 className='white'>${page.Price}</h2>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div> : <div></div>
                     }
 
                 </div>

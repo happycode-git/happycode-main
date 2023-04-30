@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router'
 import '../STYLESHEETS/TicketForm.css'
 // 
 import { BsChevronLeft, BsArrowRight } from 'react-icons/bs'
-import { AiFillDropboxCircle } from 'react-icons/ai'
+import { FcGoogle } from 'react-icons/fc'
 import { Link } from 'react-router-dom'
 import { randomString } from '../../Global'
 import { setConfirmationState } from '../../REDUX/REDUCERS/ConfirmationSlice'
@@ -106,9 +106,9 @@ export default function TicketForm() {
                             <div className='flex-around'>
                                 <h4 className='dropbox-title'>Upload Media Here</h4>
                                 <BsArrowRight />
-                                <a className='dropbox-icon' target="_blank" href={`${project.DropboxURL}`}><AiFillDropboxCircle color="0E65F9" /></a>
+                                <a className='dropbox-icon' target="_blank" href={`${project.DropboxURL}`}><FcGoogle color="0E65F9" /></a>
                             </div>
-                            <p>This link will open the dropbox folder for all ticket inquiries. Create a new folder using the ticket id to make it easy for us to find.</p>
+                            <p>This link will open the Google Drive folder for all ticket inquiries. <b>Create a new folder using the ticket id to make it easy for us to find.</b></p>
                         </div>
                         <br />
                         <button className='ticketform-form-btn' onClick={submitTicket}>Submit Ticket</button>

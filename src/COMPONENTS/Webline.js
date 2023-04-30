@@ -32,7 +32,14 @@ export default function Webline() {
         dispatch(setLoadingState(true))
         const email = document.querySelector('#tbEmail').value;
         const password = document.querySelector('#tbPass').value;
-        firebaseSignIn(dispatch, navigate, email, password);
+        firebaseSignIn(dispatch, navigate, email, password)
+            .catch(() => {
+                dispatch(setLoadingState(false))
+                dispatch(setFailureState(true))
+                setTimeout(() => {
+                    dispatch(setFailureState(false))
+                }, 1000);
+            })
     }
 
     const resetPassword = () => {
@@ -60,13 +67,22 @@ export default function Webline() {
                 })
         }
     }
+
+
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
+        document.onkeyup = function (e) {
+            e = e || window.event;
+            const key = e.key;
+            if (key == 'Enter') {
+                signIn()
+            }
+        };
     }, [])
     return (
         <div className='main'>
-             <Helmet>
+            <Helmet>
                 <title>Webline | Happy Code Dev.</title>
                 <meta name="description" content="Happy Code is a top-rated web development company that specializes in creating professional websites for small businesses. Our services are affordable, and we offer great maintenance benefits to ensure your website stays up-to-date and secure. Contact us today to learn more about our services and how we can help your business grow online." />
                 <meta name="keywords" content="web development, small business, low cost, maintenance benefits, Happy Code" />
@@ -102,11 +118,13 @@ export default function Webline() {
                     </div>
             }
             <br />
+            <div className='divider'></div>
+            <br />
             <div className='webline-panel2'>
-                <h1>We build websites <br/>for small businesses!</h1>
+                <h1>We build websites <br />for small businesses!</h1>
                 <p className='rotate apply-now'>Apply now*</p>
                 <h2>
-                    We partner with businesses who want a strong presence. <br/>To be top ranked in searches or advertising, a website must be in tip-top shape. <br/><br/>
+                    We partner with businesses who want a strong presence. <br />To be top ranked in searches or advertising, a website must be in tip-top shape. <br /><br />
                     <b>Sick of waiting forever for your developers to make even small changes? We've got you covered! Our ticketing system lets you submit requests whenever you want, and we'll check them daily. No more frustrating wait times - just fast and efficient updates.</b>
                 </h2>
             </div>
@@ -116,7 +134,7 @@ export default function Webline() {
             </div>
             <div className='webline-panel2-1'>
                 <video src={video1} controls="true" autoPlay="true" loop="true"></video>
-                <a href="https://happy-code-template-sample.web.app" target="_blank" className='sample-link'>View Sample</a>
+                <a href="https://barber-shops-template.web.app" target="_blank" className='sample-link'>View Sample</a>
             </div>
             <div className='webline-panel3'>
                 <h3 className='webline-promo-title center'><span className='yellow'>$350</span> initial fee - <span className='yellow'>$52.50/mo</span> for site above.</h3>

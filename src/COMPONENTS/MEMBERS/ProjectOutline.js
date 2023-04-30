@@ -115,7 +115,7 @@ export default function AdminOutline() {
                                         {/* <textarea id={`taRequests${i}`} className='shopper-ta' placeholder='Enter any extra requests for ideas aside from the details given above.'></textarea> */}
                                         {
                                             page.id == chosenPageID ?
-                                                <a href={project.DropboxURL} target="_blank" className='shopper-dropbox'>Dropbox</a> : <p></p>
+                                                <a href={project.DropboxURL} target="_blank" className='shopper-dropbox'>Google Drive</a> : <p></p>
                                         }
                                     </div>
                                 </div>
