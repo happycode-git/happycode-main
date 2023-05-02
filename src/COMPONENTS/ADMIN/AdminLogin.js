@@ -38,13 +38,6 @@ export default function AdminLogin() {
     useEffect(() => {
         closeNav()
         window.scrollTo(0, 0)
-        document.onkeyup = function (e) {
-            e = e || window.event;
-            const key = e.key;
-            if (key == 'Enter') {
-                signIn()
-            }
-        };
     }, [])
 
     return (
@@ -56,7 +49,11 @@ export default function AdminLogin() {
                         <h1>Admin Login</h1>
                         <div className='webline-login-inputs'>
                             <input id="tbEmail" type="email" placeholder='Email' className='webline-login-input' />
-                            <input id="tbPass" type="password" placeholder='Password' className='webline-login-input' />
+                            <input id="tbPass" type="password" placeholder='Password' className='webline-login-input' onKeyUp={(e) => {
+                                if (e.key == "Enter") {
+                                    signIn()
+                                }
+                            }} />
                             <button className='webline-login-btn' onClick={signIn}>Let's Go!</button>
                             {
                                 toggleSiteAlertState ?
