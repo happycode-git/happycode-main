@@ -65,7 +65,7 @@ export default function AdminDash() {
             BusinessType: document.querySelector('#tbType').value,
             Details: document.querySelector('#taDetails').value
         }
-        setProspectDoc(p)
+        setProspectDoc(p, admin.id)
             .then(() => {
                 dispatch(setLoadingState(false))
                 document.querySelector('#tbBusinessName').value = ""
@@ -87,7 +87,8 @@ export default function AdminDash() {
                     getProspects(dispatch)
                 }, 3000);
             })
-            .catch(() => {
+            .catch((error) => {
+                console.log(error)
                 dispatch(setLoadingState(false))
                 dispatch(setFailureState(true))
                 setTimeout(() => {
