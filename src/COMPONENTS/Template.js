@@ -48,6 +48,18 @@ export default function Webline() {
             desc: 'Hook the user in with a essential information and statements. The user should have a great idea of what the business is and does in this page.'
         },
         {
+            id: 33,
+            name: "Home 5",
+            url: 'https://happy-code-templates.web.app/home5',
+            desc: 'Hook the user in with a essential information and statements. The user should have a great idea of what the business is and does in this page.'
+        },
+        {
+            id: 34,
+            name: "Home 6",
+            url: 'https://happy-code-templates.web.app/home6',
+            desc: 'Hook the user in with a essential information and statements. The user should have a great idea of what the business is and does in this page.'
+        },
+        {
             id: 3,
             name: "About",
             url: 'https://happy-code-templates.web.app/about',

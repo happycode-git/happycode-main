@@ -677,6 +677,9 @@ export const editProspectDoc = async (pros) => {
     Details: pros.Details
   });
 }
+export const removeProspectDoc = async (pros) => {
+  await deleteDoc(doc(db, "Prospects", pros.id));
+}
 export const setBuildInfo = async (partnerID, projectID, args) => {
   await setDoc(doc(db, "Members", partnerID, "Projects", projectID, "Builds", args.id), {
     Date: args.Date,

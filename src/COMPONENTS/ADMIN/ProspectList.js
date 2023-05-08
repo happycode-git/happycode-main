@@ -6,7 +6,7 @@ import '../STYLESHEETS/ProspectList.css'
 // 
 import { BsChevronLeft } from 'react-icons/bs'
 import { BiWorld } from 'react-icons/bi'
-import { getProspects, setProspectDoc, editProspectDoc, getAllProspects } from '../../firebase';
+import { getProspects, setProspectDoc, editProspectDoc, getAllProspects, removeProspectDoc } from '../../firebase';
 import { AiFillCheckCircle, AiFillPlusCircle } from 'react-icons/ai';
 import { IoChevronDownCircleSharp, IoChevronUpCircleSharp } from 'react-icons/io5';
 import { setLoadingState } from '../../REDUX/REDUCERS/LoadingSlice';
@@ -26,6 +26,7 @@ export default function AdminDash() {
     const [toggleEditForm, setToggleEditForm] = useState(false)
     const [prospect, setProspect] = useState({})
     const [prosID, setProsID] = useState("")
+    const [tempProspects, setTempProspects] = useState([])
 
     const openEdit = (pros) => {
         setToggleEditForm(true)
@@ -84,8 +85,12 @@ export default function AdminDash() {
                 setTimeout(() => {
                     setToggleForm(false)
                     dispatch(setConfirmationState(false))
-                    getProspects(dispatch)
-                }, 3000);
+                    if (superAdminID.includes(admin.id)) {
+                        getAllProspects(dispatch)
+                    } else {
+                        getProspects(dispatch, admin.id)
+                    }
+                }, 2000);
             })
             .catch((error) => {
                 console.log(error)
@@ -93,7 +98,7 @@ export default function AdminDash() {
                 dispatch(setFailureState(true))
                 setTimeout(() => {
                     dispatch(setFailureState(false))
-                }, 3000);
+                }, 2000);
             })
 
     }
@@ -137,17 +142,47 @@ export default function AdminDash() {
                 setTimeout(() => {
                     setToggleEditForm(false)
                     dispatch(setConfirmationState(false))
-                    getProspects(dispatch)
-                }, 3000);
+                    if (superAdminID.includes(admin.id)) {
+                        getAllProspects(dispatch)
+                    } else {
+                        getProspects(dispatch, admin.id)
+                    }
+                }, 2000);
             })
             .catch(() => {
                 dispatch(setLoadingState(false))
                 dispatch(setFailureState(true))
                 setTimeout(() => {
                     dispatch(setFailureState(false))
-                }, 3000);
+                }, 2000);
             })
 
+    }
+    const removeProspect = () => {
+        dispatch(setLoadingState(true))
+        removeProspectDoc(prospect)
+            .then(() => {
+                dispatch(setLoadingState(false))
+                dispatch(setConfirmationState(true))
+                if (superAdminID.includes(admin.id)) {
+                    getAllProspects(dispatch)
+                } else {
+                    getProspects(dispatch, admin.id)
+                }
+                setTimeout(() => {
+                    setToggleEditForm(false)
+                    dispatch(setConfirmationState(false))
+
+                }, 2000);
+
+            })
+            .catch(() => {
+                dispatch(setLoadingState(false))
+                dispatch(setFailureState(true))
+                setTimeout(() => {
+                    dispatch(setFailureState(false))
+                }, 2000);
+            })
     }
 
     useEffect(() => {
@@ -359,7 +394,7 @@ export default function AdminDash() {
                                                         openEdit(pros)
                                                         console.log(pros)
                                                     }}><MdBuildCircle /></button>
-                                                    <button className="prospect-button green"><AiFillCheckCircle /></button>
+                                                    <button onClick={removeProspect} className="prospect-button green"><AiFillCheckCircle /></button>
                                                 </div>
                                             </div> : <div></div>
                                     }

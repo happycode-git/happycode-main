@@ -118,8 +118,6 @@ font-family: 'Roboto', sans-serif;
         border: 1px solid #d0d0d0;
     }
 
-
-
     .prospect-block h2 {
         font-size: 1.2em;
         letter-spacing: -1px;
@@ -141,7 +139,7 @@ font-family: 'Roboto', sans-serif;
     }
 
     .prospect-block p {
-        font-size: 0.8em;
+        font-size: 1.2em;
     }
 
     .web-icon {
@@ -161,6 +159,25 @@ font-family: 'Roboto', sans-serif;
         background-color: rgba(0, 0, 0, 0);
         border: 0;
         font-size: 2em;
+    }
+
+    
+
+    .prospect-info-wrap {
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow-y: scroll;
+        height: 100vh;
+        width: 100%;
+        padding: 1em;
+    }
+    .prospect-info {
+        background-color: #ffffff;
+        height: 100%;
+        padding: 1em;
+        border-radius: 10px;
+        box-shadow: 10px 5px 5px rgba(0,0,0,0.2);
     }
 }
 
